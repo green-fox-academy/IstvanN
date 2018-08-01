@@ -5,4 +5,4 @@ Istvan Nemeth's repository.
 
 [My syllabus repo](https://github.com/green-fox-academy/IstvanN "my nice repo")
 
-### Ok.
+### Cool!
