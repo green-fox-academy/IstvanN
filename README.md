@@ -1,2 +1,2 @@
 # IstvanN
-Nemeth Istvan's repository.
+Istvan Nemeth's repository.
