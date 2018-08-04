@@ -12,10 +12,8 @@ public class DrawTriangle {
 //    Drawing the triangle
     String text = "*";
     for (int i = 1; i <= userNumber; i++) {
-      System.out.println(" " + text + " ");
-      while (i > 1 && i < userNumber) {
-
-      }
+      System.out.println(" " + text);
+      text += "*";
     }
   }
 }
