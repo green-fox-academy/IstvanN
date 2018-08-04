@@ -11,10 +11,9 @@ public class DrawPyramid {
     int userNumber = scanner.nextInt();
 
 //    Drawing the pyramid
-    String text = "*";
-    for (int i = 1; i < userNumber; i++) {
-      System.out.println(" " + text);
-      text = text + "**";
+    String freeSpace = " ";  // This is gonna be the SPACE
+    for (int i = 1; i <= userNumber; i++) {
+      System.out.print("");
     }
   }
 }
