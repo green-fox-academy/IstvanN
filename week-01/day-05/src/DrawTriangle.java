@@ -12,7 +12,7 @@ public class DrawTriangle {
 //    Drawing the triangle
     String text = "*";
     for (int i = 1; i <= userNumber; i++) {
-      System.out.println(" " + text);
+      System.out.println(text);
       text += "*";
     }
   }
