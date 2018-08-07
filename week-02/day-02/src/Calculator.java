@@ -15,11 +15,11 @@ public class Calculator {
     String[] userInputArray = userInput.split(" ");
 
     String operation = userInputArray[0];
-    Double operationOne = Double.parseDouble(userInputArray[1]);
-    Double operationTwo = Double.parseDouble(userInputArray[2]);
+    Double operatorOne = Double.parseDouble(userInputArray[1]);
+    Double operatorTwo = Double.parseDouble(userInputArray[2]);
 
 //    Calling the function
-    calculate(operation, operationOne, operationTwo);
+    calculate(operation, operatorOne, operatorTwo);
   }
 
   //  This is the calculate method
