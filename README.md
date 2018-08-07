@@ -1,8 +1,4 @@
 # IstvanN
-Istvan Nemeth's repository.
+Istvan "Archie"  Nemeth's repository.
 
-## Now for the workshop
-
-[My syllabus repo](https://github.com/green-fox-academy/IstvanN "my nice repo")
-
-### Cool!
+## Hello, IT. Have you tried turning it off and on again?
