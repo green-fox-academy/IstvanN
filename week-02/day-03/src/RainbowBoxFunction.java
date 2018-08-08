@@ -7,7 +7,7 @@ public class RainbowBoxFunction {
   public static void mainDraw(Graphics graphics) {
     String[] colors = {"red", "orange", "yellow", "green", "blue", "purple", "magenta"};
     for (int i = colors.length - 1; i >= 0; i--) {
-      rainBox((i + 1) * 40, colors[i], graphics);
+      rainBox((i + 1) * 45, colors[i], graphics);
     }
   }
 
