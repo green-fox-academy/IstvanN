@@ -3,19 +3,23 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PositionSquare {
+public class CenterBox {
 
   public static void mainDraw(Graphics graphics) {
-
-    for (int i = 1; i <= 3; i++) {
-      squareDrawer(i * 10, i * 25, graphics);
+    // create a square drawing function that takes 1 parameter:
+    // the square size
+    // and draws a square of that size to the center of the canvas.
+    // draw 3 squares with that function.
+    // avoid code duplication.
+    for (int i = 3; i >= 1; i--) {
+      graphics.setColor(new Color(i * 50, i * 50, i * 50));
+      squareDraw(i * 50, graphics);
     }
 
   }
 
-  public static void squareDrawer(int startX, int startY, Graphics graphics) {
-    graphics.setColor(new Color(startX * 2, startY * 2, startX * 2));
-    graphics.fillRect(startX, startY, 50, 50);
+  public static void squareDraw(int size, Graphics graphics) {
+    graphics.fillRect(WIDTH / 2 - size / 2, HEIGHT / 2 - size / 2, size, size);
   }
 
   //    Don't touch the code below
@@ -39,5 +43,6 @@ public class PositionSquare {
 
     }
   }
+
 
 }
