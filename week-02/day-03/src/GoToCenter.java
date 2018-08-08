@@ -5,11 +5,6 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class GoToCenter {
   public static void mainDraw(Graphics graphics) {
-    // Create a line drawing function that takes 2 parameters:
-    // The x and y coordinates of the line's starting point
-    // and draws a line from that point to the center of the canvas.
-    // Draw 3 lines with that function. Use loop for that.
-
 
     for (int i = 0; i < 3; i++) {
       drawToCenter(i * 10, i * 150, graphics);

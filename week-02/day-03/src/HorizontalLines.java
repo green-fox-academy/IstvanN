@@ -3,16 +3,17 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Diagonals {
+public class HorizontalLines {
   public static void mainDraw(Graphics graphics) {
+    for (int i = 1; i <= 3; i++) {
+      drawHorizontal(i * 10, i * 50, graphics);
+    }
+  }
 
-    graphics.setColor(Color.GREEN);
-    graphics.drawLine(0, 0, WIDTH, HEIGHT);
+  public static void drawHorizontal(int startX, int startY, Graphics graphics) {
 
     graphics.setColor(Color.RED);
-    graphics.drawLine(0, HEIGHT, WIDTH, 0);
-
-
+    graphics.drawLine(startX, startY, startX + 50, startY);
   }
 
   // Don't touch the code below
@@ -35,5 +36,4 @@ public class Diagonals {
       mainDraw(graphics);
     }
   }
-
 }
