@@ -3,21 +3,12 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FunctionToCenter {
+public class PurpleSteps3d {
   public static void mainDraw(Graphics graphics) {
-
-    for (int j = 0; j <= HEIGHT; j += 20) {
-      for (int i = 0; i <= WIDTH; i += 20) {
-        lineToCenter(0, i, graphics);
-        lineToCenter(WIDTH, i, graphics);
-      }
-      lineToCenter(j, 0, graphics);
-      lineToCenter(j, HEIGHT, graphics);
+    for (int i = 5; i < HEIGHT / 4; i *= 2) {
+      graphics.setColor(Color.magenta);
+      graphics.fillRect(i, i, i, i);
     }
-  }
-
-  public static void lineToCenter(int startX, int startY, Graphics graphics) {
-    graphics.drawLine(startX, startY, WIDTH / 2, HEIGHT / 2);
   }
 
   // Don't touch the code below
@@ -40,5 +31,4 @@ public class FunctionToCenter {
       mainDraw(graphics);
     }
   }
-
 }

@@ -3,21 +3,20 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FunctionToCenter {
+public class ConnectTheDots {
   public static void mainDraw(Graphics graphics) {
+    // Create a function that takes 1 parameter:
+    // An array of {x, y} points
+    // and connects them with green lines.
+    // Connect these to get a box: {{10, 10}, {290,  10}, {290, 290}, {10, 290}}
+    // Connect these: {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},
+    // {120, 100}, {85, 130}, {50, 100}}
 
-    for (int j = 0; j <= HEIGHT; j += 20) {
-      for (int i = 0; i <= WIDTH; i += 20) {
-        lineToCenter(0, i, graphics);
-        lineToCenter(WIDTH, i, graphics);
-      }
-      lineToCenter(j, 0, graphics);
-      lineToCenter(j, HEIGHT, graphics);
-    }
+
   }
 
-  public static void lineToCenter(int startX, int startY, Graphics graphics) {
-    graphics.drawLine(startX, startY, WIDTH / 2, HEIGHT / 2);
+  public static void connectDots(int[][] arrayInput, Graphics graphics) {
+
   }
 
   // Don't touch the code below
@@ -40,5 +39,4 @@ public class FunctionToCenter {
       mainDraw(graphics);
     }
   }
-
 }
