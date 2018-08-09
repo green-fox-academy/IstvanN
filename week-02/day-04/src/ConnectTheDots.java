@@ -8,15 +8,37 @@ public class ConnectTheDots {
     // Create a function that takes 1 parameter:
     // An array of {x, y} points
     // and connects them with green lines.
-    // Connect these to get a box: {{10, 10}, {290,  10}, {290, 290}, {10, 290}}
+    // Connect these to get a box: {
+    // {10, 10},
+    // {290,  10},
+    // {290, 290},
+    // {10, 290}}
     // Connect these: {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},
     // {120, 100}, {85, 130}, {50, 100}}
-
+    int[][] newArray = {{10, 10}, {290,  10}, {290, 290}, {10, 290}};
+    int[][] surprise = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
+    connectDots(newArray, graphics);
+    connectDots(surprise, graphics);
 
   }
 
   public static void connectDots(int[][] arrayInput, Graphics graphics) {
 
+    graphics.setColor(Color.green);
+    int[] theXs = new int[arrayInput.length];
+    int[] theYs = new int[arrayInput.length];
+
+    for (int i = 0; i < arrayInput.length; i++) {
+      for (int j = 0; j < 2; j++) {
+        if (j == 0) {
+          theXs[i] = arrayInput[i][j];
+        } else {
+          theYs[i] = arrayInput[i][j];
+        }
+      }
+    }
+
+    graphics.drawPolygon(theXs, theYs, arrayInput.length);
   }
 
   // Don't touch the code below
