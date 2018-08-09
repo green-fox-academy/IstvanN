@@ -19,8 +19,9 @@ public class Bubble {
   //  This method makes the list if number in descending order, if the 'ifTrue' is true, otherwise it makes it ascending
   public static int[] bubbleAdvanced(int[] listToBeSorted, boolean ifTrue) {
 
+    Arrays.sort(listToBeSorted);
+
     if (ifTrue) {
-      Arrays.sort(listToBeSorted);
       int[] temporaryList = new int[listToBeSorted.length];
       int j = 0;
       for (int i = listToBeSorted.length - 1; i >= 0; i--) {
@@ -31,8 +32,6 @@ public class Bubble {
       for (int i = 0; i < temporaryList.length; i++) {
         listToBeSorted[i] = temporaryList[i];
       }
-    } else {
-      Arrays.sort(listToBeSorted);
     }
 
     return listToBeSorted;
