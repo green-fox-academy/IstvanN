@@ -42,5 +42,4 @@ public class LinePlay {
       mainDraw(graphics);
     }
   }
-
 }
