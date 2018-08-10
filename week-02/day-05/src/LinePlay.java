@@ -9,13 +9,13 @@ public class LinePlay {
 //    The purple part
     graphics.setColor(Color.magenta);
 
-    for (int i = 30; i < WIDTH; i += 20) {
+    for (int i = 30; i < (WIDTH + HEIGHT) / 2; i += 20) {
       graphics.drawLine(i, 5, WIDTH, i);
     }
 
     graphics.setColor(Color.green);
 
-    for (int i = 30; i < HEIGHT; i += 20) {
+    for (int i = 30; i < (HEIGHT + WIDTH) / 2; i += 20) {
       graphics.drawLine(5, i, i, HEIGHT);
     }
 
