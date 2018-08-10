@@ -16,27 +16,28 @@ public class Bubble {
     return listToBeSorted;
   }
 
-  //  This method makes the list if number in descending order, if the 'ifTrue' is true, otherwise it makes it ascending
-  public static int[] bubbleAdvanced(int[] listToBeSorted, boolean ifTrue) {
+  //  This method makes the array of numbers in descending order,
+  //  if the 'ifTrue' is true, otherwise it makes it ascending
+  public static int[] bubbleAdvanced(int[] arrayToBeSorted, boolean ifTrue) {
 
-    Arrays.sort(listToBeSorted);
+    Arrays.sort(arrayToBeSorted);
 
 
     if (ifTrue) {
-      int[] temporaryList = new int[listToBeSorted.length];
+      int[] temporaryList = new int[arrayToBeSorted.length];
 
 //      Looping through the list to be sorted from backwards
       int j = 0;
-      for (int i = listToBeSorted.length - 1; i >= 0; i--) {
-        temporaryList[j] = listToBeSorted[i];
+      for (int i = arrayToBeSorted.length - 1; i >= 0; i--) {
+        temporaryList[j] = arrayToBeSorted[i];
         j++;
       }
 
       for (int i = 0; i < temporaryList.length; i++) {
-        listToBeSorted[i] = temporaryList[i];
+        arrayToBeSorted[i] = temporaryList[i];
       }
     }
 
-    return listToBeSorted;
+    return arrayToBeSorted;
   }
 }
