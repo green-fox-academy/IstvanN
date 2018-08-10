@@ -21,8 +21,11 @@ public class Bubble {
 
     Arrays.sort(listToBeSorted);
 
+
     if (ifTrue) {
       int[] temporaryList = new int[listToBeSorted.length];
+
+//      Looping through the list to be sorted from backwards
       int j = 0;
       for (int i = listToBeSorted.length - 1; i >= 0; i--) {
         temporaryList[j] = listToBeSorted[i];
