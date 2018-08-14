@@ -7,7 +7,7 @@ import java.util.List;
 public class Logs {
   public static void main(String[] args) {
 
-    System.out.println(getIP("log.txt"));
+    getIP("log.txt");
 
   }
 
@@ -35,6 +35,12 @@ public class Logs {
       }
     }
 
+    Path pathNew = Paths.get("files/log-IP.txt");
+    try {
+      Files.write(pathNew, listOfIP);
+    } catch (Exception ex) {
+      System.out.println("Couldn't write the file: " + pathNew);
+    }
     return listOfIP;
   }
 }
