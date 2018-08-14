@@ -5,7 +5,6 @@ public class DivideByZero {
   }
 
   public static void divider(int number) {
-
     try {
       double result = 10 / number;
       System.out.println(result);
