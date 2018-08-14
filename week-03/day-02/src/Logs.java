@@ -16,7 +16,7 @@ public class Logs {
   public static ArrayList getIP(String filename) {
 
 //    Setting up the path of the method
-    Path path = Paths.get("files/" + filename);
+    Path path = Paths.get("files/logs/" + filename);
 
 //    Setting up the content arraylist and put the content in it with try-catch
     List<String> content = new ArrayList<>();
@@ -39,7 +39,7 @@ public class Logs {
     }
 
 //    Writing the list to a new file
-    Path pathNew = Paths.get("files/log-IP.txt");
+    Path pathNew = Paths.get("files/logs/log-IP.txt");
 
     try {
       Files.write(pathNew, listOfIP);
@@ -52,7 +52,7 @@ public class Logs {
   public static double countGetPostRatio(String filename) {
 
 //    Setting up the path of the method
-    Path path = Paths.get("files/" + filename);
+    Path path = Paths.get("files/logs/" + filename);
 
 //    Setting up the content arraylist of the file
     List<String> content = new ArrayList<>();
