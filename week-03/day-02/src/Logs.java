@@ -15,9 +15,10 @@ public class Logs {
 
 //    Setting up the path of the method
     Path path = Paths.get("files/" + filename);
-    
-//    Setting up the content arraylist
+
+//    Setting up the content arraylist and put the content in it with try-catch
     List<String> content = new ArrayList<>();
+
     try {
       content = Files.readAllLines(path);
     } catch (Exception ex) {
