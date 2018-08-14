@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class WriteMultipleLines {
   public static void main(String[] args) {
+
     writeToFile("files/my-file.txt", "Paranoid Android", 4);
   }
 
