@@ -9,6 +9,7 @@ public class Logs {
   public static void main(String[] args) {
 
     getIP("log.txt");
+    System.out.println(countGetPostRatio("log.txt"));
 
   }
 
@@ -74,8 +75,7 @@ public class Logs {
       } else if (tempList.get(2).contains("POST")) {
         listOfPost.add(tempList.get(2));
       }
-
-      return listOfGet.size() / listOfPost.size();
     }
+    return (double) listOfGet.size() / (double) listOfPost.size();
   }
 }
