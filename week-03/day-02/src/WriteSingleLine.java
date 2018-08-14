@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class WriteSingleLine {
   public static void main(String[] args) {
 
-    Path path = Paths.get("/home/archiez/greenfox/IstvanN/week-03/day-02/files/my-file.txt");
+    Path path = Paths.get("files/my-file.txt");
     ArrayList<String> myName = new ArrayList<>(Arrays.asList("Istvan Nemeth"));
 
     try {

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CountLines {
   public static void main(String[] args) {
-    System.out.println(lineCounter("/home/archiez/greenfox/IstvanN/week-03/day-02/files/my-file.txt"));
+    System.out.println(lineCounter("files/my-file.txt"));
   }
 
   public static int lineCounter(String filename) {
