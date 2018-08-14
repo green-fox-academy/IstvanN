@@ -2,6 +2,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Logs {
@@ -30,13 +31,15 @@ public class Logs {
 
 //    Adding the IP addresses to the empty list
     for (String line : content) {
-      if (!listOfIP.contains(line.substring(27, 38))) {
-        listOfIP.add(line.substring(27, 38));
+      List<String> IP = new ArrayList<>(Arrays.asList(line.split("   ")));
+      if (!listOfIP.contains(IP.get(1))) {
+        listOfIP.add(IP.get(1));
       }
     }
 
 //    Writing the list to a new file
     Path pathNew = Paths.get("files/log-IP.txt");
+
     try {
       Files.write(pathNew, listOfIP);
     } catch (Exception ex) {
@@ -44,4 +47,8 @@ public class Logs {
     }
     return listOfIP;
   }
+
+//  public static double countGetPostRatio(String filename) {
+//
+//  }
 }
