@@ -7,15 +7,19 @@ import java.util.List;
 public class Logs {
   public static void main(String[] args) {
 
+    System.out.println(getIP("log.txt"));
+
   }
 
   public static ArrayList getIP(String filename) {
 
 //    Setting up the path of the method
     Path path = Paths.get("files/" + filename);
+    
 //    Setting up the content arraylist
+    List<String> content = new ArrayList<>();
     try {
-      List<String> content = Files.readAllLines(path);
+      content = Files.readAllLines(path);
     } catch (Exception ex) {
       System.out.println("Couldn't read the file: " + filename);
     }
@@ -24,7 +28,11 @@ public class Logs {
     ArrayList<String> listOfIP = new ArrayList<>();
 
 //    Adding the IP addresses to the empty list
-    
+    for (String line : content) {
+      if (!listOfIP.contains(line.substring(27, 38))) {
+        listOfIP.add(line.substring(27, 38));
+      }
+    }
 
     return listOfIP;
   }
