@@ -35,6 +35,7 @@ public class Logs {
       }
     }
 
+//    Writing the list to a new file
     Path pathNew = Paths.get("files/log-IP.txt");
     try {
       Files.write(pathNew, listOfIP);
