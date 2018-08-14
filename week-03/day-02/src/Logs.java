@@ -31,9 +31,9 @@ public class Logs {
 
 //    Adding the IP addresses to the empty list
     for (String line : content) {
-      List<String> IP = new ArrayList<>(Arrays.asList(line.split("   ")));
-      if (!listOfIP.contains(IP.get(1))) {
-        listOfIP.add(IP.get(1));
+      List<String> tempList = new ArrayList<>(Arrays.asList(line.split("   ")));
+      if (!listOfIP.contains(tempList.get(1))) {
+        listOfIP.add(tempList.get(1));
       }
     }
 
@@ -48,7 +48,34 @@ public class Logs {
     return listOfIP;
   }
 
-//  public static double countGetPostRatio(String filename) {
-//
-//  }
+  public static double countGetPostRatio(String filename) {
+
+//    Setting up the path of the method
+    Path path = Paths.get("files/" + filename);
+
+//    Setting up the content arraylist of the file
+    List<String> content = new ArrayList<>();
+
+    try {
+      content = Files.readAllLines(path);
+    } catch (Exception ex) {
+      System.out.println("Couldn't read the file: " + filename);
+    }
+
+//    Setting up an empty array for both GET and POST
+    List<String> listOfGet = new ArrayList<>();
+    List<String> listOfPost = new ArrayList<>();
+
+//    Adding the GETs and POSTs to the lists respectively
+    for (String line : content) {
+      List<String> tempList = new ArrayList<>(Arrays.asList(line.split("   ")));
+      if (tempList.get(2).contains("GET")) {
+        listOfGet.add(tempList.get(2));
+      } else if (tempList.get(2).contains("POST")) {
+        listOfPost.add(tempList.get(2));
+      }
+
+      return listOfGet.size() / listOfPost.size();
+    }
+  }
 }
