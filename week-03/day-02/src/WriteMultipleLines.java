@@ -24,7 +24,7 @@ public class WriteMultipleLines {
     try {
       Files.write(path, lines);
     } catch (Exception ex) {
-      System.out.println("Couldn't write to the file: " + path);
+      
     }
 
   }
