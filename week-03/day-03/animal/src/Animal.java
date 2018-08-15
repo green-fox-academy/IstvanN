@@ -2,10 +2,12 @@ public class Animal {
 
   int hunger;
   int thirst;
+  static int animalCounter = 0;
 
   public Animal() {
     hunger = 50;
     thirst = 50;
+    animalCounter++;
   }
 
   public int eat() {
@@ -21,5 +23,10 @@ public class Animal {
   public void play() {
     hunger += 1;
     thirst += 1;
+  }
+
+  public void printStatus() {
+    System.out.println("This animal has " + hunger + " hunger and has " + thirst + " thirst.");
+    System.out.println("You have been breeding animals " + animalCounter + " times.");
   }
 }
