@@ -1,22 +1,26 @@
 public class Counter {
-  int initialValue;
-  int value;
+  private int value;
+  private int initialValue;
+  private boolean ifInitialWasUsed;
 
   public Counter() {
-    initialValue = 0;
+    value = 0;
+    ifInitialWasUsed = false;
   }
 
   public Counter(int initialValue) {
+    value = initialValue;
+    ifInitialWasUsed = true;
     this.initialValue = initialValue;
   }
 
   public int add() {
-    value = initialValue + 1;
+    value++;
     return value;
   }
 
   public int add(int number) {
-    value = number + initialValue;
+    value += number;
     return value;
   }
 
@@ -25,7 +29,10 @@ public class Counter {
   }
 
   public int reset() {
-    value = initialValue;
-    return value;
+    if (ifInitialWasUsed) {
+      return initialValue;
+    } else {
+      return 0;
+    }
   }
 }
