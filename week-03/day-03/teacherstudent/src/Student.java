@@ -15,9 +15,5 @@ public class Student {
   public void question(Teacher teacher) {
     teacher.answer();
   }
-
-  public void printStatus() {
-    System.out.println(name + " has " + knowledge + " knowledge.");
-  }
 }
 

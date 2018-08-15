@@ -5,4 +5,8 @@ public class Main {
 
 
   }
+
+  public static void getStatus(Student student, Teacher teacher) {
+    System.out.println(student.name + " has " + student.knowledge + " knowledge, and " + teacher.name + " has " + teacher.energy + " energy left.");
+  }
 }
