@@ -30,9 +30,10 @@ public class Counter {
 
   public int reset() {
     if (ifInitialWasUsed) {
-      return initialValue;
+      value = initialValue;
     } else {
-      return 0;
+      value = 0;
     }
+    return value;
   }
 }
