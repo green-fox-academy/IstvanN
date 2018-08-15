@@ -3,5 +3,8 @@ public class Main {
 
   }
 
-  public 
+  public static void getStatus(Station station, Car car) {
+    System.out.println("The car's fuel: " + car.gasAmount);
+    System.out.println("The Station's remaining fuel: " + station.gasAmount);
+  }
 }
