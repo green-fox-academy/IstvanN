@@ -9,14 +9,18 @@ public class Main {
     set.add(pen);
     set.add(pen2);
     set.add(pen3);
-
     getStatus(set);
 
     for (int i = 0; i < 10; i++) {
       pen.use();
     }
-
     getStatus(set);
+    set.removeTrash();
+    getStatus(set);
+
+    for (int i = 0; i < 10; i++) {
+      pen2.use();
+    }
     set.removeTrash();
     getStatus(set);
   }

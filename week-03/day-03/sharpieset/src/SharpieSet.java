@@ -28,11 +28,14 @@ public class SharpieSet {
   }
 
   public List removeTrash() {
+    List<Sharpie> sharpiesWithoutTrash = new ArrayList<>();
     for (Sharpie sharpie : sharpies) {
-      if (sharpie.inkAmount == 0) {
-        sharpies.remove(sharpie);
+      if (sharpie.inkAmount != 0) {
+        sharpiesWithoutTrash.add(sharpie);
       }
     }
+    sharpies.clear();
+    sharpies.addAll(sharpiesWithoutTrash);
     return sharpies;
   }
 }
