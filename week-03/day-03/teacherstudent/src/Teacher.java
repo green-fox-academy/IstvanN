@@ -15,4 +15,8 @@ public class Teacher {
   public void teach(Student student) {
     student.learn();
   }
+
+  public void printStatus() {
+    System.out.println(name + " has " + energy + " energy left.");
+  }
 }
