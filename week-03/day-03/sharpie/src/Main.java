@@ -3,7 +3,7 @@ public class Main {
     Sharpie pen = new Sharpie("blue", 50);
     pen.printStatus();
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 8; i++) {
       pen.use();
     }
 
