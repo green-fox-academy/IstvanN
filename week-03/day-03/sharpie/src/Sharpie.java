@@ -4,14 +4,17 @@ public class Sharpie {
   float inkAmount;
 
   public Sharpie(String color, float width) {
-    float inkAmount = 100;
+    this.color = color;
+    this.width = width;
+    inkAmount = 100;
   }
 
   public float use() {
     inkAmount -= 10;
+    return inkAmount;
   }
 
   public void printStatus() {
-    System.out.println("This sharpie has a " + color + "color, it's " +width + "wide, and the current Ink Amount is: " + inkAmount + ".");
+    System.out.println("This sharpie has a " + color + " color, it's " + width + " wide, and the current Ink Amount is: " + inkAmount + ".");
   }
 }
