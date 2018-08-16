@@ -34,8 +34,7 @@ public class SharpieSet {
         sharpiesWithoutTrash.add(sharpie);
       }
     }
-    sharpies.clear();
-    sharpies.addAll(sharpiesWithoutTrash);
+    sharpies = sharpiesWithoutTrash;
     return sharpies;
   }
 }
