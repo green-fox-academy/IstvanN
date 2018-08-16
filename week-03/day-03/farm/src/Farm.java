@@ -35,10 +35,10 @@ public class Farm {
   public List slaughter() {
     List<Animal> tempList = new ArrayList<>();
     tempList.addAll(animals);
-    for (int j = 0; tempList.size() != 1; j++) {
+    while (tempList.size() != 1) {
       for (int i = 0; i < tempList.size(); i++) {
-        if (tempList.get(j).hunger > tempList.get(i).hunger) {
-          tempList.remove(animals.get(j));
+        if (tempList.get(i).hunger > tempList.get(i + 1).hunger) {
+          tempList.remove(animals.get(i));
         }
       }
     }

@@ -11,7 +11,10 @@ public class Main {
     Animal chicken = new Animal();
     mcdonald.addAnimal(chicken);
     mcdonald.breed(chicken);
-    
+    getStatus(mcdonald);
+    pig.eat();
+    mcdonald.slaughter();
+    getStatus(mcdonald);
 
   }
 
