@@ -3,7 +3,6 @@ public class Main {
     Sharpie pen = new Sharpie("blue", 50);
     Sharpie pen2 = new Sharpie("black", 20);
     Sharpie pen3 = new Sharpie("yellow", 100);
-    Sharpie penUnUsable = new Sharpie("white", 20);
 
     SharpieSet set = new SharpieSet();
     set.add(pen);
@@ -26,6 +25,6 @@ public class Main {
   }
 
   public static void getStatus(SharpieSet sharpies) {
-    System.out.println("The sharpies list currently contains: " + sharpies.countAll() + " items and " + sharpies.countUsable() + " is usable.");
+    System.out.println("The sharpies list currently contains: " + sharpies.countAll() + " items and " + sharpies.countUsable() + " is/are usable.");
   }
 }
