@@ -6,13 +6,19 @@ public class Main {
     Farm mcdonald = new Farm(20);
     Animal pig = new Animal();
     mcdonald.addAnimal(pig);
-    getStatus(mcdonald);
+    Animal sheep = new Animal();
+    mcdonald.addAnimal(sheep);
+    Animal chicken = new Animal();
+    mcdonald.addAnimal(chicken);
+    mcdonald.breed(chicken);
+    
+
   }
 
   public static List getStatus (Farm farm) {
     System.out.println("Number of animals in the farm: " + farm.farmSize());
     System.out.println("Remaining slots :" + farm.slots);
-    System.out.println("Currently the animals in the farm are: " + farm.animals);
+    System.out.println("Currently the animals in the farm are: " + farm.showFarm());
     return farm.animals;
   }
 }

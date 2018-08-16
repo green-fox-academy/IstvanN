@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Farm {
@@ -25,6 +26,10 @@ public class Farm {
 
   public int farmSize() {
     return animals.size();
+  }
+
+  public String showFarm() {
+    return Arrays.toString(animals.toArray());
   }
 
   public List slaughter() {
