@@ -7,7 +7,6 @@ public class Mage {
   int intelligence;
   int healthPoint;
   int baseDamage;
-  MageWeapon staff;
 
   // Mage class constructor
 
@@ -26,14 +25,14 @@ public class Mage {
     return roll10;
   }
 
-  public int fireBall(MageWeapon staff, Barbarian target) {
+  public int fireBall(Barbarian target) {
     int damage = baseDamage + rollDice10();
     System.out.println(name + " hurls a fireball at his enemies. It does " + damage + " damage.");
     target.healthPoint -= damage;
     return damage;
   }
 
-  public int fireArrow(MageWeapon staff, Barbarian target) {
+  public int fireArrow(Barbarian target) {
     int arrowCount = random.nextInt(4) + 1;
     int damage = baseDamage + arrowCount * 2;
     System.out.println(name + " shoots " + arrowCount + " fiery arrows at his enemies. It does " + damage + " damage.");
@@ -41,7 +40,7 @@ public class Mage {
     return damage;
   }
 
-  public int fireWall(MageWeapon staff, Barbarian target) {
+  public int fireWall(Barbarian target) {
     int damage = baseDamage + rollDice10();
     System.out.println(name + " creates a fiery firewall between him and his enemies. It does " + damage + " damage.");
     target.healthPoint -= damage;

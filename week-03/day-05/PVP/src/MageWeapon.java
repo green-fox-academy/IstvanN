@@ -7,8 +7,7 @@ public class MageWeapon {
     this.name = name;
     user.intelligence += 3;
     if (onFire)
-      user.baseDamage+=5;
-    else;
+      user.baseDamage += 5;
   }
 }
 

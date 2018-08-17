@@ -5,12 +5,11 @@ public class Main {
   public static void main(String[] args) {
 //    Creating the characters
     Mage koni = new Mage("Börne", 4, 8);
-    MageWeapon staff = new MageWeapon("Staff of Fire", koni);
     Barbarian archie = new Barbarian("Konan");
     getStatus(archie, koni);
 //    T H E  B A T T L E  G R O U N D
     while (true) {
-      aRound(archie, koni, staff);
+      aRound(archie, koni);
       getHP(archie, koni);
       if (archie.healthPoint <= 0) {
         System.out.println("Ladies and Gentleman! " + archie.name + " has fallen! Our winner is: " + koni.name.toUpperCase() + "!");
@@ -22,15 +21,15 @@ public class Main {
     }
   }
 
-  public static void aRound(Barbarian barbarian, Mage mage, MageWeapon mageWeapon) {
+  public static void aRound(Barbarian barbarian, Mage mage) {
     Random random = new Random();
 //    Who starts the round
     int whoStarts = random.nextInt(2);
     if (whoStarts == 0) {
       barbarianActs(barbarian, mage);
-      mageActs(barbarian, mage, mageWeapon);
+      mageActs(barbarian, mage);
     } else {
-      mageActs(barbarian, mage, mageWeapon);
+      mageActs(barbarian, mage);
       barbarianActs(barbarian, mage);
     }
   }
@@ -46,18 +45,18 @@ public class Main {
     }
   }
 
-  public static void mageActs(Barbarian barbarian, Mage mage, MageWeapon mageWeapon) {
+  public static void mageActs(Barbarian barbarian, Mage mage) {
     Random random = new Random();
 //      What the mage does
     int mageRoll = random.nextInt(4);
     if (mageRoll == 0) {
       mage.eatFire(mage);
     } else if (mageRoll == 1) {
-      mage.fireArrow(mageWeapon, barbarian);
+      mage.fireArrow(barbarian);
     } else if (mageRoll == 2) {
-      mage.fireBall(mageWeapon, barbarian);
+      mage.fireBall(barbarian);
     } else {
-      mage.fireWall(mageWeapon, barbarian);
+      mage.fireWall(barbarian);
     }
   }
 
