@@ -9,7 +9,7 @@ public class Main {
     getStatus(archie, koni);
 //    T H E  B A T T L E  G R O U N D
     while (true) {
-      aRound(archie, koni);
+      oneRound(archie, koni);
       getHP(archie, koni);
       if (archie.healthPoint <= 0) {
         System.out.println("Ladies and Gentleman! " + archie.name + " has fallen! Our winner is: " + koni.name.toUpperCase() + "!");
@@ -21,7 +21,7 @@ public class Main {
     }
   }
 
-  public static void aRound(Barbarian barbarian, Mage mage) {
+  public static void oneRound(Barbarian barbarian, Mage mage) {
     Random random = new Random();
 //    Who starts the round
     int whoStarts = random.nextInt(2);
