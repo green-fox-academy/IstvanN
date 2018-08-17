@@ -34,7 +34,7 @@ public class Barbarian {
   public int battleCry() {
     int heal = rollDice10() + stamina;
     healthPoint += heal;
-    System.out.println(name + " used Battle Cry, and healed " + heal + " points. HP left: " + healthPoint + ".");
+    System.out.println(name + " used Battle Cry, and healed " + heal + " points.");
     return healthPoint;
   }
 
