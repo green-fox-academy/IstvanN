@@ -26,12 +26,6 @@ public class Mage {
     return roll10;
   }
 
-  public void status() {
-    System.out.println(name + "’s stamina is: " + stamina);
-    System.out.println(name + "’s intelligence is: " + intelligence);
-    System.out.println(name + "’s HP is currently: " + healthPoint);
-  }
-
   public int fireBall(MageWeapon staff, Barbarian target) {
     int damage = baseDamage + rollDice10();
     System.out.println(name + " hurls a fireball at his enemies. It does " + damage + " damage.");
