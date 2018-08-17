@@ -20,7 +20,6 @@ public class Main {
         break;
       }
     }
-
   }
 
   public static void aRound(Barbarian barbarian, Mage mage, MageWeapon mageWeapon) {

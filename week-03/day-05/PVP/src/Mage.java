@@ -40,7 +40,7 @@ public class Mage {
   }
 
   public int fireArrow(MageWeapon staff, Barbarian target) {
-    int arrowCount = (int) (Math.random() * 4);
+    int arrowCount = random.nextInt(4) + 1;
     int damage = baseDamage + arrowCount * 2;
     System.out.println(name + " shoots " + arrowCount + " fiery arrows at his enemies. It does " + damage + " damage.");
     target.healthPoint -= damage;
