@@ -1,9 +1,10 @@
-import java.util.Random;
-
 public class Main {
 
   public static void main(String[] args) {
-    
+    Barbarian archie = new Barbarian("Konan");
+    getStatus(archie);
+    archie.battleCry();
+    getStatus(archie);
   }
 
   public static void getStatus(Barbarian barbarian) {

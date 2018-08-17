@@ -31,14 +31,15 @@ public class Barbarian {
 
   //    The skills (methods)
 //    The heal
-  public int warCry() {
+  public int battleCry() {
     int heal = rollDice10() + stamina;
     healthPoint += heal;
-    System.out.println(name + " used War Cry, and healed " + heal + " points. HP left: " + healthPoint);
+    System.out.println(name + " used Battle Cry, and healed " + heal + " points. HP left: " + healthPoint);
     return healthPoint;
   }
-//    The 3 damage skills
-//  public int useWeapon() {
-//
-//  }
+
+  //    The 3 damage skills
+  public int useWeapon() {
+
+  }
 }
