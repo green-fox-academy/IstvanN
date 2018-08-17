@@ -12,10 +12,10 @@ public class Main {
       oneRound(archie, koni);
       getHP(archie, koni);
       if (archie.healthPoint <= 0) {
-        System.out.println("Ladies and Gentleman! " + archie.name + " has fallen! Our winner is: " + koni.name.toUpperCase() + "!");
+        System.out.println("Ladies and Gentlemen! " + archie.name + " has fallen! Our winner is: " + koni.name.toUpperCase() + "!");
         break;
       } else if (koni.healthPoint <= 0) {
-        System.out.println("Ladies and Gentleman! " + koni.name + " has fallen! Our winner is: " + archie.name.toUpperCase() + "!");
+        System.out.println("Ladies and Gentlemen! " + koni.name + " has fallen! Our winner is: " + archie.name.toUpperCase() + "!");
         break;
       }
     }
