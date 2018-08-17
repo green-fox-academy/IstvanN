@@ -51,7 +51,7 @@ public class Barbarian {
       barbarian.healthPoint += sword.selfHeal;
       barbarian.healthPoint -= sword.selfDamage;
       mage.healthPoint = mage.healthPoint - (sword.weaponDamage + barbarian.baseDamage);
-      System.out.println(barbarian.name + " used his Enchanted Sword, and caused " + damage + " damage on " + mage.name + " and healed " + sword.selfHeal +" on himself.");
+      System.out.println(barbarian.name + " used his Enchanted Sword, and caused " + damage + " damage on " + mage.name + " and healed " + sword.selfHeal + " on himself.");
     } else if (whichWeapon == 2) {
       damage = axe.weaponDamage + barbarian.baseDamage;
       barbarian.healthPoint += axe.selfHeal;
@@ -63,7 +63,7 @@ public class Barbarian {
       barbarian.healthPoint += hammer.selfHeal;
       barbarian.healthPoint -= hammer.selfDamage;
       mage.healthPoint -= (hammer.weaponDamage + barbarian.baseDamage);
-      System.out.println(barbarian.name + " used his Hammer of Absolute Destruction, and caused " + damage + " damage on " + mage.name + " and " + hammer.selfHeal + "/" + hammer.selfDamage + " heal/damage on himself." );
+      System.out.println(barbarian.name + " used his Hammer of Absolute Destruction, and caused " + damage + " damage on " + mage.name + " and " + hammer.selfHeal + "/" + hammer.selfDamage + " heal/damage on himself.");
     }
   }
 }
