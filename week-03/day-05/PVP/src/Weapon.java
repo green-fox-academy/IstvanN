@@ -1,11 +1,24 @@
 public class Weapon {
   int weaponDamage;
-  int heal;
+  int selfHeal;
   int selfDamage;
+  boolean enchanted;
 
-  public Weapon(int weaponDamage, int heal, int selfDamage){
+  public Weapon(int weaponDamage, boolean enchanted, boolean cursed) {
     this.weaponDamage = weaponDamage;
-    this.heal = heal;
-    this.selfDamage = selfDamage;
+    if (enchanted) {
+      this.weaponDamage += 5;
+      selfHeal = 5;
+    }
+    if (cursed) {
+      this.weaponDamage += 5;
+      selfDamage = 5;
+    }
   }
+
+//  public void use(Barbarian barbarian, Mage mage) {
+//    barbarian.healthPoint += selfHeal;
+//    barbarian.healthPoint -= selfDamage;
+//    mage.healthPoint -= weaponDamage + barbarian.baseDamage;
+//  }
 }

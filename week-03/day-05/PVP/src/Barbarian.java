@@ -14,7 +14,7 @@ public class Barbarian {
     this.name = name;
     strength = rollDice10();
     stamina = rollDice10();
-    healthPoint = rollDice100() + stamina;
+    healthPoint = rollHP() + stamina;
     baseDamage = rollDice10() + strength;
   }
 
@@ -24,8 +24,8 @@ public class Barbarian {
     return roll10;
   }
 
-  public int rollDice100() {
-    int roll100 = random.nextInt(99) + 1;
+  public int rollHP() {
+    int roll100 = random.nextInt(51) + 50;
     return roll100;
   }
 
@@ -38,8 +38,25 @@ public class Barbarian {
     return healthPoint;
   }
 
-  //    The 3 damage skills
-  public int useWeapon() {
+  //    The weapons
+  Weapon sword = new Weapon(5, true, false);
+  Weapon axe = new Weapon(5, true, true);
+  Weapon hammer = new Weapon(10, true, true);
 
+  public void useWeapon(Barbarian barbarian, Mage mage) {
+    int whichWeapon = random.nextInt(3) + 1;
+    if (whichWeapon == 1) {
+      barbarian.healthPoint += sword.selfHeal;
+      barbarian.healthPoint -= sword.selfDamage;
+      mage.healthPoint -= sword.weaponDamage + barbarian.baseDamage;
+    } else if (whichWeapon == 2) {
+      barbarian.healthPoint += axe.selfHeal;
+      barbarian.healthPoint -= axe.selfDamage;
+      mage.healthPoint -= axe.weaponDamage + barbarian.baseDamage;
+    } else {
+      barbarian.healthPoint += hammer.selfHeal;
+      barbarian.healthPoint -= hammer.selfDamage;
+      mage.healthPoint -= hammer.weaponDamage + barbarian.baseDamage;
+    }
   }
 }
