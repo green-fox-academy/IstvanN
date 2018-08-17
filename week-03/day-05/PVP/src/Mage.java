@@ -26,7 +26,7 @@ public class Mage {
 
   public int fireBall(MageWeapon staff, Barbarian target) {
     int damage = baseDamage + (intelligence + staff.intBoost) / 10 + 2;
-    System.out.println(name + "hurls a fireball at his enemies. It does" + damage + " damage.");
+    System.out.println(name + " hurls a fireball at his enemies. It does" + damage + " damage.");
     target.healthPoint -= damage;
     return damage;
   }
@@ -34,20 +34,20 @@ public class Mage {
   public int fireArrow(MageWeapon staff, Barbarian target) {
     int arrowCount = (int) (Math.random() * 4);
     int damage = baseDamage + (intelligence + staff.intBoost) / 10 + arrowCount * 2;
-    System.out.println(name + "shoots " + arrowCount + " fiery arrows at his enemies. It does " + damage + " damage.");
+    System.out.println(name + " shoots " + arrowCount + " fiery arrows at his enemies. It does " + damage + " damage.");
     target.healthPoint -= damage;
     return damage;
   }
 
   public int fireWall(MageWeapon staff, Barbarian target) {
     int damage = baseDamage + (intelligence + staff.intBoost) / 10 + 3;
-    System.out.println(name + "creates a fiery firewall between him and his enemies. It does " + damage + " damage.");
+    System.out.println(name + " creates a fiery firewall between him and his enemies. It does " + damage + " damage.");
     target.healthPoint -= damage;
     return damage;
   }
 
   public int eatFire(Mage target) {
-    System.out.println(name + "does something that would seem horrible to a non-pyromaniac person. He begins to cast fire in his left palm and shoves it into his mouth. It heals him by " + stamina + " points.");
+    System.out.println(name + " does something that would seem horrible to a non-pyromaniac person. He begins to cast fire in his left palm and shoves it into his mouth. It heals him by " + stamina + " points.");
     target.healthPoint += stamina;
     return target.healthPoint;
   }
