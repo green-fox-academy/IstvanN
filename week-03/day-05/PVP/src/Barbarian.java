@@ -41,25 +41,29 @@ public class Barbarian {
   //    The weapons
   Weapon sword = new Weapon(5, true, false);
   Weapon axe = new Weapon(5, false, true);
-  Weapon hammer = new Weapon(10, true, true);
+  Weapon hammer = new Weapon(5, true, true);
 
   public void useWeapon(Barbarian barbarian, Mage mage) {
+    int damage;
     int whichWeapon = random.nextInt(3) + 1;
     if (whichWeapon == 1) {
+      damage = sword.weaponDamage + barbarian.baseDamage;
       barbarian.healthPoint += sword.selfHeal;
       barbarian.healthPoint -= sword.selfDamage;
-      mage.healthPoint -= (sword.weaponDamage + barbarian.baseDamage);
-      System.out.println(barbarian.name + " used his Enchanted Sword, and caused " + sword.weaponDamage + barbarian.baseDamage + " damage!");
+      mage.healthPoint = mage.healthPoint - (sword.weaponDamage + barbarian.baseDamage);
+      System.out.println(barbarian.name + " used his Enchanted Sword, and caused " + damage + " damage!");
     } else if (whichWeapon == 2) {
+      damage = axe.weaponDamage + barbarian.baseDamage;
       barbarian.healthPoint += axe.selfHeal;
       barbarian.healthPoint -= axe.selfDamage;
       mage.healthPoint -= (axe.weaponDamage + barbarian.baseDamage);
-      System.out.println(barbarian.name + " used his Cursed Axe, and caused " + axe.weaponDamage + barbarian.baseDamage + " damage!");
+      System.out.println(barbarian.name + " used his Cursed Axe, and caused " + damage + " damage!");
     } else {
+      damage = hammer.weaponDamage + barbarian.baseDamage;
       barbarian.healthPoint += hammer.selfHeal;
       barbarian.healthPoint -= hammer.selfDamage;
       mage.healthPoint -= (hammer.weaponDamage + barbarian.baseDamage);
-      System.out.println(barbarian.name + " used his Hammer of Absolute Destruction, and caused " + hammer.weaponDamage + barbarian.baseDamage + " damage!");
+      System.out.println(barbarian.name + " used his Hammer of Absolute Destruction, and caused " + damage + " damage!");
     }
   }
 }
