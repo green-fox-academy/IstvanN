@@ -1,11 +1,14 @@
 
 public class MageWeapon {
   String name;
-  int intBoost;
+  boolean onFire = false;
 
-  MageWeapon(String name, int intBoost) {
+  MageWeapon(String name, Mage user) {
     this.name = name;
-    this.intBoost = intBoost;
+    user.intelligence += 3;
+    if (onFire)
+      user.baseDamage+=5;
+    else;
   }
 }
 

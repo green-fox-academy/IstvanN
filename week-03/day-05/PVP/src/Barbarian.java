@@ -9,7 +9,7 @@ public class Barbarian {
   int healthPoint;
   int baseDamage;
 
-  //  The obstructor
+  //  The constructor
   public Barbarian(String name) {
     this.name = name;
     strength = rollDice10();

@@ -4,8 +4,8 @@ public class Main {
 
   public static void main(String[] args) {
 //    Creating the characters
-    MageWeapon staff = new MageWeapon("Staff of Fire", 5);
-    Mage koni = new Mage("Börne", 4, 8, staff);
+    Mage koni = new Mage("Börne", 4, 8);
+    MageWeapon staff = new MageWeapon("Staff of Fire", koni);
     Barbarian archie = new Barbarian("Konan");
     getStatus(archie, koni);
 //    T H E  B A T T L E  G R O U N D
