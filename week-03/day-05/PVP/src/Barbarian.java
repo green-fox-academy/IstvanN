@@ -37,6 +37,7 @@ public class Barbarian {
     System.out.println(name + " used Battle Cry, and healed " + heal + " points. HP left: " + healthPoint);
     return healthPoint;
   }
+
   //    The weapons
   Weapon sword = new Weapon(5, true, false);
   Weapon axe = new Weapon(5, false, true);
