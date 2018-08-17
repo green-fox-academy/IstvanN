@@ -8,12 +8,35 @@ public class Main {
     Mage koni = new Mage("Börne", 4, 8, staff);
     Barbarian archie = new Barbarian("Konan");
     getStatus(archie, koni);
-    whichSkill(archie, koni, staff);
-    getHP(archie, koni);
+//    T H E  B A T T L E  G R O U N D
+    while (true) {
+      aRound(archie, koni, staff);
+      getHP(archie, koni);
+      if (archie.healthPoint <= 0) {
+        System.out.println("Ladies and Gentleman! " + archie.name + " has fallen! Our winner is: " + koni.name.toUpperCase() + "!");
+        break;
+      } else if (koni.healthPoint <= 0) {
+        System.out.println("Ladies and Gentleman! " + koni.name + " has fallen! Our winner is: " + archie.name.toUpperCase() + "!");
+        break;
+      }
+    }
 
   }
 
-  public static void whichSkill(Barbarian barbarian, Mage mage, MageWeapon mageWeapon) {
+  public static void aRound(Barbarian barbarian, Mage mage, MageWeapon mageWeapon) {
+    Random random = new Random();
+//    Who starts the round
+    int whoStarts = random.nextInt(2);
+    if (whoStarts == 0) {
+      barbarianActs(barbarian, mage);
+      mageActs(barbarian, mage, mageWeapon);
+    } else {
+      mageActs(barbarian, mage, mageWeapon);
+      barbarianActs(barbarian, mage);
+    }
+  }
+
+  public static void barbarianActs(Barbarian barbarian, Mage mage) {
 //    What the barbarian does
     Random random = new Random();
     int barbarianRoll = random.nextInt(2);
@@ -22,7 +45,11 @@ public class Main {
     } else {
       barbarian.useWeapon(barbarian, mage);
     }
-//    What the mage does
+  }
+
+  public static void mageActs(Barbarian barbarian, Mage mage, MageWeapon mageWeapon) {
+    Random random = new Random();
+//      What the mage does
     int mageRoll = random.nextInt(4);
     if (mageRoll == 0) {
       mage.eatFire(mage);
@@ -34,6 +61,7 @@ public class Main {
       mage.fireWall(mageWeapon, barbarian);
     }
   }
+
 
   public static void getStatus(Barbarian barbarian, Mage mage) {
     System.out.println(barbarian.name + " has the following stats:");
@@ -53,4 +81,5 @@ public class Main {
     System.out.println(mage.name + ": " + mage.healthPoint + " HP left. \n");
   }
 }
+
 
