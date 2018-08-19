@@ -9,7 +9,7 @@ public class BattleApp {
     for (int i = 0; i < 5; i++) {
       royal.letTheCaptainDrink();
     }
-    
+
     blackPearl.shipStatus();
     royal.shipStatus();
 
