@@ -19,10 +19,16 @@ public class Main {
     trump.authorName = "William Turton";
     trump.publicationDate = "2017.03.28.";
     trump.text = "Daniel Hanley, a cybersecurity engineer at IBM, doesn’t want to be the center of attention. When I asked to take his picture outside one of IBM’s New York City offices, he told me that he wasn’t really into the whole organizer profile thing.";
+
+    Blog myBlog = new Blog("Archie's Blog");
+    myBlog.addBlogPost(trump);
+    myBlog.addBlogPost(loremIpsum);
+    myBlog.updateBlogPost(0, waitButWhy);
+    getStatus(myBlog);
   }
 
   public static void getStatus(Blog blog) {
-    System.out.println(blog.name + " currently contains " + blog.getBlogSize() + "blogposts, which are the following:");
-
+    System.out.println(blog.name + " currently contains " + blog.getBlogSize() + " blogposts, which are the following:");
+    blog.printTitles();
   }
 }

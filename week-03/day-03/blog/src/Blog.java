@@ -27,7 +27,7 @@ public class Blog {
 
   public void printTitles() {
     for (BlogPost blogPost : blog) {
-      System.out.println(blogPost.title + ", ");
+      System.out.println(blogPost.title);
     }
   }
 
