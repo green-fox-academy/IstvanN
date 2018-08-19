@@ -1,6 +1,6 @@
 public class BlogPost {
 
-  String authorname;
+  String authorName;
   String title;
   String text;
   String publicationDate;
