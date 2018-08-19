@@ -47,12 +47,20 @@ public class Pirate {
       if (pirate.alive) {
         Random random = new Random();
         int brawRoll = random.nextInt(3);
+        if (brawRoll == 0) {
+          alive = false;
+        } else if (brawRoll == 1) {
+          pirate.alive = false;
+        } else {
+          passedOut = true;
+          pirate.passedOut = true;
+        }
       } else {
         System.out.println("The chosen fellow is dead. Why can't you let him rest in pieces?");
       }
     } else {
-      System.out.println("This fellow cannot fight. Let him rest in peace.");
+      System.out.println("This fellow cannot fight. Let him rest in piss.");
     }
-
+    return alive;
   }
 }
