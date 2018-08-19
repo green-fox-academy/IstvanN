@@ -4,24 +4,28 @@ import java.util.List;
 
 public class Farm {
   List<Animal> animals;
+  String name;
   int slots;
 
-  public Farm(int slots) {
+  public Farm(String name, int slots) {
+    this.name = name;
     animals = new ArrayList<>();
     this.slots = slots;
   }
 
-  public List addAnimal(Animal animal) {
+  public void addAnimal(Animal animal) {
     animals.add(animal);
     slots--;
-    return animals;
   }
 
-  public List breed(Animal animal) {
-    animal = new Animal();
-    animals.add(animal);
-    slots--;
-    return animals;
+  public Farm breed(Farm farm, Animal animal) {
+    if (slots > 0) {
+      farm.addAnimal(animal);
+    } else {
+      System.out.println("Sorry, " + farm.name + " is full!");
+    }
+
+    return farm;
   }
 
   public int farmSize() {
@@ -32,22 +36,22 @@ public class Farm {
     return Arrays.toString(animals.toArray());
   }
 
-  public List slaughter() {
-    List<Animal> tempList = new ArrayList<>();
-    tempList.addAll(animals);
-    while (tempList.size() != 1) {
-      for (int i = 0; i < tempList.size(); i++) {
-        if (tempList.get(i).hunger > tempList.get(i + 1).hunger) {
-          tempList.remove(animals.get(i));
-        }
-      }
-    }
-    for (Animal animal : animals) {
-      if (animal.equals(tempList.get(0))) {
-        animals.remove(animal);
-      }
-    }
-    slots++;
-    return animals;
+//  public List slaughter() {
+//    List<Animal> tempList = new ArrayList<>();
+//    tempList.addAll(animals);
+//    while (tempList.size() != 1) {
+//      for (int i = 0; i < tempList.size(); i++) {
+//        if (tempList.get(i).hunger > tempList.get(i + 1).hunger) {
+//          tempList.remove(animals.get(i));
+//        }
+//      }
+//    }
+//    for (Animal animal : animals) {
+//      if (animal.equals(tempList.get(0))) {
+//        animals.remove(animal);
+//      }
+//    }
+//    slots++;
+//    return animals;
   }
 }
