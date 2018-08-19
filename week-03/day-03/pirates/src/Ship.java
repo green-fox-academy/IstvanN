@@ -36,4 +36,20 @@ public class Ship {
       }
     }
   }
+
+  public int numberOfAliveCrew() {
+    int numberOfAlivePirates = 0;
+    for (Pirate pirate : ship) {
+      if (pirate.alive) {
+        numberOfAlivePirates++;
+      }
+    }
+    return numberOfAlivePirates;
+  }
+
+  public void shipStatus() {
+    System.out.println(name + " is in the following condition:");
+    captainStatus();
+    System.out.println("The number of alive pirates are: " + numberOfAliveCrew());
+  }
 }
