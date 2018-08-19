@@ -2,12 +2,11 @@ public class Animal {
 
   int hunger;
   int thirst;
-  String name;
 
-  public Animal(String name) {
-    this.name = name;
-    hunger = 50;
-    thirst = 50;
+
+  public Animal() {
+    hunger = 5;
+    thirst = 5;
 
   }
 

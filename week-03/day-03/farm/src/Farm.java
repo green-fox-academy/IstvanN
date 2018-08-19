@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 public class Farm {
@@ -19,24 +17,18 @@ public class Farm {
     slots--;
   }
 
-  public Animal breed(String animalName) {
+  public Animal breed() {
     if (slots > 0) {
-      animals.add(new Animal(animalName));
+      animals.add(new Animal());
       slots--;
     } else {
       System.out.println("Sorry, this farm is full!");
     }
-    return new Animal(animalName);
+    return new Animal();
   }
 
   public int farmSize() {
     return animals.size();
-  }
-
-  public void showFarm() {
-    for (Animal animal : animals) {
-      System.out.print(animal.name + ", ");
-    }
   }
 
   public List slaughter() {
@@ -47,6 +39,7 @@ public class Farm {
       }
     }
     animals.remove(animals.get(indexOfHungriest));
+    slots++;
     return animals;
   }
 }
