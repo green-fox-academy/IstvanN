@@ -7,5 +7,7 @@ public class BattleApp {
     royal.fillShip("Admiral Jackson");
     blackPearl.shipStatus();
     royal.shipStatus();
+
+    System.out.println(blackPearl.battle(royal));
   }
 }

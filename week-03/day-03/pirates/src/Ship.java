@@ -18,7 +18,7 @@ public class Ship {
     for (int i = 0; i <= random.nextInt(10); i++) {
       ship.add(new Pirate());
     }
-    ship.set(random.nextInt(10), new Pirate(captainName));
+    ship.set(random.nextInt(ship.size()), new Pirate(captainName));
     return ship;
   }
 
@@ -53,7 +53,7 @@ public class Ship {
   public void shipStatus() {
     System.out.println(name + " is in the following condition:");
     captainStatus();
-    System.out.println("The number of alive pirates are: " + numberOfAliveCrew());
+    System.out.println("The number of alive pirates are: " + numberOfAliveCrew() + "\n");
   }
 
   public List party() {
@@ -65,18 +65,24 @@ public class Ship {
     return ship;
   }
 
+  public int size() {
+    return ship.size();
+  }
+
   public boolean battle(Ship otherShip) {
     Random random = new Random();
-    if (score > otherShip.score) {
-      for (int i = 0; i <= random.nextInt(10); i++) {
+    if (score >= otherShip.score) {  // equal is also enough to win, because they attack first
+      for (int i = 0; i <= random.nextInt(otherShip.size()); i++) {
         otherShip.ship.get(i).die();
       }
+      System.out.println("The winner is: " + name);
       party();
       return true;
     } else {
-      for (int i = 0; i <= random.nextInt(10); i++) {
+      for (int i = 0; i <= random.nextInt(ship.size()); i++) {
         ship.get(i).die();
       }
+      System.out.println("The winner is: " + otherShip.name);
       otherShip.party();
       return false;
     }
