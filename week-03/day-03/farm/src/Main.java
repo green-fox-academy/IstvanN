@@ -5,7 +5,8 @@ public class Main {
   public static void main(String[] args) {
     Farm farm = new Farm("McDonald", 5);
 
-    farm.breed(farm);
+    Animal sheep = farm.breed("sheep");
+    Animal lamb = farm.breed("Lamb");
     getStatus(farm);
   }
 
