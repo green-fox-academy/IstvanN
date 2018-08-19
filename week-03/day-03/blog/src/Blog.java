@@ -24,4 +24,14 @@ public class Blog {
     blog.set(index, newBlogPost);
     return blog;
   }
+
+  public void printTitles() {
+    for (BlogPost blogPost : blog) {
+      System.out.println(blogPost.title + ", ");
+    }
+  }
+
+  public int getBlogSize() {
+    return blog.size();
+  }
 }
