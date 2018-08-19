@@ -16,14 +16,12 @@ public class Ship {
   public List fillShip(String captainName) {
     Random random = new Random();
     for (int i = 0; i <= random.nextInt(10); i++) {
-      if (i == random.nextInt(10)) {
-        ship.add(new Pirate(captainName));
-      } else {
-        ship.add(new Pirate());
-      }
+      ship.add(new Pirate());
     }
+    ship.set(random.nextInt(10), new Pirate(captainName));
     return ship;
   }
+
 
   public int captainStatus() {
     int captainRumLevel = 0;
