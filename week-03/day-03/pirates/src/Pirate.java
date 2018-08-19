@@ -6,18 +6,18 @@ public class Pirate {
   boolean passedOut;
   boolean hasParrot;
   boolean isCaptain;
-  String ccaptainName;
+  String captainName;
 
   public Pirate() {
     rumLevel = 0;
     alive = true;
     passedOut = false;
-    hasParrot = true;
+    hasParrot = false;  // only captains have parrots...
     isCaptain = false;
   }
 
   public Pirate(String captainName) {
-    this.ccaptainName = captainName;
+    this.captainName = captainName;
     isCaptain = true;
     rumLevel = 0;
     alive = true;
