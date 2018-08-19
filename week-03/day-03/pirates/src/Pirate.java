@@ -4,11 +4,17 @@ public class Pirate {
   int rumLevel;
   boolean alive;
   boolean passedOut;
+  boolean hasParrot;
 
   public Pirate() {
     rumLevel = 0;
     alive = true;
     passedOut = false;
+    if (passedOut) {
+      hasParrot = false;
+    } else {
+      hasParrot = true;
+    }
   }
 
   public int drinkSomeRum() {
@@ -46,14 +52,16 @@ public class Pirate {
     if (alive) {
       if (pirate.alive) {
         Random random = new Random();
-        int brawRoll = random.nextInt(3);
-        if (brawRoll == 0) {
+        int brawlRoll = random.nextInt(3);
+        if (brawlRoll == 0) {
           alive = false;
-        } else if (brawRoll == 1) {
+        } else if (brawlRoll == 1) {
           pirate.alive = false;
         } else {
           passedOut = true;
+          hasParrot = false;
           pirate.passedOut = true;
+          pirate.hasParrot = false;
         }
       } else {
         System.out.println("The chosen fellow is dead. Why can't you let him rest in pieces?");
@@ -68,6 +76,7 @@ public class Pirate {
     if (alive) {
       System.out.println("Rum level: " + rumLevel);
       System.out.println("Passed out: " + passedOut);
+      System.out.println("Has parrot: " + hasParrot);
     } else {
       System.out.println("This pirate has fallen. RIP");
     }
