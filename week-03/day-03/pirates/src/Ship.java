@@ -6,11 +6,12 @@ public class Ship {
   List<Pirate> ship;
   String name;
   int score;
+  Pirate captain;
 
   public Ship(String name) {
     this.name = name;
     ship = new ArrayList<>();
-    score = numberOfAliveCrew() + captainStatus();
+
   }
 
   public List fillShip(String captainName) {
@@ -19,25 +20,41 @@ public class Ship {
       ship.add(new Pirate());
     }
     ship.set(random.nextInt(ship.size()), new Pirate(captainName));
+    score = numberOfAliveCrew() + captainRumLevel();
     return ship;
   }
 
+  public Pirate getCaptain() {
+    for (Pirate pirate : ship) {
+      if (pirate.isCaptain) {
+        captain = pirate;
+      }
+    }
+    return captain;
+  }
 
-  public int captainStatus() {
-    int captainRumLevel = 0;
+  public void captainStatus() {
     for (Pirate pirate : ship) {
       if (pirate.isCaptain) {
         if (pirate.alive) {
           System.out.println(pirate.captainName + " has the following stats:");
           System.out.println("Rum level: " + pirate.rumLevel);
           System.out.println("Passed out: " + pirate.passedOut);
-          captainRumLevel += pirate.rumLevel;
         } else {
           System.out.println("The captain is dead. RUN!!!!");
         }
       }
     }
-    return captainRumLevel;
+  }
+
+  public int captainRumLevel() {
+    int captainRum = 0;
+    for (Pirate pirate : ship) {
+      if (pirate.isCaptain) {
+        captainRum += pirate.rumLevel;
+      }
+    }
+    return captainRum;
   }
 
   public int numberOfAliveCrew() {
@@ -53,7 +70,8 @@ public class Ship {
   public void shipStatus() {
     System.out.println(name + " is in the following condition:");
     captainStatus();
-    System.out.println("The number of alive pirates are: " + numberOfAliveCrew() + "\n");
+    System.out.println("The number of alive pirates are: " + numberOfAliveCrew());
+    System.out.println("Score: " + score + "\n");
   }
 
   public List party() {

@@ -8,6 +8,8 @@ public class BattleApp {
     blackPearl.shipStatus();
     royal.shipStatus();
 
-    System.out.println(blackPearl.battle(royal));
+    blackPearl.battle(royal);
+    blackPearl.shipStatus();
+    royal.shipStatus();
   }
 }
