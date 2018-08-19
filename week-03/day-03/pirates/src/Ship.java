@@ -20,7 +20,7 @@ public class Ship {
       ship.add(new Pirate());
     }
     ship.set(random.nextInt(ship.size()), new Pirate(captainName));
-    score = numberOfAliveCrew() + captainRumLevel();
+    score = numberOfAliveCrew() + getCaptain().rumLevel;
     return ship;
   }
 
@@ -28,33 +28,26 @@ public class Ship {
     for (Pirate pirate : ship) {
       if (pirate.isCaptain) {
         captain = pirate;
+        break;
       }
     }
     return captain;
   }
 
   public void captainStatus() {
-    for (Pirate pirate : ship) {
-      if (pirate.isCaptain) {
-        if (pirate.alive) {
-          System.out.println(pirate.captainName + " has the following stats:");
-          System.out.println("Rum level: " + pirate.rumLevel);
-          System.out.println("Passed out: " + pirate.passedOut);
-        } else {
-          System.out.println("The captain is dead. RUN!!!!");
-        }
-      }
+    if (captain.alive) {
+      System.out.println(captain.captainName + " has the following stats:");
+      System.out.println("Rum level: " + captain.rumLevel);
+      System.out.println("Passed out: " + captain.passedOut);
+    } else {
+      System.out.println("The captain is dead. RUN!!!!");
     }
   }
 
-  public int captainRumLevel() {
-    int captainRum = 0;
-    for (Pirate pirate : ship) {
-      if (pirate.isCaptain) {
-        captainRum += pirate.rumLevel;
-      }
-    }
-    return captainRum;
+  public int letTheCaptainDrink() {
+    getCaptain().rumLevel++;
+    score = getCaptain().rumLevel + numberOfAliveCrew();
+    return captain.rumLevel;
   }
 
   public int numberOfAliveCrew() {

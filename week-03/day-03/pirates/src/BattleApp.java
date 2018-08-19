@@ -5,11 +5,15 @@ public class BattleApp {
 
     blackPearl.fillShip("Jack Sparrow");
     royal.fillShip("Admiral Jackson");
+
+    for (int i = 0; i < 5; i++) {
+      royal.letTheCaptainDrink();
+    }
+    
     blackPearl.shipStatus();
     royal.shipStatus();
 
+
     blackPearl.battle(royal);
-    blackPearl.shipStatus();
-    royal.shipStatus();
   }
 }
