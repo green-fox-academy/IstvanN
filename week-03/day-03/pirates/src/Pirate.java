@@ -63,4 +63,13 @@ public class Pirate {
     }
     return alive;
   }
+
+  public void getStatus() {
+    if (alive) {
+      System.out.println("Rum level: " + rumLevel);
+      System.out.println("Passed out: " + passedOut);
+    } else {
+      System.out.println("This pirate has fallen. RIP");
+    }
+  }
 }
