@@ -5,16 +5,24 @@ public class Pirate {
   boolean alive;
   boolean passedOut;
   boolean hasParrot;
+  boolean isCaptain;
+  String ccaptainName;
 
   public Pirate() {
     rumLevel = 0;
     alive = true;
     passedOut = false;
-    if (passedOut) {
-      hasParrot = false;
-    } else {
-      hasParrot = true;
-    }
+    hasParrot = true;
+    isCaptain = false;
+  }
+
+  public Pirate(String captainName) {
+    this.ccaptainName = captainName;
+    isCaptain = true;
+    rumLevel = 0;
+    alive = true;
+    passedOut = false;
+    hasParrot = true;
   }
 
   public int drinkSomeRum() {
@@ -54,9 +62,9 @@ public class Pirate {
         Random random = new Random();
         int brawlRoll = random.nextInt(3);
         if (brawlRoll == 0) {
-          alive = false;
+          die();
         } else if (brawlRoll == 1) {
-          pirate.alive = false;
+          pirate.die();
         } else {
           passedOut = true;
           hasParrot = false;

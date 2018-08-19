@@ -6,5 +6,7 @@ public class Main {
     pirate1.brawl(pirate2);
     pirate1.getStatus();
     pirate2.getStatus();
+
+    pirate1.drinkSomeRum();
   }
 }
