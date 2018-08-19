@@ -2,8 +2,10 @@ public class Animal {
 
   int hunger;
   int thirst;
+  String name;
 
-  public Animal() {
+  public Animal(String name) {
+    this.name = name;
     hunger = 50;
     thirst = 50;
 

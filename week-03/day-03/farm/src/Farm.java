@@ -18,9 +18,9 @@ public class Farm {
     slots--;
   }
 
-  public Farm breed(Farm farm, Animal animal) {
+  public Farm breed(Farm farm, String animalName) {
     if (slots > 0) {
-      farm.addAnimal(animal);
+      farm.addAnimal(new Animal(animalName));
     } else {
       System.out.println("Sorry, " + farm.name + " is full!");
     }
@@ -32,8 +32,10 @@ public class Farm {
     return animals.size();
   }
 
-  public String showFarm() {
-    return Arrays.toString(animals.toArray());
+  public void showFarm() {
+    for (Animal animal : animals) {
+      System.out.print(animal + " ");
+    }
   }
 
 //  public List slaughter() {
@@ -53,5 +55,5 @@ public class Farm {
 //    }
 //    slots++;
 //    return animals;
-  }
+//  }
 }
