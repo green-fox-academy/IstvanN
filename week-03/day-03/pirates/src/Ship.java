@@ -7,6 +7,11 @@ public class Ship {
   String name;
   int score;
   Pirate captain;
+  Random random = new Random();
+
+  public Ship() {
+    ship = new ArrayList<>();
+  }
 
   public Ship(String name) {
     this.name = name;
@@ -14,7 +19,6 @@ public class Ship {
   }
 
   public List fillShip(String captainName) {
-    Random random = new Random();
     for (int i = 0; i <= random.nextInt(10); i++) {
       ship.add(new Pirate());
     }
@@ -67,7 +71,6 @@ public class Ship {
   }
 
   public List party() {
-    Random random = new Random();
     for (Pirate pirate : ship) {
       for (int i = 0; i <= random.nextInt(10); i++)
         pirate.drinkSomeRum();
@@ -80,7 +83,6 @@ public class Ship {
   }
 
   public boolean battle(Ship otherShip) {
-    Random random = new Random();
     if (score >= otherShip.score) {  // equal is also enough to win, because they attack first
       for (int i = 0; i <= random.nextInt(otherShip.size()); i++) {
         otherShip.ship.get(i).die();
