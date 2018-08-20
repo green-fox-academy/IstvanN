@@ -11,6 +11,7 @@ public class Ship {
 
   public Ship() {
     ship = new ArrayList<>();
+    score = 0;
   }
 
   public Ship(String name) {
@@ -22,6 +23,7 @@ public class Ship {
     for (int i = 0; i <= random.nextInt(10); i++) {
       ship.add(new Pirate());
     }
+    score = numberOfAliveCrew();
     return ship;
   }
 
