@@ -18,7 +18,14 @@ public class Ship {
     ship = new ArrayList<>();
   }
 
-  public List fillShip(String captainName) {
+  public List fillShip() {
+    for (int i = 0; i <= random.nextInt(10); i++) {
+      ship.add(new Pirate());
+    }
+    return ship;
+  }
+
+  public List fillShipWithCaptain(String captainName) {
     for (int i = 0; i <= random.nextInt(10); i++) {
       ship.add(new Pirate());
     }
