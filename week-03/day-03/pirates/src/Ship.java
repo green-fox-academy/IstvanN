@@ -11,7 +11,6 @@ public class Ship {
   public Ship(String name) {
     this.name = name;
     ship = new ArrayList<>();
-
   }
 
   public List fillShip(String captainName) {
