@@ -5,8 +5,9 @@ public class WarApp {
     Armada royal = new Armada("Royal Army");
     royal.fillArmada();
 
-    System.out.println(pirates.size());
-    System.out.println(royal.size());
+    System.out.println(pirates.name + " armada size is: " + pirates.size());
+    System.out.println(royal.name + " armada size is: " + royal.size() + "\n");
+    System.out.println("LET THE BATTLE BEGIN!");
     pirates.war(royal);
   }
 }

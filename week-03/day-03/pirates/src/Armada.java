@@ -34,30 +34,21 @@ public class Armada {
     return armada;
   }
 
-  public List shipBattle(Armada otherArmada) {
-    for (int i = 0; i < armada.size(); i++) {
-      for (int j = 0; j < otherArmada.size(); j++) {
-        System.out.println("Ship " + (i + 1) + "(score: " + armada.get(i).score + ") vs. Ship " + (j + 1) + "(score: " + otherArmada.getShip(j).score + ")");
-        if (armada.get(i).score > otherArmada.getShip(j).score) {
-          otherArmada.remove(j);
-        } else {
-          armada.remove(i);
-        }
+  public boolean war(Armada otherArmada) {
+    while (armada.size() != 0 && otherArmada.size() != 0) {
+      System.out.println(name + " Ship (score: " + armada.get(0).score + ") vs. " + otherArmada.name + " Ship (score: " + otherArmada.getShip(0).score + ")");
+      if (armada.get(0).score >= otherArmada.getShip(0).score) {  // equal is enough since the armada ship hits first
+        otherArmada.remove(0);
+      } else {
+        armada.remove(0);
       }
     }
-    return armada;
-  }
-
-  public void war(Armada otherArmada) {
-    while (true) {
-      if (armada.size() == 0) {
-        System.out.println("The winner of the war is: " + otherArmada.name);
-        break;
-      } else if (otherArmada.size() == 0) {
-        System.out.println("The winner of the war is: " + name);
-        break;
-      }
-      shipBattle(otherArmada);
+    if (armada.size() == 0) {
+      System.out.println("The winner is: " + otherArmada.name);
+      return false;
+    } else {
+      System.out.println("The winner is " + name);
+      return true;
     }
   }
 }
