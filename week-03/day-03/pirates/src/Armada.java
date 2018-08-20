@@ -13,7 +13,7 @@ public class Armada {
   }
 
   public List fillArmada() {
-    for (int i = 0; i < random.nextInt(10); i++) {
+    for (int i = 0; i <= random.nextInt(10); i++) {
       Ship tempShip = new Ship();
       tempShip.fillShip();
       armada.add(tempShip);
@@ -39,8 +39,10 @@ public class Armada {
       System.out.println(name + " Ship (score: " + armada.get(0).score + ") vs. " + otherArmada.name + " Ship (score: " + otherArmada.getShip(0).score + ")");
       if (armada.get(0).score >= otherArmada.getShip(0).score) {  // equal is enough since the armada ship hits first
         otherArmada.remove(0);
+        armada.get(0).score--;
       } else {
         armada.remove(0);
+        otherArmada.getShip(0).score--;
       }
     }
     if (armada.size() == 0) {
