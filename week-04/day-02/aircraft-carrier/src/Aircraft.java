@@ -42,7 +42,8 @@ public class Aircraft {
   }
 
   public int getMissingAmmo() {
-    return maxAmmo - currentAmmo;
+    int missingAmmo = maxAmmo - currentAmmo;
+    return missingAmmo;
   }
 
   public boolean needAmmo() {
@@ -51,5 +52,10 @@ public class Aircraft {
     } else {
       return false;
     }
+  }
+
+  public int calculateDamage() {
+    int damageDone = currentAmmo * damage;
+    return damageDone;
   }
 }

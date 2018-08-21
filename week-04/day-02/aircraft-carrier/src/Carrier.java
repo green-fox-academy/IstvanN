@@ -56,7 +56,7 @@ public class Carrier {
   public void fight(Carrier otherCarrier) {
     int damageOutput = 0;
     for (Aircraft aircraft : aircrafts) {
-      damageOutput += aircraft.currentAmmo * aircraft.damage;
+      damageOutput += aircraft.fight();
     }
     otherCarrier.healthPoint -= damageOutput;
   }
@@ -64,7 +64,7 @@ public class Carrier {
   public int calculateMaxDamage() {
     int maxDamage = 0;
     for (Aircraft aircraft : aircrafts) {
-      maxDamage += aircraft.maxDamage;
+      maxDamage += aircraft.calculateDamage();
     }
     return maxDamage;
   }
