@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 import java.util.List;
 
 public class Carrier {
@@ -43,7 +44,7 @@ public class Carrier {
 
   public void fillAll() {
     if (ammoStorage == 0) {
-      System.out.println("The ammo storage is empty Sir, can't do shit.");
+      throw new EmptyStackException();
     } else if (ammoStorage >= calculateAmmoNeeded()) {
       for (Aircraft aircraft : aircrafts) {
         ammoStorage = aircraft.refill(ammoStorage);

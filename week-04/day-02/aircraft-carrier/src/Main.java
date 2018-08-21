@@ -15,9 +15,10 @@ public class Main {
     enemyCarrier.add(enemyf35);
     enemyCarrier.fillAll();
     System.out.println(enemyCarrier.getStatus());
-    System.out.println("A F T E R  T H E  B A T T L E \n");
+    System.out.println("A F T E R -- T H E -- B A T T L E \n");
     carrier.fight(enemyCarrier);
     System.out.println(carrier.getStatus());
     System.out.println(enemyCarrier.getStatus());
+    carrier.fillAll();
   }
 }
