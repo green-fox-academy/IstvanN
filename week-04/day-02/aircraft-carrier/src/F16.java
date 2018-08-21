@@ -5,5 +5,6 @@ public class F16 extends Aircraft {
     damage = 30;
     type = "F16";
     priority = false;
+    maxDamage = damage * maxAmmo;
   }
 }

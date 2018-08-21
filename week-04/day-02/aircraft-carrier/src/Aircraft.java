@@ -8,7 +8,6 @@ public class Aircraft {
 
   public Aircraft() {
     currentAmmo = 0;
-    maxDamage = damage * maxAmmo;
   }
 
   public int flight() {
@@ -35,7 +34,7 @@ public class Aircraft {
   }
 
   public String getStatus() {
-    String status = "Type " + type + ", Ammo: " + maxAmmo + ", Base Damage: " + damage + ", All Damage: " + maxDamage;
+    String status = "Type " + type + ", Ammo: " + currentAmmo + ", Base Damage: " + damage + ", All Damage: " + maxDamage;
     return status;
   }
 
