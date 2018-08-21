@@ -36,5 +36,6 @@ public class Garden {
     for (Plant plant : plants) {
       plant.showPlantStatus();
     }
+    System.out.println("");
   }
 }

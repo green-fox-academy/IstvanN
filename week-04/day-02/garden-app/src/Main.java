@@ -11,5 +11,13 @@ public class Main {
     garden.addPlant(orangeTree);
 
     garden.showGarden();
+    for (int i = 0; i < 2; i++) {
+      if (i == 0) {
+        garden.water(40);
+      } else {
+        garden.water(70);
+      }
+      garden.showGarden();
+    }
   }
 }
