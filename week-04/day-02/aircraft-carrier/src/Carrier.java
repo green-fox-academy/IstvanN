@@ -18,6 +18,10 @@ public class Carrier {
 
   public int calculateAmmoNeeded () {
     int ammoNeeded = 0;
-    
+    for (Aircraft aircraft : aircrafts) {
+      if (aircraft.currentAmmo < aircraft.maxAmmo) {
+        int missingAmmo = aircraft.maxAmmo - aircraft.
+      }
+    }
   }
 }

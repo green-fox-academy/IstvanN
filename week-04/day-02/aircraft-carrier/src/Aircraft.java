@@ -34,11 +34,23 @@ public class Aircraft {
   }
 
   public String getStatus() {
-    String status = "Type " + type + ", Ammo: " + currentAmmo + ", Base Damage: " + damage + ", All Damage: " + maxDamage;
+    String status = "Type " + getType() + ", Ammo: " + currentAmmo + ", Base Damage: " + damage + ", All Damage: " + maxDamage;
     return status;
   }
 
   public boolean isPriority() {
     return priority;
+  }
+
+  public int getMissingAmmo() {
+    return maxAmmo - currentAmmo;
+  }
+
+  public boolean isFull() {
+    if (maxAmmo == currentAmmo) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
