@@ -15,7 +15,7 @@ public class Garden {
   public int scanGarden() {
     int plantsNeedWatering = 0;
     for (Plant plant : plants) {
-      if (plant.waterAmount < plant.waterNeed) {
+      if (plant.waterLevel < plant.waterNeed) {
         plantsNeedWatering++;
       }
     }
@@ -24,10 +24,10 @@ public class Garden {
 
   public void water(int wateringAmount) {
     System.out.println("Watering with " + wateringAmount);
-    int divider = scanGarden();
+    double equalAmount = wateringAmount / scanGarden();
     for (Plant plant : plants) {
-      if (plant.waterAmount < plant.waterNeed) {
-        
+      if (plant.waterLevel < plant.waterNeed) {
+        plant.waterLevel += equalAmount * plant.waterAbsorb;
       }
     }
   }
