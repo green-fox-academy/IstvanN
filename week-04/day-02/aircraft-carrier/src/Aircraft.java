@@ -38,4 +38,8 @@ public class Aircraft {
     String status = "Type " + type + ", Ammo: " + maxAmmo + ", Base Damage: " + damage + ", All Damage: " + maxDamage;
     return status;
   }
+
+  public boolean isPriority() {
+    return priority;
+  }
 }
