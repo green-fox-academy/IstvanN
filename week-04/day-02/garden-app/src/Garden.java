@@ -8,7 +8,27 @@ public class Garden {
     plants = new ArrayList<>();
   }
 
-  public List addPlant() {
-    plants.ad
+  public void addPlant(Plant plant) {
+    plants.add(plant);
+  }
+
+  public int scanGarden() {
+    int plantsNeedWatering = 0;
+    for (Plant plant : plants) {
+      if (plant.waterAmount < plant.waterNeed) {
+        plantsNeedWatering++;
+      }
+    }
+    return plantsNeedWatering;
+  }
+
+  public void water(int wateringAmount) {
+    System.out.println("Watering with " + wateringAmount);
+    int divider = scanGarden();
+    for (Plant plant : plants) {
+      if (plant.waterAmount < plant.waterNeed) {
+        
+      }
+    }
   }
 }
