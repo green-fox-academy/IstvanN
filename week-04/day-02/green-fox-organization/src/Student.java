@@ -1,6 +1,6 @@
 public class Student extends Person {
-  private String previousOrganization;
-  private int skippedDays;
+  String previousOrganization;
+  int skippedDays;
 
   public Student() {
     name = "Jane Doe";
