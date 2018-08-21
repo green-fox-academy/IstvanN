@@ -16,12 +16,13 @@ public class Carrier {
     aircrafts.add(aircraft);
   }
 
-  public int calculateAmmoNeeded () {
+  public int calculateAmmoNeeded() {
     int ammoNeeded = 0;
     for (Aircraft aircraft : aircrafts) {
-      if (aircraft.currentAmmo < aircraft.maxAmmo) {
-        int missingAmmo = aircraft.maxAmmo - aircraft.
+      if (aircraft.needAmmo()) {
+        ammoNeeded += aircraft.getMissingAmmo();
       }
     }
+    return ammoNeeded;
   }
 }

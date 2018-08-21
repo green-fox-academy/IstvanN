@@ -46,8 +46,8 @@ public class Aircraft {
     return maxAmmo - currentAmmo;
   }
 
-  public boolean isFull() {
-    if (maxAmmo == currentAmmo) {
+  public boolean needAmmo() {
+    if (currentAmmo < maxAmmo) {
       return true;
     } else {
       return false;
