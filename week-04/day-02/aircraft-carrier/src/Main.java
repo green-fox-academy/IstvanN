@@ -2,12 +2,13 @@ public class Main {
   public static void main(String[] args) {
     F16 f16 = new F16();
     F35 f35 = new F35();
-
-    System.out.println(f16.getStatus());
-    System.out.println(f35.getStatus());
-    System.out.println("Ammo remaining: " + f16.refill(300));
-    System.out.println("Ammo remaining: " + f35.refill(300));
-    System.out.println(f16.getStatus());
-    System.out.println(f35.getStatus());
+    F35 f352 = new F35();
+    Carrier carrier = new Carrier(20, 100);
+    carrier.add(f16);
+    carrier.add(f35);
+    carrier.add(f352);
+    System.out.println(carrier.getStatus());
+    carrier.fillAll();
+    System.out.println(carrier.getStatus());
   }
 }

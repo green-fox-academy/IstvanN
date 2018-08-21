@@ -41,7 +41,7 @@ public class Carrier {
     }
   }
 
-  public void fillAllAircrafts() {
+  public void fillAll() {
     if (ammoStorage == 0) {
       System.out.println("The ammo storage is empty Sir, can't do shit.");
     } else if (ammoStorage >= calculateAmmoNeeded()) {
