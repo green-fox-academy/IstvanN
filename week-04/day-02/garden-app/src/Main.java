@@ -9,5 +9,7 @@ public class Main {
     garden.addPlant(purpleTree);
     Tree orangeTree = new Tree("orange");
     garden.addPlant(orangeTree);
+
+    garden.showGarden();
   }
 }

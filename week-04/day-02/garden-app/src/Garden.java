@@ -31,4 +31,10 @@ public class Garden {
       }
     }
   }
+
+  public void showGarden() {
+    for (Plant plant : plants) {
+      plant.showPlantStatus();
+    }
+  }
 }
