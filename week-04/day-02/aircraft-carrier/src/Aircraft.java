@@ -25,7 +25,6 @@ public class Aircraft {
       currentAmmo = maxAmmo;
       remainingAmmo = ammoToBeAdded - maxAmmo;
     }
-
     return remainingAmmo;
   }
 
