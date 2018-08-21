@@ -2,9 +2,13 @@ public class Aircraft {
   int currentAmmo;
   int maxAmmo;
   int damage;
+  int maxDamage;
+  String type;
+  boolean priority;
 
   public Aircraft() {
     currentAmmo = 0;
+    maxDamage = damage * maxAmmo;
   }
 
   public int flight() {
@@ -24,5 +28,14 @@ public class Aircraft {
     }
 
     return remainingAmmo;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public String getStatus() {
+    String status = "Type " + type + ", Ammo: " + maxAmmo + ", Base Damage: " + damage + ", All Damage: " + maxDamage;
+    return status;
   }
 }
