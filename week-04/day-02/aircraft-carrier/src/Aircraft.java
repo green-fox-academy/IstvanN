@@ -1,8 +1,9 @@
 public class Aircraft {
-  int ammo;
+  int currentAmmo;
+  int maxAmmo;
   int damage;
 
   public Aircraft() {
-    ammo = 0;
+    currentAmmo = 0;
   }
 }
