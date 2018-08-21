@@ -3,4 +3,8 @@ public class Plant {
   double waterAmount;
   int waterNeed;
   double waterAbsorb;
+
+  public Plant() {
+    waterAmount = 0;
+  }
 }
