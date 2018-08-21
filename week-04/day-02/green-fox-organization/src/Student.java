@@ -16,11 +16,11 @@ public class Student extends Person {
     skippedDays = 0;
   }
 
-  public void  getGoal() {
+  public void getGoal() {
     System.out.println("Be a juniour software developer.");
   }
 
   public void introduce() {
-    "Hi, I'm " + name ", a " + age + " year old " + gender + " from " + previousOrganization + " who skipped " + skippedDays + " days from the course already."
+    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + " from " + previousOrganization + " who skipped " + skippedDays + " days from the course already.");
   }
 }
