@@ -1,13 +1,23 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Carrier {
   List<Aircraft> aircrafts;
-  int maxAmmo;
-  int currentAmmo;
+  int ammoStorage;
   int healthPoint;
 
   public Carrier(int initialAmmo, int healthPoint) {
-    currentAmmo = initialAmmo;
+    ammoStorage = initialAmmo;
     this.healthPoint = healthPoint;
+    aircrafts = new ArrayList<>();
+  }
+
+  public void add(Aircraft aircraft) {
+    aircrafts.add(aircraft);
+  }
+
+  public int calculateAmmoNeeded () {
+    int ammoNeeded = 0;
+    
   }
 }
