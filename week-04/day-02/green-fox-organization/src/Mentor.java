@@ -1,16 +1,16 @@
 public class Mentor extends Person {
   String level;
 
-  public Mentor(String name, int age, String gender, String level) {
-    super(name, age, gender);
-    this.level = level;
-  }
-
   public Mentor() {
     name = "Jane Doe";
     age = 30;
     gender = "female";
     level = "intermediate";
+  }
+
+  public Mentor(String name, int age, String gender, String level) {
+    super(name, age, gender);
+    this.level = level;
   }
 
   public void getGoal() {
