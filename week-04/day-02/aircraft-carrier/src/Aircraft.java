@@ -10,7 +10,7 @@ public class Aircraft {
     currentAmmo = 0;
   }
 
-  public int flight() {
+  public int fight() {
     int damageDone = currentAmmo * damage;
     currentAmmo = 0;
     return damageDone;
