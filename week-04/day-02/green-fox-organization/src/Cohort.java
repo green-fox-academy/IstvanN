@@ -12,14 +12,12 @@ public class Cohort {
     mentors = new ArrayList<>();
   }
 
-  public List addStudent(Student student) {
+  public void addStudent(Student student) {
     students.add(student);
-    return students;
   }
 
-  public List addMentor(Mentor mentor) {
+  public void addMentor(Mentor mentor) {
     mentors.add(mentor);
-    return mentors;
   }
 
   public void info() {
