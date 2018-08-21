@@ -4,5 +4,6 @@ public class Tree extends Plant {
     this.color = color;
     waterNeed = 10;
     waterAbsorb = 0.4;
+    type = "Tree";
   }
 }

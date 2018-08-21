@@ -4,5 +4,6 @@ public class Flower extends Plant {
     this.color = color;
     waterNeed = 5;
     waterAbsorb = 0.75;
+    type = "Flower";
   }
 }
