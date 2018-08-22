@@ -6,13 +6,12 @@ import java.util.List;
 import java.util.Random;
 
 public class Reservation implements Reservationy {
-  String dowBooking;
-  String codeBooking;
+  String reservation;
   List<String> listOfDays = new ArrayList<>(Arrays.asList("MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"));
   Random random = new Random();
 
   public Reservation() {
-    generateReservation();
+    reservation = generateReservation();
   }
 
   private String generateReservation() {
@@ -28,6 +27,17 @@ public class Reservation implements Reservationy {
 
   @Override
   public String getCodeBooking() {
-    return null;
+    String code = "";
+    String charsAvailable = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    while (code.length() < 8) {
+      int getRandom = random.nextInt(36);
+      code += charsAvailable.charAt(getRandom);
+    }
+
+    return code;
+  }
+
+  public String getReservation() {
+    return reservation;
   }
 }
