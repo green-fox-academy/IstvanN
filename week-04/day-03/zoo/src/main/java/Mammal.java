@@ -25,11 +25,15 @@ public class Mammal extends Animal {
 
   @Override
   public void move() {
-    System.out.println("Moving on " + numberOfLegs + "legs.");
+    System.out.println("Moving on " + getNumberOfLegs() + "legs.");
   }
 
   @Override
   public void makeASound() {
-    System.out.println("Moaning");
+    if (get.equals("male")) {
+      System.out.println("Moaaaww");
+    } else {
+      System.out.println("Meeeeeee");
+    }
   }
 }

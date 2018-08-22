@@ -11,7 +11,17 @@ public abstract class Animal {
     return name;
   }
 
-  public abstract String breed();
+  public String breed() {
+    return "laying eggs.";
+  }
+
+  public int getNumberOfLegs() {
+    return numberOfLegs;
+  }
+
+  public String getGender() {
+    return gender;
+  }
 
   public abstract void move();
 
