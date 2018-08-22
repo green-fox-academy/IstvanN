@@ -1,9 +1,17 @@
-package main.java;
+package main.java.animals;
 
 public class Reptile extends Animal {
 
   public Reptile() {
     name = "Random reptile";
+    age = 0;
+    gender = "female";
+    numberOfLegs = 4;
+    hasWings = false;
+  }
+
+  public Reptile(String name) {
+    this.name = name;
     age = 0;
     gender = "female";
     numberOfLegs = 4;
