@@ -6,8 +6,17 @@ public class ElectricGuitar extends StringedInstrument {
     numberOfStrings = 6;
   }
 
+  public ElectricGuitar(int numberOfStrings) {
+    name = "Electric Guitar";
+    this.numberOfStrings = numberOfStrings;
+  }
+
   @Override
   public String sound() {
-    return "Twang";
+    if (numberOfStrings == 6) {
+      return "Twang";
+    } else {
+      return "Twangg";
+    }
   }
 }
