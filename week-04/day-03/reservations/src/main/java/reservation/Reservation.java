@@ -12,19 +12,18 @@ public class Reservation implements Reservationy {
   Random random = new Random();
 
   public Reservation() {
-    generateBooking();
+    generateReservation();
   }
 
-  private String generateBooking() {
-    String booking = "
-    return booking;
+  private String generateReservation() {
+    String reservation = "Booking# " + getCodeBooking() + " for " + getDowBooking();
+    return reservation;
   }
 
   @Override
   public String getDowBooking() {
     int getRandom = random.nextInt(7);
     return listOfDays.get(getRandom);
-
   }
 
   @Override
