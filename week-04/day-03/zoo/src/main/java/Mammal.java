@@ -22,4 +22,14 @@ public class Mammal extends Animal {
   public String breed() {
     return "pushing miniature versions out.";
   }
+
+  @Override
+  public void move() {
+    System.out.println("Moving on " + numberOfLegs + "legs.");
+  }
+
+  @Override
+  public void makeASound() {
+    System.out.println("Moaning");
+  }
 }

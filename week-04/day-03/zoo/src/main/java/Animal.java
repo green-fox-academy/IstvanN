@@ -12,4 +12,8 @@ public abstract class Animal {
   }
 
   public abstract String breed();
+
+  public abstract void move();
+
+  public abstract void makeASound();
 }
