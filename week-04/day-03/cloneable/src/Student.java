@@ -30,12 +30,12 @@ public class Student extends Person implements Cloneable {
   }
 
   public Student clone() {
-    Student cloneStud = new Student();
+    Student cloneStudent = new Student();
     try {
-      cloneStud = (Student) super.clone();
+      cloneStudent = (Student) super.clone();
     } catch (CloneNotSupportedException e) {
       e.printStackTrace();
     }
-    return cloneStud;
+    return cloneStudent;
   }
 }
