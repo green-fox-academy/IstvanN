@@ -30,7 +30,7 @@ public class Mammal extends Animal {
 
   @Override
   public void makeASound() {
-    if (get.equals("male")) {
+    if (getGender().equals("male")) {
       System.out.println("Moaaaww");
     } else {
       System.out.println("Meeeeeee");
