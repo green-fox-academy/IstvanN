@@ -14,12 +14,12 @@ public class AppleTest {
 
   @Test
   public void getAppleShouldReturnMyString() {
-    Assert.assertEquals("apple", apple.getApple());
+    Assert.assertEquals("applex", apple.getApple());
   }
 
   @Test
   public void getAppleReturnsName() {
-    Assert.assertEquals(apple.getApple(), apple.name);
+    Assert.assertEquals(apple.getApple(), apple.name + "x");
   }
 
 }
