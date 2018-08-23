@@ -39,4 +39,11 @@ public class SumTest {
     Assert.assertEquals(0, sum.sumAll(list));
   }
 
+  @Test
+  public void testSumWithOneElement() {
+    List list = new ArrayList(Arrays.asList(1));
+    sum.sumAll(list);
+    Assert.assertEquals(1, sum.sumAll(list));
+  }
+
 }
