@@ -1,6 +1,7 @@
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -13,12 +14,8 @@ public class AnagramTest {
   }
 
   @Test
-  public void testIfAnagramMethod() {
-    Assert.assertTrue(a.ifAnagram("dog", "god"));
-  }
-
-  @Test
-  public void shouldReturnFalse() {
-    Assert.assertFalse(a.ifAnagram("asd", "wasd"));
+  public void testCastWordMethod() {
+    List list = a.castWordIntoListOfChars("bok");
+    Assert.assertEquals('b', list.get(0));
   }
 }
