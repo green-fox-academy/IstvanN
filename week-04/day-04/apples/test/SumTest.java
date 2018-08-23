@@ -2,27 +2,33 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class SumTest {
-  Sum l;
+  Sum sum;
 
   @Before
   public void before() {
-    l = new Sum();
+    sum = new Sum();
   }
 
   @Test
   public void createEmptyList() {
-    Assert.assertEquals(0, l.getSize());
+    Assert.assertEquals(0, sum.getSize());
   }
 
   @Test
-  public void
+  public void getElementTestAndAddNumberTest() {
+    sum.addNumber(5);
+    Assert.assertEquals(5, sum.getElement(0));
+  }
 
   @Test
-  public void addMethodTest() {
-    l.addNumber(5);
-    Assert.assertEquals();
+  public void testSumMethod() {
+    List list = new ArrayList(Arrays.asList(5, 10, 15));
+    sum.sumAll(list);
   }
+
 }

@@ -15,7 +15,12 @@ public class Sum {
     list.add(number);
   }
 
-  public Integer getElement(int index) {
+  public int getElement(int index) {
     return list.get(index);
+  }
+
+
+  public int sumAll(List<Integer> list) {
+    
   }
 }
