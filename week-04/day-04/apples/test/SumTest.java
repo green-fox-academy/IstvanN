@@ -29,6 +29,7 @@ public class SumTest {
   public void testSumMethod() {
     List list = new ArrayList(Arrays.asList(5, 10, 15));
     sum.sumAll(list);
+    Assert.assertEquals(30, sum.sumAll(list));
   }
 
 }
