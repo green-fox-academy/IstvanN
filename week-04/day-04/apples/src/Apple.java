@@ -1,4 +1,6 @@
 public class Apple {
 
-  public
+  public String getApple() {
+    return "apple";
+  }
 }
