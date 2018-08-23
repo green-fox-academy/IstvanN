@@ -16,4 +16,13 @@ public class SumTest {
   public void createEmptyList() {
     Assert.assertEquals(0, l.getSize());
   }
+
+  @Test
+  public void
+
+  @Test
+  public void addMethodTest() {
+    l.addNumber(5);
+    Assert.assertEquals();
+  }
 }

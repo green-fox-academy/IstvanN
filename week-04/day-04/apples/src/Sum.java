@@ -10,4 +10,12 @@ public class Sum {
   public int getSize() {
     return list.size();
   }
+
+  public void addNumber(int number) {
+    list.add(number);
+  }
+
+  public Integer getElement(int index) {
+    return list.get(index);
+  }
 }
