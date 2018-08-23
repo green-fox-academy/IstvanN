@@ -18,4 +18,7 @@ public class AnagramTest {
     char[] listOfChars = a.castWordIntoListOfChars("bok");
     Assert.assertEquals('b', listOfChars[0]);
   }
+
+  @Test
+  public void 
 }
