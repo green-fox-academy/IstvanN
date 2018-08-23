@@ -32,4 +32,11 @@ public class SumTest {
     Assert.assertEquals(30, sum.sumAll(list));
   }
 
+  @Test
+  public void testSumWithEmptyList() {
+    List list = new ArrayList();
+    sum.sumAll(list);
+    Assert.assertEquals(0, sum.sumAll(list));
+  }
+
 }
