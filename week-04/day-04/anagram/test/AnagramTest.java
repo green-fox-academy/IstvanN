@@ -20,7 +20,7 @@ public class AnagramTest {
   }
 
   @Test
-  public void testIfAnagramMethod() {
-    Assert.assertTrue(a.ifAnagram("god", "dog"));
+  public void testIfAnagramMethodFalse() {
+    Assert.assertFalse(a.ifAnagram("ugugugu", "ugugug"));
   }
 }
