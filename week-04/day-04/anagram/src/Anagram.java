@@ -1,23 +1,19 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Anagram {
 
 //  public boolean ifAnagram(String word, String otherWord) {
-//    ArrayList<Character> wordList = new ArrayList<>();
-//    ArrayList<Character> otherWordList = new ArrayList<>();
-//    for (int i = 0; i < word.length(); i++) {
-//      wordList.add(word.charAt(i));
-//    }
+//    ArrayList wordSort = Collections.sort();
 //
 //  }
 
-  public List castWordIntoListOfChars(String word) {
-    ArrayList<Character> wordList = new ArrayList<>();
+  public char[] castWordIntoListOfChars(String word) {
+    char[] wordList = new char[word.length()];
     for (int i = 0; i < word.length(); i++) {
-      wordList.add(word.charAt(i));
+      wordList[i] = (word.charAt(i));
     }
-
     return wordList;
   }
 }
