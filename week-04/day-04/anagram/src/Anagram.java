@@ -1,22 +1,25 @@
+import java.util.Arrays;
 
 public class Anagram {
 
   public boolean ifAnagram(String word, String otherWord) {
-    char[] wordSorted = castWordIntoListOfChars(word);
-    char[] otherWordSorted = castWordIntoListOfChars(otherWord);
+    String[] wordList = castWordIntoListOfArray(word);
+    String[] otherWordList = castWordIntoListOfArray(otherWord);
 
-    if (wordSorted == otherWordSorted) {
+    Arrays.sort(wordList);
+    Arrays.sort(otherWordList);
+
+    if (wordList == otherWordList) {
       return true;
     } else {
       return false;
     }
+
   }
 
-  public char[] castWordIntoListOfChars(String word) {
-    char[] wordList = new char[word.length()];
-    for (int i = 0; i < word.length(); i++) {
-      wordList[i] = (word.charAt(i));
-    }
+  public String[] castWordIntoListOfArray(String word) {
+    String[] wordList = new String[word.length()];
+    wordList = word.split("");
     return wordList;
   }
 }
