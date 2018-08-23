@@ -7,6 +7,7 @@ public class Sum {
   public Sum() {
     list = new ArrayList<>();
   }
+
   public int getSize() {
     return list.size();
   }
@@ -21,6 +22,10 @@ public class Sum {
 
 
   public int sumAll(List<Integer> list) {
-    
+    int sum = 0;
+    for (int n : list) {
+      sum += n;
+    }
+    return sum;
   }
 }
