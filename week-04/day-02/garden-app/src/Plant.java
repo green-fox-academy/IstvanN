@@ -10,11 +10,7 @@ public class Plant {
   }
 
   public boolean ifNeedsWater() {
-    if (waterLevel < waterNeed) {
-      return true;
-    } else {
-      return false;
-    }
+    return (waterLevel < waterNeed);
   }
 
   public void showPlantStatus() {
