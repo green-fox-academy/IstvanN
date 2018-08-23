@@ -28,4 +28,9 @@ public class AnagramTest {
   public void testIfAnagramMethodTrue() {
     Assert.assertTrue(a.ifAnagram("funeral", "realfun"));
   }
+
+  @Test
+  public void testAnagramMethodWithSpaces() {
+    Assert.assertTrue(a.ifAnagram("funeral", "real fun"));
+  }
 }
