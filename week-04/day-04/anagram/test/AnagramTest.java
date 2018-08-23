@@ -23,4 +23,9 @@ public class AnagramTest {
   public void testIfAnagramMethodFalse() {
     Assert.assertFalse(a.ifAnagram("ugugugu", "ugugug"));
   }
+
+  @Test
+  public void testIfAnagramMethodTrue() {
+    Assert.assertTrue(a.ifAnagram("funeral", "realfun"));
+  }
 }
