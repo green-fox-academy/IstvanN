@@ -16,4 +16,9 @@ public class AnagramTest {
   public void testIfAnagramMethod() {
     Assert.assertTrue(a.ifAnagram("dog", "god"));
   }
+
+  @Test
+  public void shouldReturnFalse() {
+    Assert.assertFalse(a.ifAnagram("asd", "wasd"));
+  }
 }
