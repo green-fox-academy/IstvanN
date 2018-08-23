@@ -23,8 +23,12 @@ public class Sum {
 
   public int sumAll(List<Integer> list) {
     int sum = 0;
-    for (int n : list) {
-      sum += n;
+    try {
+      for (int n : list) {
+        sum += n;
+      }
+    } catch (Exception ex) {
+      sum = 0;
     }
     return sum;
   }

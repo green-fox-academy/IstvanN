@@ -51,6 +51,6 @@ public class SumTest {
     List list = new ArrayList();
     list.add(null);
     sum.sumAll(list);
-    Assert.assertEquals(null, sum.sumAll(list));
+    Assert.assertEquals(0, sum.sumAll(list));
   }
 }
