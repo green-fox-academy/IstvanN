@@ -9,7 +9,7 @@ public class Anagram {
     Arrays.sort(wordList);
     Arrays.sort(otherWordList);
 
-    if (wordList == otherWordList) {
+    if (wordList.equals(otherWordList)) {
       return true;
     } else {
       return false;
