@@ -15,12 +15,12 @@ public class CountLettersTest {
   @Test
   public void testCountLettersMethod() {
     s = "lol";
-    Assert.assertEquals(2, cl.countLetters(s).get('l'), 0);
+    Assert.assertEquals(2, cl.countLetters(s).get("l"), 0);
   }
 
   @Test
   public void testCountLettersMethodWithAnotherWord() {
     s = "llllk";
-    Assert.assertEquals(4, cl.countLetters(s).get('l'), 0);
+    Assert.assertEquals(4, cl.countLetters(s).get("l"), 0);
   }
 }
