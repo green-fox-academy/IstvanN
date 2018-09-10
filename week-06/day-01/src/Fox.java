@@ -16,6 +16,10 @@ public class Fox {
     return color;
   }
 
+  public String getType() {
+    return type;
+  }
+
   @Override
   public String toString() {
     return "Fox{" +

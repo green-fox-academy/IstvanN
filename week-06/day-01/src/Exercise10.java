@@ -17,5 +17,11 @@ public class Exercise10 {
         .filter(fox -> fox.getColor().equals("green"))
         .collect(Collectors.toList());
     System.out.println(greenFoxes);
+
+    List<Fox> greenPallidaFoxes = foxes
+        .stream()
+        .filter(fox -> fox.getColor().equals("green") && fox.getType().equals("pallida"))
+        .collect(Collectors.toList());
+    System.out.println(greenPallidaFoxes);
   }
 }
