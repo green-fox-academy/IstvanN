@@ -21,7 +21,12 @@ public class Person {
     return age;
   }
 
+  @Override
   public String toString() {
-    return firstName + " " + secondName + ", " + age;
+    return "Person[" +
+        "First Name : " + firstName + '\'' +
+        ", Second Name : " + secondName + '\'' +
+        ", Age : " + age +
+        ']';
   }
 }
