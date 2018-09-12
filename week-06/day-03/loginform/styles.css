@@ -32,6 +32,10 @@ input {
   width: 200px;
 }
 
+input:focus {
+  border-color: green;
+}
+
 input[id="password"] {
   background: url(/home/archiez/greenfox/IstvanN/week-06/day-03/loginform/eye.png) no-repeat;
   background-size: 8%;
