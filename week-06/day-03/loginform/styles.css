@@ -1,0 +1,53 @@
+body{
+  background-color: lightgrey;
+}
+
+form {
+  margin: 0 auto;
+  width: 400px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: white;
+  font-family: 'Arial';
+  padding: 50px;
+}
+
+h1 {
+  font-size: 20;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+
+label, p {
+  font-size: 9px;
+}
+
+label, input, p, button {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+input {
+  height: 30px;
+  width: 200px;
+}
+
+input[id="password"] {
+  background: url(/home/archiez/greenfox/IstvanN/week-06/day-03/loginform/eye.png) no-repeat;
+  background-size: 8%;
+  background-position: 175px 10px;
+}
+
+p {
+  margin-top: 1px;
+  text-indent: 120px;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-weight: 200;
+}
