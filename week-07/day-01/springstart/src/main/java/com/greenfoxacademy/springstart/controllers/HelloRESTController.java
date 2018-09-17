@@ -9,7 +9,7 @@ public class HelloRESTController {
 
   @GetMapping("/greeting")
   public Greeting greet(@RequestParam("name") String name) {
-    Greeting greeting = new Greeting(1, String.format("Hello %s!", name));
+    Greeting greeting = new Greeting(1, String.format("Hello, dear %s!", name.toUpperCase()));
     return greeting;
   }
 }
