@@ -9,6 +9,6 @@ public class GreetingController {
 
   @GetMapping("/greeting")
   public String showGreeting(Model model) {
-    model.addAttribute()
+    model.addAttribute("greeting", new Greeting)
   }
 }
