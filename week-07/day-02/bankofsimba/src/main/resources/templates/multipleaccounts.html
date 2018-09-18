@@ -35,7 +35,7 @@
             <td th:text="*{name}"></td>
             <td th:text="*{#numbers.formatDecimal(balance, 0, 2, 'POINT')} + ' ' + *{currency}"></td>
             <td th:text="*{animalType}"></td>
-            <td th:text="*{isKing()}"></td>
+            <td th:text="*{isKing()}" th:bgcolor="*{isKing()} ? black : white"></td>
         </tr>
         </tbody>
     </table>
