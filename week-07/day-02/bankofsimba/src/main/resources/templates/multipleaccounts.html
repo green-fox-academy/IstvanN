@@ -5,7 +5,7 @@
     <link rel="stylesheet" th:href="@{/style.css}"/>
     <meta charset="utf-8"/>
     <style>
-        table, td, th {
+        h1, table, td, th {
             border: 1px solid grey;
             border-collapse: collapse;
             width: 500px;
@@ -13,6 +13,7 @@
             font-family: Arial, Helvetica, sans-serif;
             color: rgb(82, 64, 64);
             padding: 20px;
+            margin: 50px;
         }
     </style>
 </head>
@@ -35,7 +36,7 @@
             <td th:text="*{name}"></td>
             <td th:text="*{#numbers.formatDecimal(balance, 0, 2, 'POINT')} + ' ' + *{currency}"></td>
             <td th:text="*{animalType}"></td>
-            <td th:text="*{isKing()}" th:bgcolor="*{isKing()} ? black : white"></td>
+            <td th:text="*{isKing()} ? 'King' : 'Peasant'" th:bgcolor="*{isKing()} ? yellow : white"></td>
         </tr>
         </tbody>
     </table>
