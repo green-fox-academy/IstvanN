@@ -12,6 +12,7 @@
             text-indent: 10px;
             font-family: Arial, Helvetica, sans-serif;
             color: rgb(82, 64, 64);
+            padding: 20px;
         }
     </style>
 </head>
@@ -25,6 +26,7 @@
             <th>Name</th>
             <th>Balance</th>
             <th>Animal Type</th>
+            <th>Status</th>
         </tr>
         </thead>
         <tbody>
@@ -33,6 +35,7 @@
             <td th:text="*{name}"></td>
             <td th:text="*{#numbers.formatDecimal(balance, 0, 2, 'POINT')} + ' ' + *{currency}"></td>
             <td th:text="*{animalType}"></td>
+            <td th:text="*{isKing()}"></td>
         </tr>
         </tbody>
     </table>

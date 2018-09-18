@@ -13,7 +13,7 @@ public class BankController {
 
   @GetMapping("/show")
   public String showAccount(Model model) {
-    model.addAttribute("bankAccount", new BankAccount("Simba", 2000, "lion", "Zebra"));
+    model.addAttribute("bankAccount", new BankAccount("Simba", 2000, "lion", "Zebra", true));
     return "account";
   }
 
@@ -27,11 +27,11 @@ public class BankController {
   @GetMapping("/accounts")
   public String showListOfAccounts(Model model) {
     List<BankAccount> accounts = Arrays.asList(
-        new BankAccount("Simba", 2000, "lion", "Zebra"),
-        new BankAccount("Mufasa", 10000, "lion", "Zebra"),
-        new BankAccount("Zordon", 3, "lion", "Hyena"),
-        new BankAccount("Timon", 5, "meerkat", "Bug"),
-        new BankAccount("Pumbaa", 15, "warthog", "Bug")
+        new BankAccount("Simba", 2000, "lion", "Zebra", true),
+        new BankAccount("Mufasa", 10000, "lion", "Zebra", false),
+        new BankAccount("Zordon", 3, "lion", "Hyena", false),
+        new BankAccount("Timon", 5, "meerkat", "Bug", false),
+        new BankAccount("Pumbaa", 15, "warthog", "Bug", false)
     );
     model.addAttribute("bankAccounts", accounts);
     return "multipleaccounts";
