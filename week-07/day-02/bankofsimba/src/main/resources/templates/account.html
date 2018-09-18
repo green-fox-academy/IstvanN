@@ -19,7 +19,7 @@
         <tbody>
         <tr th:object="${bankAccount}">
             <td th:text="*{name}"></td>
-            <td th:text="*{balance} + ' ' + *{currency}"></td>
+            <td th:text="*{#numbers.formatDecimal(balance, 0, 2, 'POINT')} + ' ' + *{currency}"></td>
             <td th:text="*{animalType}"></td>
         </tr>
         </tbody>
