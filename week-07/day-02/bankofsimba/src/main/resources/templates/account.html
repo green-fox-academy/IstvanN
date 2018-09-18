@@ -19,7 +19,7 @@
         <tbody>
         <tr th:object="${bankAccount}">
             <td th:text="*{name}"></td>
-            <td th:text="*{balance}"></td>
+            <td th:text="*{balance} + ' ' + *{currency}"></td>
             <td th:text="*{animalType}"></td>
         </tr>
         </tbody>
