@@ -33,5 +33,7 @@ public class BankController {
         new BankAccount("Timon", 5, "meerkat", "Bug"),
         new BankAccount("Pumbaa", 15, "warthog", "Bug")
     );
+    model.addAttribute("bankAccounts", accounts);
+    return "multipleaccounts";
   }
 }
