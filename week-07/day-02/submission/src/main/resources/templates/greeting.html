@@ -7,7 +7,16 @@
 <body>
 <div>
     <h1>Submission Form</h1>
-    <form ac
+    <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+        <div>
+            <label for="greeting-id">Id:</label>
+            <input type="text" id="greeting-id" name="greeting-id" th:field="*{id}">
+        </div>
+        <div>
+            <label for="greeting-content">Message:</label>
+            <input type="text" id="greeting-content" name="greeting-content" th:field="*{content}">
+        </div>
+    </form>
 </div>
 </body>
 </html>
