@@ -17,7 +17,7 @@ public class HelloAllWorldController {
     RandomHello randomHello = new RandomHello();
     model.addAttribute("name", name.toUpperCase());
     model.addAttribute("randomhello", randomHello.getActualHello().toUpperCase());
-    model.addAttribute("rgb", randomRGB + ", " + randomRGB + ", " + randomRGB);
+    model.addAttribute("rgb", randomRGB + "," + randomRGB + "," + randomRGB);
     return "randomhello";
   }
 }
