@@ -61,4 +61,12 @@ public class BankAccount {
   public void setKing(boolean king) {
     isKing = king;
   }
+
+  public boolean isGoodGuy() {
+    return isGoodGuy;
+  }
+
+  public void setGoodGuy(boolean goodGuy) {
+    isGoodGuy = goodGuy;
+  }
 }

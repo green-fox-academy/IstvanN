@@ -16,6 +16,7 @@
             <th>Balance</th>
             <th>Animal Type</th>
             <th>Status</th>
+            <th>Good/Bad guy</th>
         </tr>
         </thead>
         <tbody>
@@ -24,8 +25,12 @@
             <td th:text="*{name}"></td>
             <td th:text="*{#numbers.formatDecimal(balance, 0, 2, 'POINT')} + ' ' + *{currency}"></td>
             <td th:text="*{animalType}"></td>
-                <td th:if="*{isKing()}"><img src="images/crown.png"/></td>
-                <td th:unless="*{isKing()}"></td>
+            <td th:if="*{isKing()}"><img src="images/crown.png"/></td>
+            <td th:unless="*{isKing()}"></td>
+            <th:block th:switch="*{isGoodGuy()}">
+                <td th:case="true">Good Boi</td>
+                <td th:case="false">Baaaaaad boi</td>
+            </th:block>
         </tr>
         </tbody>
     </table>
