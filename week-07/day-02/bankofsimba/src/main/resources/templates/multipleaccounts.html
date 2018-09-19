@@ -30,8 +30,9 @@
             <td th:unless="*{isKing()}"></td>
             <td th:text="*{isGoodGuy()} ? 'Good boi' : 'Baaaad boi'"></td>
             <td>
-                <form method="post">
-                    <input type="submit" name="toIncrease" th:value="'Donate ' + *{name}">
+                <form method="post" action="/increase">
+                    <input type="submit" th:value="'Donate ' + *{name}">
+                    <input type="hidden" th:value="${accountStat.index}" name="toIncrease">
                 </form>
             </td>
         </tr>

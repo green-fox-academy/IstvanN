@@ -3,7 +3,7 @@ package com.greenfoxacademy.bankofsimba.controllers;
 import com.greenfoxacademy.bankofsimba.models.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -29,6 +29,12 @@ public class BankController {
   public String showListOfAccounts(Model model) {
     model.addAttribute("bankAccounts", accounts);
     return "multipleaccounts";
+  }
+
+  @PostMapping("/increase")
+  public String increaseBalance(@RequestParam(value = "toIncrease") int index) {
+    accounts.get(index).raiseBalance();
+    return "redirect:/accounts";
   }
 
   public List<BankAccount> createList() {
