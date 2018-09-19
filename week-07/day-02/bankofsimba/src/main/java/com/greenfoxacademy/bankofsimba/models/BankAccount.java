@@ -7,17 +7,19 @@ public class BankAccount {
   private String animalType;
   private String currency;
   private boolean isKing;
+  private boolean isGoodGuy;
 
 
   public BankAccount() {
   }
 
-  public BankAccount(String name, int balance, String animalType, String currency, boolean isKing) {
+  public BankAccount(String name, int balance, String animalType, String currency, boolean isKing, boolean isGoodGuy) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
     this.currency = currency;
     this.isKing = isKing;
+    this.isGoodGuy = isGoodGuy;
   }
 
   public String getCurrency() {
