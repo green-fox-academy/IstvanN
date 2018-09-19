@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -37,14 +37,20 @@ public class BankController {
     return "redirect:/accounts";
   }
 
+  @PostMapping("/addaccount")
+  public String addAccount(@RequestParam(value = "owner") String name,
+                           @RequestParam(value = "animaltype") String type) {
+    accounts.add(new BankAccount(name, 0, type, "Zebra", false, true));
+    return "redirect:/accounts";
+  }
+
   public List<BankAccount> createList() {
-    List<BankAccount> accounts = Arrays.asList(
-        new BankAccount("Simba", 2000, "lion", "Zebra", true, true),
-        new BankAccount("Mufasa", 10000, "lion", "Zebra", false, true),
-        new BankAccount("Zordon", 3, "lion", "Hyena", false, false),
-        new BankAccount("Timon", 5, "meerkat", "Bug", false, true),
-        new BankAccount("Pumbaa", 15, "warthog", "Bug", false, true)
-    );
+    List<BankAccount> accounts = new ArrayList<>();
+    accounts.add(new BankAccount("Simba", 2000, "lion", "Zebra", true, true));
+    accounts.add(new BankAccount("Mufasa", 10000, "lion", "Zebra", false, true));
+    accounts.add(new BankAccount("Zordon", 3, "lion", "Hyena", false, false));
+    accounts.add(new BankAccount("Timon", 5, "meerkat", "Bug", false, true));
+    accounts.add(new BankAccount("Pumbaa", 15, "warthog", "Bug", false, true));
 
     return accounts;
   }
