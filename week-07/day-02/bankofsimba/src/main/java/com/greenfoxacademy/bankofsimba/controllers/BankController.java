@@ -44,6 +44,12 @@ public class BankController {
     return "redirect:/accounts";
   }
 
+  @PostMapping("/remove")
+  public String removeAccount(@RequestParam(value = "toRemove") int index) {
+    accounts.remove(index);
+    return "redirect:/accounts";
+  }
+
   public List<BankAccount> createList() {
     List<BankAccount> accounts = new ArrayList<>();
     accounts.add(new BankAccount("Simba", 2000, "lion", "Zebra", true, true));

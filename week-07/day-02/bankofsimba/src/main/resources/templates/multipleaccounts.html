@@ -18,6 +18,7 @@
             <th>Status</th>
             <th>Good/Bad guy</th>
             <th>Donate</th>
+            <th>Remove</th>
         </tr>
         </thead>
         <tbody>
@@ -33,6 +34,12 @@
                 <form method="post" action="/increase">
                     <input type="submit" th:value="'Donate ' + *{name}">
                     <input type="hidden" th:value="${accountStat.index}" name="toIncrease">
+                </form>
+            </td>
+            <td>
+                <form method="post" action="/remove">
+                    <input type="submit" th:value="'Remove ' + *{name}">
+                    <input type="hidden" th:value="${accountStat.index}" name="toRemove">
                 </form>
             </td>
         </tr>
