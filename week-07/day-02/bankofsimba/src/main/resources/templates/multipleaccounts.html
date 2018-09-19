@@ -24,7 +24,8 @@
             <td th:text="*{name}"></td>
             <td th:text="*{#numbers.formatDecimal(balance, 0, 2, 'POINT')} + ' ' + *{currency}"></td>
             <td th:text="*{animalType}"></td>
-            <td th:text="*{isKing()} ? 'King' : 'Peasant'" th:bgcolor="*{isKing()} ? yellow : white"></td>
+                <td th:if="*{isKing()}"><img src="images/crown.png"/></td>
+                <td th:unless="*{isKing()}"></td>
         </tr>
         </tbody>
     </table>
