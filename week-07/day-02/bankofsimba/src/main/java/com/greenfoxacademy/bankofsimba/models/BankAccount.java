@@ -46,6 +46,10 @@ public class BankAccount {
     this.balance = balance;
   }
 
+  public void raiseBalance() {
+    balance += 10;
+  }
+
   public String getAnimalType() {
     return animalType;
   }

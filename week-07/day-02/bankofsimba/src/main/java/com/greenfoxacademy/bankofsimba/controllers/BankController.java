@@ -10,6 +10,7 @@ import java.util.List;
 
 @Controller
 public class BankController {
+  List<BankAccount> accounts = createList();
 
   @GetMapping("/show")
   public String showAccount(Model model) {
@@ -26,6 +27,11 @@ public class BankController {
 
   @GetMapping("/accounts")
   public String showListOfAccounts(Model model) {
+    model.addAttribute("bankAccounts", accounts);
+    return "multipleaccounts";
+  }
+
+  public List<BankAccount> createList() {
     List<BankAccount> accounts = Arrays.asList(
         new BankAccount("Simba", 2000, "lion", "Zebra", true, true),
         new BankAccount("Mufasa", 10000, "lion", "Zebra", false, true),
@@ -33,7 +39,7 @@ public class BankController {
         new BankAccount("Timon", 5, "meerkat", "Bug", false, true),
         new BankAccount("Pumbaa", 15, "warthog", "Bug", false, true)
     );
-    model.addAttribute("bankAccounts", accounts);
-    return "multipleaccounts";
+
+    return accounts;
   }
 }

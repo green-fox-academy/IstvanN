@@ -17,6 +17,7 @@
             <th>Animal Type</th>
             <th>Status</th>
             <th>Good/Bad guy</th>
+            <th>Donate</th>
         </tr>
         </thead>
         <tbody>
@@ -28,6 +29,11 @@
             <td th:if="*{isKing()}"><img src="images/crown.png"/></td>
             <td th:unless="*{isKing()}"></td>
             <td th:text="*{isGoodGuy()} ? 'Good boi' : 'Baaaad boi'"></td>
+            <td>
+                <form method="post">
+                    <input type="submit" name="toIncrease" th:value="'Donate ' + *{name}">
+                </form>
+            </td>
         </tr>
         </tbody>
     </table>
