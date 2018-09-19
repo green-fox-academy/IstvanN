@@ -21,3 +21,7 @@ th {
     font-weight: normal;
     text-align: left;
 }
+
+#myform {
+    margin: 10px;
+}

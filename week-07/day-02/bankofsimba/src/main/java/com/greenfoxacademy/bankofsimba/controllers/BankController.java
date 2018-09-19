@@ -39,8 +39,10 @@ public class BankController {
 
   @PostMapping("/addaccount")
   public String addAccount(@RequestParam(value = "owner") String name,
-                           @RequestParam(value = "animaltype") String type) {
-    accounts.add(new BankAccount(name, 0, type, "Zebra", false, true));
+                           @RequestParam(value = "animaltype") String type,
+                           @RequestParam(value = "king") boolean isKing,
+                           @RequestParam(value = "goodboi") boolean isGoodGuy) {
+    accounts.add(new BankAccount(name, 0, type, "Zebra", isKing, isGoodGuy));
     return "redirect:/accounts";
   }
 

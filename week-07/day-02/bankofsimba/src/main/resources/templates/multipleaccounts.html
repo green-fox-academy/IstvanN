@@ -46,7 +46,7 @@
         </tbody>
     </table>
 </div>
-<div class="form">
+<div id="myform" class="form">
     <form method="post" action="/addaccount">
         <div>
             <label for="owner">Owner: </label>
@@ -55,6 +55,18 @@
         <div>
             <label for="animaltype">Animal Type: </label>
             <input id="animaltype" type="text" name="animaltype" required>
+        </div>
+        <div>
+            <select name="king">
+                <option value=true>King</option>
+                <option value=false>Peasant</option>
+            </select>
+        </div>
+        <div>
+            <select name="goodboi">
+                <option value=true>Good</option>
+                <option value=false>Bad</option>
+            </select>
         </div>
         <div>
             <input type="submit" value="Submit">
