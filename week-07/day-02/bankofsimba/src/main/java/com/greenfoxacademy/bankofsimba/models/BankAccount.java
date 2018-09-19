@@ -47,7 +47,11 @@ public class BankAccount {
   }
 
   public void raiseBalance() {
-    balance += 10;
+    if (isKing) {
+      balance += 100;
+    } else {
+      balance += 10;
+    }
   }
 
   public String getAnimalType() {
