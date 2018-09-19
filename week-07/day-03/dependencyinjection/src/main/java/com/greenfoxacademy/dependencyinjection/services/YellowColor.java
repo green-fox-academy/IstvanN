@@ -1,11 +1,15 @@
 package com.greenfoxacademy.dependencyinjection.services;
 
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
-@Service
+
 public class YellowColor implements MyColor {
+
+  @Autowired
+  Printer printer;
+
   @Override
   public void printColor() {
-    System.out.println("It is YELLOW!");
+    printer.log("It is YELLOW!");
   }
 }
