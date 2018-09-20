@@ -31,9 +31,10 @@ public class BankController {
     return "multipleaccounts";
   }
 
-  @PostMapping("/increase")
-  public String increaseBalance(@RequestParam(value = "toIncrease") int index) {
-    accounts.get(index).raiseBalance();
+  @PostMapping("/donate")
+  public String increaseBalance(@RequestParam(value = "toIncrease") int index,
+                                @RequestParam(value = "amountToIncrease") int amountToIncrease) {
+    accounts.get(index).raiseBalance(amountToIncrease);
     return "redirect:/accounts";
   }
 

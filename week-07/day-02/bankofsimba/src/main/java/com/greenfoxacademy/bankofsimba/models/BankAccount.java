@@ -46,11 +46,11 @@ public class BankAccount {
     this.balance = balance;
   }
 
-  public void raiseBalance() {
+  public void raiseBalance(int amountToIncrease) {
     if (isKing) {
-      balance += 100;
+      balance += amountToIncrease * 2;
     } else {
-      balance += 10;
+      balance += amountToIncrease;
     }
   }
 

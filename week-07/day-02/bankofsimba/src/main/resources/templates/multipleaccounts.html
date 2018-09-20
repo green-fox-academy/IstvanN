@@ -42,6 +42,11 @@
             margin-bottom: 5px;
             background-color: lightgrey;
         }
+
+        .donationbutton {
+            margin-top: auto;
+            margin-left: auto;
+        }
     </style>
 </head>
 <body>
@@ -70,8 +75,10 @@
             <td th:unless="*{isKing()}"></td>
             <td th:text="*{isGoodGuy()} ? 'Good boi' : 'Baaaad boi'"></td>
             <td>
-                <form method="post" action="/increase">
-                    <input type="submit" th:value="'Donate ' + *{name}">
+                <form method="post" action="/donate">
+                    <label for="amount"></label>
+                    <input type="number" id="amount" name="amountToIncrease">
+                    <input type="submit" th:value="'Donate ' + *{name}" class="donationbutton">
                     <input type="hidden" th:value="${accountStat.index}" name="toIncrease">
                 </form>
             </td>
@@ -114,8 +121,8 @@
         </div>
         <div>
             <select name="goodboi">
-                <option value=true>Good</option>
-                <option value=false>Bad</option>
+                <option value=true>Good guy</option>
+                <option value=false>Bad guy</option>
             </select>
         </div>
         <div id="mybutton">
