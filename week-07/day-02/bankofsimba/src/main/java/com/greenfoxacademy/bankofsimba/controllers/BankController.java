@@ -32,7 +32,7 @@ public class BankController {
   }
 
   @PostMapping("/donate")
-  public String increaseBalance(@RequestParam(value = "toIncrease") int index,
+  public String increaseBalance(@RequestParam(value = "indexOfAccount") int index,
                                 @RequestParam(value = "amountToIncrease") int amountToIncrease) {
     accounts.get(index).raiseBalance(amountToIncrease);
     return "redirect:/accounts";
