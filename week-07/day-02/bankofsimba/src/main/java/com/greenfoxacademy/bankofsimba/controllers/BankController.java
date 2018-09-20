@@ -61,7 +61,6 @@ public class BankController {
     accounts.add(new BankAccount("Mufasa", 10000, "lion", "Zebra", false, true));
     accounts.add(new BankAccount("Zordon", 3, "lion", "Hyena", false, false));
     accounts.add(new BankAccount("Timon", 5, "meerkat", "Bug", false, true));
-    accounts.add(new BankAccount("Pumbaa", 15, "warthog", "Bug", false, true));
 
     return accounts;
   }
