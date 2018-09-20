@@ -2,8 +2,47 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Multiple Bank Accounts</title>
-    <link rel="stylesheet" href="style.css"/>
+    <!--<link rel="stylesheet" href="style.css"/>-->
     <meta charset="utf-8"/>
+    <style>
+        table, td, th {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            width: 1300px;
+            text-indent: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(82, 64, 64);
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: lightgrey;
+        }
+
+        th, tr {
+            line-height: 60px;
+        }
+
+        th {
+            background-color: black;
+            color: lightgrey;
+            font-weight: normal;
+            text-align: left;
+        }
+
+        #myform {
+            border-radius: 5px;
+        }
+
+        #mybutton {
+            margin-top: 10px;
+            margin-left: 115px;
+        }
+
+        .fillout {
+            margin-bottom: 5px;
+            background-color: lightgrey;
+        }
+    </style>
 </head>
 <body>
 <h1>The Bank Accounts of Lion King Characters</h1>
@@ -46,15 +85,26 @@
         </tbody>
     </table>
 </div>
+<div>
+    <h2>Submit your favourite character to have an account!</h2>
+</div>
 <div id="myform" class="form">
     <form method="post" action="/addaccount">
         <div>
-            <label for="owner">Owner: </label>
-            <input id="owner" type="text" name="owner" required>
+            <label for="owner">Owner</label><br>
+            <input class="fillout" id="owner" type="text" name="owner" required>
         </div>
         <div>
-            <label for="animaltype">Animal Type: </label>
-            <input id="animaltype" type="text" name="animaltype" required>
+            <label for="animaltype">Animal Type</label><br>
+            <input class="fillout" id="animaltype" type="text" name="animaltype" required>
+        </div>
+        <div>
+            <label for="money">Starting money</label><br>
+            <input class="fillout" id="money" type="number" name="startingmoney" required>
+        </div>
+        <div>
+            <label for="currency">Currency</label><br>
+            <input class="fillout" id="currency" type="text" name="currency" required>
         </div>
         <div>
             <select name="king">
@@ -68,7 +118,7 @@
                 <option value=false>Bad</option>
             </select>
         </div>
-        <div>
+        <div id="mybutton">
             <input type="submit" value="Submit">
         </div>
     </form>

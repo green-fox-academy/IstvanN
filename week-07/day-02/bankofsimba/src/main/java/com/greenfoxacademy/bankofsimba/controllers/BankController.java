@@ -41,8 +41,10 @@ public class BankController {
   public String addAccount(@RequestParam(value = "owner") String name,
                            @RequestParam(value = "animaltype") String type,
                            @RequestParam(value = "king") boolean isKing,
-                           @RequestParam(value = "goodboi") boolean isGoodGuy) {
-    accounts.add(new BankAccount(name, 0, type, "Zebra", isKing, isGoodGuy));
+                           @RequestParam(value = "goodboi") boolean isGoodGuy,
+                           @RequestParam(value = "currency") String currency,
+                           @RequestParam(value = "startingmoney") int startingMoney) {
+    accounts.add(new BankAccount(name, startingMoney, type, currency, isKing, isGoodGuy));
     return "redirect:/accounts";
   }
 
