@@ -48,9 +48,9 @@ public class BankAccount {
 
   public void raiseBalance(int amountToIncrease) {
     if (isKing) {
-      balance += amountToIncrease * 2;
+      balance += Math.abs(amountToIncrease * 2);
     } else {
-      balance += amountToIncrease;
+      balance += Math.abs(amountToIncrease);
     }
   }
 
