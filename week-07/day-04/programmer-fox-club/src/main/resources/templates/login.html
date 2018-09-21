@@ -12,9 +12,19 @@
     <p>Please provide a name, so you can associate it to your pet!</p>
 </div>
 <div>
-    <form method="post">
-        <label for="petname">Name: </label>
-        <input id="petname" name="petname">
+    <form method="post" action="/login">
+        <div>
+            <label for="petname">Name: </label><br>
+            <input id="petname" name="petname">
+        </div>
+        <div>
+            <label for="food">Starting food: </label><br>
+            <input id="food" name="food">
+        </div>
+        <div>
+            <label for="drink">Starting drink: </label><br>
+            <input id="drink" name="drink">
+        </div>
         <button>GO</button>
     </form>
 </div>

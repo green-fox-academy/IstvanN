@@ -30,8 +30,12 @@ public class MainController {
   }
 
   @PostMapping("/login")
-  public String createFoxWithName(@RequestParam(value = "petname") String petName) {
+  public String createFoxWithName(@RequestParam("petname") String petName,
+                                  @RequestParam("food") String food,
+                                  @RequestParam("drink") String drink) {
     Fox fox = new Fox(petName);
+    fox.setFood(food);
+    fox.setDrink(drink);
     foxes.add(fox);
     return "redirect:/?name=" + petName;
   }
