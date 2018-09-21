@@ -38,6 +38,11 @@ public class MainController {
     return "redirect:/?name=" + petName;
   }
 
+  @GetMapping("/nutritionStore")
+  public String showNutritionStore(@RequestParam("petname") String petName, Model model) {
+
+  }
+
   private Fox getFoxByName(String name) {
     for (Fox fox : foxes) {
       if (fox.getName().equals(name)) {
