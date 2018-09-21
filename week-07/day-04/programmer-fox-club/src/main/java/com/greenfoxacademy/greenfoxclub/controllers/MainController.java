@@ -20,10 +20,7 @@ public class MainController {
       return "redirect:/login";
     }
     Fox fox = getFoxByName(petName);
-    model.addAttribute("petname", fox.getName());
-    model.addAttribute("number-of-tricks", fox.getNumberOfTricks());
-    model.addAttribute("food", fox.getFood());
-    model.addAttribute("drink", fox.getDrink());
+    model.addAttribute("fox", fox);
     return "index";
   }
 
