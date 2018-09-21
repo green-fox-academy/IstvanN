@@ -1,7 +1,8 @@
 package com.greenfoxacademy.greenfoxclub.controllers;
 
-import com.greenfoxacademy.greenfoxclub.containers.FoxContainer;
+import com.greenfoxacademy.greenfoxclub.services.FoxService;
 import com.greenfoxacademy.greenfoxclub.models.Fox;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MainController {
 
+  @Autowired
+  FoxService foxContainer;
+
   @GetMapping("/")
-  public String index(@RequestParam(value = "name", required = false) String petName, Model model, FoxContainer foxContainer) {
+  public String index(@RequestParam(value = "name", required = false) String petName, Model model) {
     if (petName == null) {
       return "redirect:/login";
     }
@@ -27,12 +31,10 @@ public class MainController {
   }
 
   @PostMapping("/login")
-  public String createFoxWithName(@RequestParam("petname") String petName, FoxContainer foxContainer) {
-    Fox fox = new Fox(petName);
+  public String createFoxWithName(@RequestParam("petname") String petName) {
+    Fox fox = foxContainer.createFox(petName);
     fox.setFood("burger");
     fox.setDrink("beer");
-    foxContainer.addFox(fox);
     return "redirect:/?name=" + petName;
   }
-
 }

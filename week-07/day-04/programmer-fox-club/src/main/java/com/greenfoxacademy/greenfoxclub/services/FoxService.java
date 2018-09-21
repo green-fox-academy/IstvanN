@@ -1,15 +1,17 @@
-package com.greenfoxacademy.greenfoxclub.containers;
+package com.greenfoxacademy.greenfoxclub.services;
 
 import com.greenfoxacademy.greenfoxclub.models.Fox;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FoxContainer {
+@Service
+public class FoxService {
 
   List<Fox> foxes;
 
-  public FoxContainer() {
+  public FoxService() {
     foxes = new ArrayList<>();
   }
 
@@ -26,4 +28,11 @@ public class FoxContainer {
 
     return null;
   }
+
+  public Fox createFox(String name) {
+    Fox fox = new Fox(name);
+    foxes.add(fox);
+    return fox;
+  }
+
 }

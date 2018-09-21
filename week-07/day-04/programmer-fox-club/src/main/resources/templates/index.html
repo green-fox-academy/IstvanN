@@ -5,9 +5,10 @@
     <title>Green Fox Club</title>
 </head>
 <body>
-<div id="information">
+<div id="options" th:object="${fox}">
     <ul>
         <li>Information</li>
+        <li><a href="/nutritionStore/*{name}">Nutrition</a></li>
     </ul>
 </div>
 <div id="fox-picture">
