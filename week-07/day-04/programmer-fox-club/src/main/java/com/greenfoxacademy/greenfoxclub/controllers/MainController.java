@@ -1,6 +1,7 @@
 package com.greenfoxacademy.greenfoxclub.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,7 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
 
   @GetMapping("/")
-  public String index() {
+  public String index(@RequestParam("name") String name, Model model) {
+    if (name.isEmpty()) {
+      return "login";
+    }
+    model.addAttribute("petname", name);
     return "index";
   }
 
@@ -19,5 +24,7 @@ public class MainController {
   }
 
   @PostMapping("/login")
-  public String receivePetName(@RequestParam "petname")
+  public String receivePetName(@RequestParam(value = "petname") String name) {
+    return "redirect:/?name=" + name;
+  }
 }

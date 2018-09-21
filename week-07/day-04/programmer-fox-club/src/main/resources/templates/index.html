@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" xmlns:th="http://wwww.thymeleaf.org">
     <title>Green Fox Club</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
     <img src="../images/greenfox.png">
 </div>
 <div id="status">
-    <p>This is Mr. Fox. Currently living on pizza and lemonade. He knows 2 tricks.</p>
+    <p th:text="|This is ${petname}. Currently living on pizza and lemonade. He knows 2 tricks.|"></p>
 </div>
 <div id="tricks">
     <h1>Known tricks</h1>
