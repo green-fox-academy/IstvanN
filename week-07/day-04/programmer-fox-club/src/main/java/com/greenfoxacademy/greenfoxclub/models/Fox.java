@@ -15,8 +15,6 @@ public class Fox {
     this.name = name;
     tricks = new ArrayList<>();
     numberOfTricks = tricks.size();
-    food = "nothing";
-    drink = "nothing";
   }
 
   public String getName() {
