@@ -12,7 +12,7 @@ import java.util.List;
 
 @Controller
 public class MainController {
-  List<Fox> foxes = new ArrayList<>();
+  private static List<Fox> foxes = new ArrayList<>();
 
   @GetMapping("/")
   public String index(@RequestParam(value = "name", required = false) String petName, Model model) {
@@ -38,12 +38,7 @@ public class MainController {
     return "redirect:/?name=" + petName;
   }
 
-  @GetMapping("/nutritionStore")
-  public String showNutritionStore(@RequestParam("petname") String petName, Model model) {
-
-  }
-
-  private Fox getFoxByName(String name) {
+  public static Fox getFoxByName(String name) {
     for (Fox fox : foxes) {
       if (fox.getName().equals(name)) {
         return fox;
