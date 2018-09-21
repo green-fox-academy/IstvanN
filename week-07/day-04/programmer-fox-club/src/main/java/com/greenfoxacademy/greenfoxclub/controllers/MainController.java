@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
 
   @GetMapping("/")
-  public String index(@RequestParam("name") String name, Model model) {
-    if (name.isEmpty()) {
-      return "login";
+  public String index(@RequestParam(value = "name", required = false) String petName, Model model) {
+    if (petName == null) {
+      return "redirect:/login";
     }
-    model.addAttribute("petname", name);
+
+    model.addAttribute("petname", petName);
     return "index";
   }
 
@@ -24,7 +25,7 @@ public class MainController {
   }
 
   @PostMapping("/login")
-  public String receivePetName(@RequestParam(value = "petname") String name) {
-    return "redirect:/?name=" + name;
+  public String receivePetName(@RequestParam(value = "petname") String petName) {
+    return "redirect:/?name=" + petName;
   }
 }
