@@ -1,5 +1,6 @@
 package com.greenfoxacademy.greenfoxclub.controllers;
 
+import com.greenfoxacademy.greenfoxclub.containers.FoxContainer;
 import com.greenfoxacademy.greenfoxclub.models.Fox;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,19 +8,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 public class MainController {
-  private static List<Fox> foxes = new ArrayList<>();
 
   @GetMapping("/")
-  public String index(@RequestParam(value = "name", required = false) String petName, Model model) {
+  public String index(@RequestParam(value = "name", required = false) String petName, Model model, FoxContainer foxContainer) {
     if (petName == null) {
       return "redirect:/login";
     }
-    Fox fox = getFoxByName(petName);
+    Fox fox = foxContainer.getFoxByName(petName);
     model.addAttribute("fox", fox);
     return "index";
   }
@@ -30,21 +27,12 @@ public class MainController {
   }
 
   @PostMapping("/login")
-  public String createFoxWithName(@RequestParam("petname") String petName) {
+  public String createFoxWithName(@RequestParam("petname") String petName, FoxContainer foxContainer) {
     Fox fox = new Fox(petName);
     fox.setFood("burger");
     fox.setDrink("beer");
-    foxes.add(fox);
+    foxContainer.addFox(fox);
     return "redirect:/?name=" + petName;
   }
 
-  public static Fox getFoxByName(String name) {
-    for (Fox fox : foxes) {
-      if (fox.getName().equals(name)) {
-        return fox;
-      }
-    }
-
-    return null;
-  }
 }

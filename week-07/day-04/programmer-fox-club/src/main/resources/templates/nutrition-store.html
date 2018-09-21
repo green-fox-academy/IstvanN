@@ -9,9 +9,11 @@
     <h1>Welcome to the Nutrition Store!</h1>
 </div>
 <div>
-    <select name="food">
-        <option value></option>
-    </select>
+    <form method="post" action="/nutritionStore">
+        <select name="food">
+            <option th:each="food : ${foods}"></option>
+        </select>
+    </form>
 </div>
 </body>
 </html>

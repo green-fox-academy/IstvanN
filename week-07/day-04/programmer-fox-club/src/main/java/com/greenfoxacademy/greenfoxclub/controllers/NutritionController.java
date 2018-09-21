@@ -19,7 +19,7 @@ public class NutritionController {
     model.addAttribute("foods", foods);
     model.addAttribute("drinks", drinks);
 
-    return "redirect:/?name=" + petName;
+    return "redirect:/nutritionStore?name=" + petName;
   }
 
   private List<String> createFoods() {
