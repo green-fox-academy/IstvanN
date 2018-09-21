@@ -6,6 +6,7 @@ import java.util.List;
 public class Fox {
 
   String name;
+  int numberOfTricks;
   List<String> tricks;
   String food;
   String drink;
@@ -13,14 +14,9 @@ public class Fox {
   public Fox(String name) {
     this.name = name;
     tricks = new ArrayList<>();
+    numberOfTricks = tricks.size();
     food = "none";
     drink = "none";
-  }
-
-  public Fox(String name, String food, String drink) {
-    this.name = name;
-    this.food = food;
-    this.drink = drink;
   }
 
   public String getName() {
@@ -53,5 +49,13 @@ public class Fox {
 
   public void setDrink(String drink) {
     this.drink = drink;
+  }
+
+  public int getNumberOfTricks() {
+    return numberOfTricks;
+  }
+
+  public void setNumberOfTricks(int numberOfTricks) {
+    this.numberOfTricks = numberOfTricks;
   }
 }

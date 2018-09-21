@@ -19,8 +19,11 @@ public class MainController {
     if (petName == null) {
       return "redirect:/login";
     }
-
-    model.addAttribute("petname", petName);
+    Fox fox = getFoxByName(petName);
+    model.addAttribute("petname", fox.getName());
+    model.addAttribute("number-of-tricks", fox.getNumberOfTricks());
+    model.addAttribute("food", fox.getFood());
+    model.addAttribute("drink", fox.getDrink());
     return "index";
   }
 
@@ -34,5 +37,15 @@ public class MainController {
     Fox fox = new Fox(petName);
     foxes.add(fox);
     return "redirect:/?name=" + petName;
+  }
+
+  private Fox getFoxByName(String name) {
+    for (Fox fox : foxes) {
+      if (fox.getName().equals(name)) {
+        return fox;
+      }
+    }
+
+    return null;
   }
 }
