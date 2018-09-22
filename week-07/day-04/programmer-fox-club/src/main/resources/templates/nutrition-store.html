@@ -13,14 +13,17 @@
         <div>
             <p>Food:</p>
             <select name="food">
-                <option th:each="food : ${foods}" th:field="*{food}" th:text="${food}" th:value="food"></option>
+                <option th:each="food : ${foods}" th:field="*{food}" th:text="${food}" th:value="${food}"></option>
             </select>
         </div>
         <div>
             <p>Drink</p>
             <select name="drink">
-                <option th:each="drink : ${drinks}" th:field="*{drink}" th:text="${drink}" th:value="drink"></option>
+                <option th:each="drink : ${drinks}" th:field="*{drink}" th:text="${drink}" th:value="${drink}"></option>
             </select>
+        </div>
+        <div>
+            <button th:text="|Submit *{name}'s new food and drink!|"></button>
         </div>
     </form>
 </div>
