@@ -9,21 +9,22 @@
     <h1 th:text="|Welcome to ${fox.name}'s Nutrition Store!|"></h1>
 </div>
 <div>
-    <form method="post" action="/nutritionStore" th:object="${fox}">
+    <form method="post" action="#" th:action="@{/nutritionStore}" th:object="${fox}">
         <div>
             <p>Food:</p>
-            <select name="food">
-                <option th:each="food : ${foods}" th:field="*{food}" th:text="${food}" th:value="${food}"></option>
+            <select name="food" th:field="*{food}">
+                <option th:each="food : ${foods}" th:text="${food}" th:value="${food}" th:default="*{food}"></option>
             </select>
         </div>
         <div>
             <p>Drink</p>
-            <select name="drink">
-                <option th:each="drink : ${drinks}" th:field="*{drink}" th:text="${drink}" th:value="${drink}"></option>
+            <select name="drink" th:field="*{drink}">
+                <option th:each="drink : ${drinks}" th:text="${drink}" th:value="${drink}" th:default="*{drink}"></option>
             </select>
         </div>
         <div>
-            <button th:text="|Submit *{name}'s new food and drink!|"></button>
+            <input th:type="submit" th:text="|Submit *{name}'s new Food and drink|"/>
+            <input th:type="hidden" name="name" th:value="${fox.name}">
         </div>
     </form>
 </div>

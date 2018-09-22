@@ -32,7 +32,7 @@ public class MainController {
 
   @PostMapping("/login")
   public String createFoxWithName(@RequestParam("petname") String petName) {
-    Fox fox = foxService.createFox(petName);
+    foxService.createFox(petName);
     return "redirect:/?name=" + petName;
   }
 }
