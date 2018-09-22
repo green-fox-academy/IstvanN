@@ -33,8 +33,6 @@ public class MainController {
   @PostMapping("/login")
   public String createFoxWithName(@RequestParam("petname") String petName) {
     Fox fox = foxService.createFox(petName);
-    fox.setFood("burger");
-    fox.setDrink("beer");
     return "redirect:/?name=" + petName;
   }
 }
