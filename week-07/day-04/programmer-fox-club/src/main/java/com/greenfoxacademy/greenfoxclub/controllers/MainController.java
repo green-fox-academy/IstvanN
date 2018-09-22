@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
 
   @Autowired
-  FoxService foxContainer;
+  FoxService foxService;
 
   @GetMapping("/")
   public String index(@RequestParam(value = "name", required = false) String petName, Model model) {
     if (petName == null) {
       return "redirect:/login";
     }
-    Fox fox = foxContainer.getFoxByName(petName);
+    Fox fox = foxService.getFoxByName(petName);
     model.addAttribute("fox", fox);
     return "index";
   }
@@ -32,7 +32,7 @@ public class MainController {
 
   @PostMapping("/login")
   public String createFoxWithName(@RequestParam("petname") String petName) {
-    Fox fox = foxContainer.createFox(petName);
+    Fox fox = foxService.createFox(petName);
     fox.setFood("burger");
     fox.setDrink("beer");
     return "redirect:/?name=" + petName;

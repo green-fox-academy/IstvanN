@@ -6,14 +6,20 @@
 </head>
 <body>
 <div>
-    <h1>Welcome to the Nutrition Store!</h1>
+    <h1 th:text="|Welcome to ${fox.name}'s Nutrition Store!|"></h1>
 </div>
 <div>
-    <form method="post" action="/nutritionStore">
+    <form method="post" action="/nutritionStore" th:object="${fox}">
         <div>
             <p>Food:</p>
             <select name="food">
-                <option th:each="food : ${foods}" th:value="food" th:text="${food}"></option>
+                <option th:each="food : ${foods}" th:field="*{food}" th:text="${food}" th:value="food"></option>
+            </select>
+        </div>
+        <div>
+            <p>Drink</p>
+            <select name="drink">
+                <option th:each="drink : ${drinks}" th:field="*{drink}" th:text="${drink}" th:value="drink"></option>
             </select>
         </div>
     </form>

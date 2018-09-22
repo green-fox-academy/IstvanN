@@ -8,7 +8,7 @@
 <div id="options" th:object="${fox}">
     <ul>
         <li>Information</li>
-        <li><a href="/nutritionStore/*{name}">Nutrition</a></li>
+        <li><a th:href="|/nutritionStore?name=*{name}|">Nutrition</a></li>
     </ul>
 </div>
 <div id="fox-picture">
