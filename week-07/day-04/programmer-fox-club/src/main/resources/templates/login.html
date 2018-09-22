@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Login</title>
 </head>
 <body>
@@ -12,10 +12,10 @@
     <p>Please provide a name, so you can associate it to your pet!</p>
 </div>
 <div>
-    <form method="post" action="/login">
+    <form method="post" th:action="@{/login}" th:object="${fox}">
         <div>
             <label for="petname">Name: </label><br>
-            <input id="petname" name="petname">
+            <input id="petname" name="petname" th:field="*{name}">
         </div>
         <button>GO</button>
     </form>

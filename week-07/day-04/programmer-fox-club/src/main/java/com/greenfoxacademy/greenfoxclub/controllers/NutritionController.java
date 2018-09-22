@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,7 +33,8 @@ public class NutritionController {
   }
 
   @PostMapping("/nutritionStore")
-  public String setFoxNewFoodAndDrink(@ModelAttribute Fox fox) {
+  public String setFoxNewFoodAndDrink(@ModelAttribute Fox fox, RedirectAttributes redir) {
+    redir.addAttribute("name", fox.getName());
     return "index";
   }
 

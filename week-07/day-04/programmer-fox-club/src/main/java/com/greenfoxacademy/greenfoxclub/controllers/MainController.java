@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class MainController {
@@ -26,13 +28,15 @@ public class MainController {
   }
 
   @GetMapping("/login")
-  public String showLogin() {
+  public String showLogin(Model model) {
+    model.addAttribute("fox", new Fox());
     return "login";
   }
 
   @PostMapping("/login")
-  public String createFoxWithName(@RequestParam("petname") String petName) {
-    foxService.createFox(petName);
-    return "redirect:/?name=" + petName;
+  public String createFox(@ModelAttribute Fox fox, RedirectAttributes redir) {
+    foxService.addFox(fox);
+    redir.addAttribute("name", fox.getName());
+    return "redirect:/";
   }
 }
