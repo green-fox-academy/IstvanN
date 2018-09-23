@@ -39,4 +39,9 @@ public class MainController {
     studentService.save(student);
     return "redirect:/gfa";
   }
+
+  @GetMapping("/gfa/check")
+  public String checkStudent() {
+    return "student-checker";
+  }
 }
