@@ -25,4 +25,9 @@ public class MainController {
     model.addAttribute("students", students);
     return "students";
   }
+
+  @GetMapping("/gfa/add")
+  public String showAddForm() {
+    return "add-student-form";
+  }
 }
