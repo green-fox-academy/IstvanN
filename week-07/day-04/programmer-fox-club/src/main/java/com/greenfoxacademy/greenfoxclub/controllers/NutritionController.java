@@ -33,9 +33,14 @@ public class NutritionController {
   }
 
   @PostMapping("/nutritionStore")
-  public String setFoxNewFoodAndDrink(@ModelAttribute Fox fox, RedirectAttributes redir) {
-    redir.addAttribute("name", fox.getName());
-    return "index";
+  public String setFoxNewFoodAndDrink(@RequestParam("name") String foxName,
+                                      @RequestParam("food") String food,
+                                      @RequestParam("drink") String drink,
+                                      RedirectAttributes redir) {
+    foxService.getFoxByName(foxName).setFood(food);
+    foxService.getFoxByName(foxName).setDrink(drink);
+    redir.addAttribute("name", foxName);
+    return "redirect:/";
   }
 
 }
