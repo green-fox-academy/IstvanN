@@ -10,4 +10,9 @@ public class MainController {
   public String index() {
     return "index";
   }
+
+  @GetMapping("/gfa/list")
+  public String showStudentsList() {
+    return "students";
+  }
 }
