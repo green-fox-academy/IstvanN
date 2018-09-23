@@ -26,7 +26,10 @@ public class MainController {
   }
 
   @GetMapping("/useful/email")
-  public String validateEmail(@RequestParam("emailAddress") String emailAddress) {
-
+  public String validateEmail(@RequestParam("email") String emailAddress, Model model) {
+    boolean isEmail = utilityService.validateEmail(emailAddress);
+    model.addAttribute("emailAddress", emailAddress);
+    model.addAttribute("isEmail", isEmail);
+    return "email";
   }
 }
