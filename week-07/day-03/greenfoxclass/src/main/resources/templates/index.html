@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Green Fox Students App</title>
@@ -9,7 +9,10 @@
     <h1>Welcome to Green Fox Academy!</h1>
 </div>
 <div>
-    <h2>Links:</h2>
+    <h2 th:text="|There are currently ${count} students in the institution.|"></h2>
+</div>
+<div>
+    <h3>Links:</h3>
 </div>
 <div>
     <ul>
