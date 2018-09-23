@@ -41,7 +41,12 @@ public class MainController {
   }
 
   @GetMapping("/gfa/check")
-  public String checkStudent() {
+  public String checkStudentForm() {
     return "student-checker";
+  }
+
+  @PostMapping("gfa/check")
+  public String showCheckResult() {
+    return "result-of-check";
   }
 }
