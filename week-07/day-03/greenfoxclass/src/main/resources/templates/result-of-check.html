@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>The Result Of The Check</title>
@@ -7,6 +7,18 @@
 <body>
 <div>
     <h1>The result of the search:</h1>
+</div>
+<div>
+    <h2 th:text="|So the question is if ${student} is in list, right? Well the answer is:|"></h2>
+</div>
+<div th:if="${isInList}">
+    <h3 th:text="|Yes, ${student} is part of GFA.|"></h3>
+</div>
+<div th:unless="${isInList}">
+    <h3 th:text="|No, ${student} is NOT part of GFA... YET.|"></h3>
+</div>
+<div>
+    <span><a href="/gfa">Back to main page</a></span>
 </div>
 </body>
 </html>

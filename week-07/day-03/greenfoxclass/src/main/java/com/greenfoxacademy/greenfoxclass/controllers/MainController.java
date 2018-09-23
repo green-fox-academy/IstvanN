@@ -46,7 +46,9 @@ public class MainController {
   }
 
   @PostMapping("gfa/check")
-  public String showCheckResult() {
+  public String showCheckResult(@RequestParam("name") String studentName, Model model) {
+    model.addAttribute("student", studentName);
+    model.addAttribute("isInList", studentService.isStudentInList(studentName));
     return "result-of-check";
   }
 }

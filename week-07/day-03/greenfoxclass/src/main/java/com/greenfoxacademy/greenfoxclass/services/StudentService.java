@@ -27,4 +27,8 @@ public class StudentService {
   public int countStudents() {
     return names.size();
   }
+
+  public boolean isStudentInList(String studentName) {
+    return names.contains(studentName);
+  }
 }
