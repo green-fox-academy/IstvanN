@@ -9,6 +9,7 @@
     <ul>
         <li><a th:href="|/?name=*{name}|">Information</a></li>
         <li><a th:href="|/nutritionStore?name=*{name}|">Nutrition Store</a></li>
+        <li><a th:href="|/trickCenter?name=*{name}|">Trick Center</a></li>
     </ul>
 </div>
 <div id="fox-picture">
@@ -16,8 +17,10 @@
 </div>
 <div id="status" th:object="${fox}">
     <p th:text="|This is *{name}.|"></p>
-        <p th:if="*{food} == null and *{drink} == null" th:text="|Currently living on nothing. He knows *{numberOfTricks} tricks.|"></p>
-    <p th:unless="*{food} == null and *{drink} == null" th:text="|Currently living on *{food} and *{drink}. He knows *{numberOfTricks} tricks.|"></p>
+    <p th:if="*{food} == null and *{drink} == null"
+       th:text="|Currently living on nothing. He knows *{numberOfTricks} tricks.|"></p>
+    <p th:unless="*{food} == null and *{drink} == null"
+       th:text="|Currently living on *{food} and *{drink}. He knows *{numberOfTricks} tricks.|"></p>
     </span>
 </div>
 <div id="tricks" th:object="${fox}">

@@ -59,4 +59,8 @@ public class Fox {
   public void setNumberOfTricks(int numberOfTricks) {
     this.numberOfTricks = numberOfTricks;
   }
+
+  public void teachTrick(String trick) {
+    tricks.add(trick);
+  }
 }
