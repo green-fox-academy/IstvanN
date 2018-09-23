@@ -13,6 +13,17 @@
         <li><a href="/useful/colored">Colored Background</a></li>
         <li><a href="/useful/email?email=is@this.valid">This should be a valid email</a></li>
         <li><a href="/useful/email?email=not_valid_email.com">This should be an INVALID email</a></li>
+        <form method="post" action="/useful/decoder">
+            <li>
+                <label for="decoder">Text to be decoded: </label>
+                <input id="decoder" name="textToDecode">
+            </li>
+            <li>
+                <label for="number">Number to be caesar'd with: </label>
+                <input id="number" name="number">
+            </li>
+            <button>DECODE</button>
+        </form>
     </ul>
 </div>
 </body>
