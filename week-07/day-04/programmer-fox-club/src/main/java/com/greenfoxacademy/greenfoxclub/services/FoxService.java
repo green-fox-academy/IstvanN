@@ -28,11 +28,4 @@ public class FoxService {
 
     return null;
   }
-
-  public Fox createFox(String name) {
-    Fox fox = new Fox(name);
-    foxes.add(fox);
-    return fox;
-  }
-
 }

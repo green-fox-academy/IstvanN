@@ -6,18 +6,12 @@ import java.util.List;
 public class Fox {
 
   String name;
-  int numberOfTricks;
   List<String> tricks;
   String food;
   String drink;
 
   public Fox() {
-  }
-
-  public Fox(String name) {
-    this.name = name;
     tricks = new ArrayList<>();
-    numberOfTricks = tricks.size();
   }
 
   public String getName() {
@@ -52,15 +46,9 @@ public class Fox {
     this.drink = drink;
   }
 
-  public int getNumberOfTricks() {
-    return numberOfTricks;
-  }
-
-  public void setNumberOfTricks(int numberOfTricks) {
-    this.numberOfTricks = numberOfTricks;
-  }
-
   public void teachTrick(String trick) {
-    tricks.add(trick);
+    if (!tricks.contains(trick)) {
+      tricks.add(trick);
+    }
   }
 }
