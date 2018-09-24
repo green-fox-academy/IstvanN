@@ -13,8 +13,7 @@ public class main {
     books.add(4);
     books.add(5);
 
-    HashMap<Integer,Integer> hpMap=HP.createHashmap(books);
-    System.out.println(hpMap);
+    HP.getPrice(books);
 
   }
 }
