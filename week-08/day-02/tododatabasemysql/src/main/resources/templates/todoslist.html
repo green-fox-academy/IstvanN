@@ -40,7 +40,6 @@
     <table>
         <thead>
         <tr>
-            <th>NO.</th>
             <th>ID</th>
             <th>ACTION</th>
             <th>DONE</th>
@@ -50,8 +49,7 @@
         </thead>
         <tbody>
         <tr th:each="singletodo : ${todos}" th:object="${singletodo}">
-            <td th:text="${singletodoStat.index + 1}"></td>
-            <td th:text="|T*{id}|"></td>
+            <td th:text="*{id}"></td>
             <td th:text="*{title}"></td>
             <td th:text="*{done}"></td>
             <td th:text="*{urgent}"></td>
