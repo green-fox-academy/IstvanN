@@ -60,8 +60,8 @@
         <tr th:each="singletodo : ${todos}" th:object="${singletodo}">
             <td th:text="*{id}"></td>
             <td th:text="*{title}"></td>
-            <td th:text="*{done}"></td>
-            <td th:text="*{urgent}"></td>
+            <td th:text="*{done} ? '~' : ''"></td>
+            <td th:text="*{urgent} ? '!' : ''"></td>
             <td>
                 <form action="#" th:action="@{/todo/{id}/delete(id=*{id})}" method="post">
                     <input type="submit" value="delete">
