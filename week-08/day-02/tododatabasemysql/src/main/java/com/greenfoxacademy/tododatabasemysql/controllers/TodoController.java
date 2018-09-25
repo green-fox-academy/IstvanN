@@ -46,6 +46,11 @@ public class TodoController {
     todoRepository.deleteById(id);
     return "redirect:/todo/list";
   }
+
+  @GetMapping("/list/edit")
+  public String showEditForm() {
+    return "edit-todo";
+  }
 }
 
 

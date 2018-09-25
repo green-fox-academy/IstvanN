@@ -27,13 +27,21 @@
             font-weight: normal;
             text-align: left;
         }
+
+        #addnew {
+            margin-bottom: 20px;
+        }
+
+        .button {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 <div>
     <h1>TODOS FOR TODAY:</h1>
 </div>
-<div>
+<div id="addnew">
     <a href="/todo/add">Add new todo</a>
 </div>
 <div>
@@ -62,7 +70,7 @@
         </tbody>
     </table>
 </div>
-<div>
+<div class="button">
     <form action="/todo/list?isActive=true" method="post">
         <input type="submit" value="Check the active todos">
     </form>
