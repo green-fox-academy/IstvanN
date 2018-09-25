@@ -9,9 +9,15 @@
     <h1>Feel free to edit your todo here!</h1>
 </div>
 <div>
-    <form th:object="${todo}">
-        <label for="title">Title: </label>
-        <input id="title">
+    <form th:object="${todo}" action="#">
+        <div>
+            The todo itself:<br>
+            <textarea th:text="*{title}" th:field="*{title}"></textarea><br>
+        </div>
+        <div>
+            <label for="urgent">Is it urgent?</label>
+            <input id="urgent" type="checkbox" th:checked="*{urgent}">
+        </div>
     </form>
 </div>
 </body>

@@ -49,7 +49,7 @@ public class TodoController {
 
   @GetMapping("/{id}/edit")
   public String showEditForm(@PathVariable("id") long id, Model model) {
-    model.addAttribute("todo", todoRepository.findById(id));
+    model.addAttribute("todo", todoRepository.findById(id).get());
     return "edit-todo";
   }
 }
