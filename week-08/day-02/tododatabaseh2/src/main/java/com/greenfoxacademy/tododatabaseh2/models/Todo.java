@@ -1,10 +1,12 @@
 package com.greenfoxacademy.tododatabaseh2.models;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Todo {
 
+  @Id
   long id;
   String title;
   boolean urgent;
