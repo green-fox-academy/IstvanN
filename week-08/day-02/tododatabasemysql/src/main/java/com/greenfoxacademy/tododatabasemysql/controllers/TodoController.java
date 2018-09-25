@@ -41,7 +41,7 @@ public class TodoController {
     return "redirect:/todo/list";
   }
 
-  @PostMapping("/{id}/delete")
+  @PostMapping(value = "/{id}/delete")
   public String deleteTodo(@PathVariable("id") long id) {
     todoRepository.deleteById(id);
     return "redirect:/todo/list";
