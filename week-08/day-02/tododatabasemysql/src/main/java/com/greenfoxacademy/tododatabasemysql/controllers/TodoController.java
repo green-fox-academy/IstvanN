@@ -47,8 +47,9 @@ public class TodoController {
     return "redirect:/todo/list";
   }
 
-  @GetMapping("/list/edit")
-  public String showEditForm() {
+  @GetMapping("/{id}/edit")
+  public String showEditForm(@PathVariable("id") long id, Model model) {
+    model.addAttribute("todo", todoRepository.findById(id));
     return "edit-todo";
   }
 }
