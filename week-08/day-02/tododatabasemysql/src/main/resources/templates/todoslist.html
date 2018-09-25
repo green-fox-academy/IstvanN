@@ -58,7 +58,11 @@
         <tbody>
         <tr th:each="singletodo : ${todos}" th:object="${singletodo}">
             <td th:text="*{id}"></td>
-            <td><a href="/todo/add"><span th:text="*{title}"></span></a></td>
+            <td>
+                <a th:href="@{/todo/{id}/show(id=*{id})}">
+                    <span th:text="*{title}"></span>
+                </a>
+            </td>
             <td class="symbol" th:text="*{done} ? '✔' : ''"></td>
             <td class="symbol" th:text="*{urgent} ? '!' : ''"></td>
             <td>

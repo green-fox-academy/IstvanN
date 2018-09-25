@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Show Single Todo</title>
+</head>
+<body th:object="${todo}">
+<div>
+    <h1 th:text="|Todo id: *{id}|"></h1>
+</div>
+</body>
+</html>
