@@ -60,7 +60,10 @@
         <tr th:each="singletodo : ${todos}" th:object="${singletodo}">
             <td th:text="*{id}"></td>
             <td th:text="*{title}"></td>
-            <td th:text="*{done} ? '~' : ''"></td>
+            <div>
+                <td th:if="*{done}"><img src="images/crown.png" /></td>
+                <td th:unless="*{done}"></td>
+            </div>
             <td th:text="*{urgent} ? '!' : ''"></td>
             <td>
                 <form action="#" th:action="@{/todo/{id}/delete(id=*{id})}" method="post">
