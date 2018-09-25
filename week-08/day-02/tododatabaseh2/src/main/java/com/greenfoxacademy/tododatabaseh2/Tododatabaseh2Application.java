@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.util.Arrays;
 
 @SpringBootApplication
 public class Tododatabaseh2Application implements CommandLineRunner {
@@ -23,5 +24,6 @@ public class Tododatabaseh2Application implements CommandLineRunner {
     todoRepository.save(todo1);
     Todo todo2 = new Todo("I have to play some Sword Coast Legends");
     todoRepository.save(todo2);
+    todoRepository.saveAll(Arrays.asList(new Todo("Lol"), new Todo("Lel")));
   }
 }
