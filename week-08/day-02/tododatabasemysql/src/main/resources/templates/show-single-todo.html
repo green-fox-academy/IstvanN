@@ -2,11 +2,36 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Show Single Todo</title>
+    <title th:text="${todo.title}"></title>
 </head>
 <body th:object="${todo}">
 <div>
-    <h1 th:text="|Todo id: *{id}|"></h1>
+    <h1>Welcome to the single todo view!</h1>
+</div>
+<div>
+    <h2 th:text="|Todo id: *{id}|"></h2>
+</div>
+<div>
+    <h3>Todo title:</h3>
+    <p th:text="*{title}"></p>
+</div>
+<div>
+    <h3>Is it done?</h3>
+    <p th:text="*{done} ? '✔' : '-'"></p>
+</div>
+<div>
+    <h3>Is it urgent?</h3>
+    <p th:text="*{urgent} ? 'Yes!' : 'No.'"></p>
+</div>
+<div>
+    <form action="#" th:action="@{/todo/{id}/delete(id=*{id})}" method="post">
+        <input type="submit" value="Delete todo">
+    </form>
+</div>
+<div>
+    <form action="#" th:action="@{/todo/{id}/edit(id=*{id})}" method="get">
+        <input type="submit" value="Edit todo">
+    </form>
 </div>
 </body>
 </html>
