@@ -1,12 +1,11 @@
 package com.greenfoxacademy.tododatabasemysql.models;
 
-import org.springframework.stereotype.Repository;
-
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Repository
+@Entity
 public class Todo {
 
   @Id
