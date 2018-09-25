@@ -58,6 +58,12 @@ public class TodoController {
     todoRepository.save(todo);
     return "redirect:/todo/list";
   }
+
+  @GetMapping("/{id}/show")
+  public String showSingleTodo(@PathVariable("id") long id, Model model) {
+    model.addAttribute("todo", todoRepository.findById(id).get());
+    return "show-single-todo";
+  }
 }
 
 
