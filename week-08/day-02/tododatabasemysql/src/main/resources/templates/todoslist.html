@@ -12,12 +12,15 @@
             font-family: Arial, Helvetica, sans-serif;
             color: rgb(82, 64, 64);
         }
+
         tbody tr:nth-child(odd) {
             background-color: lightgrey;
         }
+
         th, tr {
             line-height: 60px;
         }
+
         th {
             background-color: black;
             color: lightgrey;
@@ -49,6 +52,14 @@
         </tr>
         </tbody>
     </table>
+</div>
+<div>
+    <form action="/todo/list?isActive=true" method="post">
+        <input type="submit" value="Check the active todos">
+    </form>
+    <form action="/todo/list" method="post">
+        <input type="submit" value="Back to main menu">
+    </form>
 </div>
 </body>
 </html>
