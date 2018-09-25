@@ -8,15 +8,18 @@
 <div>
     <h1>Feel free to edit your todo here!</h1>
 </div>
-<div>
-    <form th:object="${todo}" action="#">
+<div th:object="${todo}">
+    <form action="#" th:action="@{/todo/{id}/edit(id=*{id})}" method="post">
         <div>
             The todo itself:<br>
             <textarea th:text="*{title}" th:field="*{title}"></textarea><br>
         </div>
         <div>
             <label for="urgent">Is it urgent?</label>
-            <input id="urgent" type="checkbox" th:checked="*{urgent}">
+            <input id="urgent" type="checkbox" th:checked="*{urgent}" th:field="*{urgent}">
+        </div>
+        <div>
+            <button>Submit the changes!</button>
         </div>
     </form>
 </div>
