@@ -38,7 +38,7 @@ public class TodoController {
   @PostMapping("/add")
   public String addNewTodo(@ModelAttribute Todo todo) {
     todoRepository.save(todo);
-    return "redirect:/list";
+    return "redirect:/todo/list";
   }
 }
 

@@ -15,6 +15,10 @@
             <input id="title" th:field="*{title}">
         </div>
         <div>
+            <label for="urgent">Is it urgent?</label>
+            <input id="urgent" type="checkbox" th:field="*{urgent}">
+        </div>
+        <div>
             <button>Submit new todo!</button>
         </div>
     </form>
