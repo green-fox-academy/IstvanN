@@ -40,6 +40,12 @@ public class TodoController {
     todoRepository.save(todo);
     return "redirect:/todo/list";
   }
+
+  @PostMapping("/{id}/delete")
+  public String deleteTodo(@PathVariable("id") long id) {
+    todoRepository.deleteById(id);
+    return "redirect:/todo/list";
+  }
 }
 
 
