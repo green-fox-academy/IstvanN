@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.stream.StreamSupport;
 
 @Controller
 @RequestMapping("/todo")
@@ -19,9 +18,7 @@ public class TodoController {
   @RequestMapping(value = {"", "/list"})
   public String list(@RequestParam(value = "isActive", required = false) boolean isActive, Model model) {
     if (isActive) {
-      model.addAttribute("todos", StreamSupport.stream(todoRepository.findAll().spliterator(), false)
-          .filter(todo -> !todo.isDone())
-          .toArray());
+      model.addAttribute("todos", todoRepository.findAllByDoneFalse());
       return "todoslist";
     }
 
