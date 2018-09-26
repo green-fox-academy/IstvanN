@@ -8,11 +8,11 @@
 </head>
 <body>
 <div>
-    <h1>TODOS FOR TODAY:</h1>
+    <h1 style="text-align: center">TODOS FOR TODAY</h1>
 </div>
 <div>
     <form action="/todo/add" method="get">
-        <button class="btn btn-success btn-lg" style="margin: fill">Submit new todo!</button>
+        <button class="btn btn-success btn-lg col-md-12">Submit new todo!</button>
     </form>
 </div>
 <div>
@@ -31,24 +31,38 @@
         <tbody>
         <tr th:each="singletodo : ${todos}" th:object="${singletodo}">
             <td th:text="${singletodoStat.index + 1}"></td>
-            <td th:text="*{id}"></td>
+            <td th:text="|T*{id}|"></td>
             <td>
                 <a th:href="@{/todo/{id}/show(id=*{id})}">
                     <span th:text="*{title}"></span>
                 </a>
             </td>
             <div>
-                <td th:text="*{done} ? '✔' : ''"></td>
-                <td th:text="*{urgent} ? '!' : ''"></td>
+                <td th:if="*{done}">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </td>
+                <td th:unless="*{done}">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </td>
+            </div>
+            <div>
+                <td th:if="*{urgent}">
+                    <span class="glyphicon glyphicon-flash"></span>
+                </td>
+                <td th:unless="*{urgent}">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </td>
             </div>
             <td>
                 <form action="#" th:action="@{/todo/{id}/delete(id=*{id})}" method="post">
-                    <input type="submit" class="btn btn-danger" value="delete">
+                    <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon glyphicon-trash"
+                                                                       aria-hidden="true"></button>
                 </form>
             </td>
             <td>
                 <form action="#" th:action="@{/todo/{id}/edit(id=*{id})}" method="get">
-                    <input class="btn btn-primary" type="submit" value="edit">
+                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"
+                                                                       aria-hidden="true"></button>
                 </form>
             </td>
         </tr>
@@ -57,10 +71,10 @@
 </div>
 <div>
     <form action="/todo/list?isActive=true" method="post">
-        <input type="submit" value="Check the active todos">
+        <input type="submit" value="Check the active todos" class="btn btn-warning col-md-12">
     </form>
     <form action="/todo/list" method="post">
-        <input type="submit" value="Back to main menu">
+        <input type="submit" value="Back to main menu" class="btn btn-info col-md-12">
     </form>
 </div>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
