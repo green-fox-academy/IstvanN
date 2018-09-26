@@ -2,62 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Multiple Bank Accounts</title>
-    <!--<link rel="stylesheet" href="style.css"/>-->
     <meta charset="utf-8"/>
-    <style>
-        table, td, th {
-            border: 1px solid grey;
-            border-collapse: collapse;
-            width: 1500px;
-            text-indent: 10px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: rgb(82, 64, 64);
-        }
-
-        tbody tr:nth-child(odd) {
-            background-color: lightgrey;
-        }
-
-        th, tr {
-            line-height: 60px;
-        }
-
-        th {
-            background-color: black;
-            color: lightgrey;
-            font-weight: normal;
-            text-align: left;
-        }
-
-        #myform {
-            border-radius: 5px;
-        }
-
-        #mybutton {
-            margin-top: 10px;
-            margin-left: 115px;
-        }
-
-        .fillout {
-            margin-bottom: 5px;
-            background-color: lightgrey;
-        }
-
-        .donationbutton {
-            margin-top: 5px;
-            margin-left: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-<h1>The Bank Accounts of Lion King Characters</h1>
+<h1 class="page-header" style="font-family: Samanata">The Bank Accounts of Lion King Characters</h1>
 <div>
-    <table>
+    <table class="table table-hover">
         <thead>
         <tr>
             <th>No.</th>
             <th>Name</th>
             <th>Balance</th>
+            <th>Currency</th>
             <th>Animal Type</th>
             <th>Status</th>
             <th>Good/Bad guy</th>
@@ -69,22 +26,25 @@
         <tr th:each="account : ${bankAccounts}" th:object="${account}">
             <td th:text="${accountStat.index} + 1"></td>
             <td th:text="*{name}"></td>
-            <td th:text="*{#numbers.formatDecimal(balance, 0, 2, 'POINT')} + ' ' + *{currency}"></td>
+            <td th:text="*{#numbers.formatDecimal(balance, 0, 2, 'POINT')}"></td>
+            <td th:text="*{currency}"></td>
             <td th:text="*{animalType}"></td>
-            <td th:if="*{isKing()}"><img src="images/crown.png"/></td>
-            <td th:unless="*{isKing()}"></td>
-            <td th:text="*{isGoodGuy()} ? 'Good boi' : 'Baaaad boi'"></td>
+            <td th:if="*{isKing()}"><span class="glyphicon glyphicon-king" aria-hidden="true"></span></td>
+            <td th:unless="*{isKing()}"><span class="glyphicon glyphicon-pawn"></span></td>
+            <td th:if="*{isGoodGuy()}"><span class="glyphicon glyphicon-education" aria-hidden="true"></span></td>
+            <td th:unless="*{isGoodGuy()}"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span></td>
             <td>
-                <form method="post" action="/donate">
+                <form method="post" action="/donate" >
                     <label for="amount"></label>
                     <input type="number" id="amount" name="amountToIncrease" th:placeholder="|Amount of *{currency}s to send|">
-                    <input type="submit" th:value="|Donate *{name}|" class="donationbutton">
+                    <input type="submit" th:value="|Donate *{name}|" class="btn btn-info">
                     <input type="hidden" th:value="${accountStat.index}" name="indexOfAccount">
                 </form>
             </td>
             <td>
                 <form method="post" action="/remove">
-                    <input type="submit" th:value="'Remove ' + *{name}">
+                    <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></button>
+
                     <input type="hidden" th:value="${accountStat.index}" name="toRemove">
                 </form>
             </td>
@@ -95,38 +55,38 @@
 <div>
     <h2>Submit your favourite character to have an account!</h2>
 </div>
-<div id="myform" class="form">
+<div class="form-group" style="width: 30%">
     <form method="post" action="/addaccount">
         <div>
             <label for="owner">Owner</label><br>
-            <input class="fillout" id="owner" type="text" name="owner" required>
+            <input class="form-control" id="owner" type="text" name="owner" required>
         </div>
         <div>
             <label for="animaltype">Animal Type</label><br>
-            <input class="fillout" id="animaltype" type="text" name="animaltype" required>
+            <input class="form-control" id="animaltype" type="text" name="animaltype" required>
         </div>
         <div>
             <label for="money">Starting money</label><br>
-            <input class="fillout" id="money" type="number" name="startingmoney" required>
+            <input class="form-control" id="money" type="number" name="startingmoney" required>
         </div>
         <div>
             <label for="currency">Currency</label><br>
-            <input class="fillout" id="currency" type="text" name="currency" required>
+            <input class="form-control" id="currency" type="text" name="currency" required>
         </div>
         <div>
-            <select name="king">
+            <select name="king" class="btn btn-warning" style="margin-top: 20px">
                 <option value=true>King</option>
                 <option value=false>Peasant</option>
             </select>
         </div>
         <div>
-            <select name="goodboi">
+            <select name="goodboi" class="btn btn-success" style="margin-top: 20px">
                 <option value=true>Good guy</option>
                 <option value=false>Bad guy</option>
             </select>
         </div>
         <div id="mybutton">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" class="btn btn-primary" style="margin-top: 20px">
         </div>
     </form>
 </div>

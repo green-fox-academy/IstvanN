@@ -3,50 +3,23 @@
 <head>
     <meta charset="UTF-8"/>
     <title>List of Todos</title>
-    <style>
-        table, td, th {
-            border: 1px solid grey;
-            border-collapse: collapse;
-            width: 1500px;
-            text-indent: 10px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: rgb(82, 64, 64);
-        }
-
-        tbody tr:nth-child(odd) {
-            background-color: lightgrey;
-        }
-
-        th, tr {
-            line-height: 60px;
-        }
-
-        th {
-            background-color: black;
-            color: lightgrey;
-            font-weight: normal;
-        }
-
-        #addnew {
-            margin-bottom: 20px;
-        }
-
-        .button {
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 <div>
     <h1>TODOS FOR TODAY:</h1>
 </div>
-<div id="addnew">
-    <a href="/todo/add">Add new todo</a>
+<div>
+    <form action="/todo/add" method="get">
+        <button class="btn btn-success btn-lg" style="margin: fill">Submit new todo!</button>
+    </form>
 </div>
 <div>
-    <table style="text-align: center">
+    <table class="table table table-hover">
         <thead>
         <tr>
+            <th>#</th>
             <th>ID</th>
             <th>ACTION</th>
             <th>DONE</th>
@@ -57,29 +30,32 @@
         </thead>
         <tbody>
         <tr th:each="singletodo : ${todos}" th:object="${singletodo}">
+            <td th:text="${singletodoStat.index + 1}"></td>
             <td th:text="*{id}"></td>
             <td>
                 <a th:href="@{/todo/{id}/show(id=*{id})}">
                     <span th:text="*{title}"></span>
                 </a>
             </td>
-            <td class="symbol" th:text="*{done} ? '✔' : ''"></td>
-            <td class="symbol" th:text="*{urgent} ? '!' : ''"></td>
+            <div>
+                <td th:text="*{done} ? '✔' : ''"></td>
+                <td th:text="*{urgent} ? '!' : ''"></td>
+            </div>
             <td>
                 <form action="#" th:action="@{/todo/{id}/delete(id=*{id})}" method="post">
-                    <input type="submit" value="delete">
+                    <input type="submit" class="btn btn-danger" value="delete">
                 </form>
             </td>
             <td>
                 <form action="#" th:action="@{/todo/{id}/edit(id=*{id})}" method="get">
-                    <input type="submit" value="edit">
+                    <input class="btn btn-primary" type="submit" value="edit">
                 </form>
             </td>
         </tr>
         </tbody>
     </table>
 </div>
-<div class="button">
+<div>
     <form action="/todo/list?isActive=true" method="post">
         <input type="submit" value="Check the active todos">
     </form>
@@ -87,5 +63,8 @@
         <input type="submit" value="Back to main menu">
     </form>
 </div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </body>
 </html>
