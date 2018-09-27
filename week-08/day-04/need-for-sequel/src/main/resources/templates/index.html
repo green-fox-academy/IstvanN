@@ -15,14 +15,14 @@
             <th>ID</th>
             <th>Title</th>
             <th>Company</th>
-            <th>Income</th>
+            <th>Income (in million)</th>
             <th>Age</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="game : ${games}" th:object="${game}">
             <td th:text="${gameStat.index + 1}"></td>
-            <td th:text="*{id}"></td>
+            <td th:text="|VG*{id}|"></td>
             <td th:text="*{title}"></td>
             <td th:text="*{company}"></td>
             <td th:text="*{income}"></td>
@@ -31,5 +31,26 @@
         </tbody>
     </table>
 </div>
+<dvi>
+    <form action="/filter" method="get">
+        <div>
+            <label for="age">Age:</label>
+            <select name="ageOption">
+                <option value="greater">greater than or equals</option>
+                <option value="lesser">lesser</option>
+            </select>
+            <input id="age" type="number" name="ageValue" required>
+        </div>
+        <div>
+            <label for="income">Income:</label>
+            <select name="incomeOption">
+                <option value="greater">greater than or equals</option>
+                <option value="lesser">lesser</option>
+            </select>
+            <input id="income" type="number" name="incomeValue" required>
+        </div>
+        <button>Filter!</button>
+    </form>
+</dvi>
 </body>
 </html>

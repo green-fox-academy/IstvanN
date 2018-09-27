@@ -10,4 +10,6 @@ import java.util.List;
 public interface VideoGameRepository extends CrudRepository<VideoGame, Integer> {
 
   List<VideoGame> findAll();
+  List<VideoGame> findAllByAgeGreaterThanEqual(int number);
+  List<VideoGame> findAllByAgeLessThanEqual(int number);
 }

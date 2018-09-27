@@ -9,4 +9,5 @@ public interface VideoGameService {
   List<VideoGame> getVideoGames();
   VideoGame getVideoGameById(int videoGameId);
   void saveVideoGame(VideoGame videoGame);
+  List<VideoGame> filterVideoGamesByAgeAndIncome(String ageOption, int ageValue, String incomeOption, int incomeValue);
 }
