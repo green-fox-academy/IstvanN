@@ -14,17 +14,19 @@ public class VideoGame {
 
   private String title;
   private String company;
-  private Integer income;
-  private Integer age;
+  private int income;
+  private int age;
+  private int soldCopy;
 
   public VideoGame() {
   }
 
-  public VideoGame(String title, String company, Integer income, Integer age) {
+  public VideoGame(String title, String company, int income, int age, int soldCopy) {
     this.title = title;
     this.company = company;
     this.income = income;
     this.age = age;
+    this.soldCopy = soldCopy;
   }
 
   public int getId() {
@@ -63,7 +65,15 @@ public class VideoGame {
     return age;
   }
 
-  public void setAge(Integer age) {
+  public void setAge(int age) {
     this.age = age;
+  }
+
+  public int getSoldCopy() {
+    return soldCopy;
+  }
+
+  public void setSoldCopy(int soldCopy) {
+    this.soldCopy = soldCopy;
   }
 }
