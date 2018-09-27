@@ -16,6 +16,7 @@ public class VideoGame {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
+
   private String title;
   private String company;
   private int income;

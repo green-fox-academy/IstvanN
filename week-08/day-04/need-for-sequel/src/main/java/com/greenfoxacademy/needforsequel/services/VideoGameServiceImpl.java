@@ -3,9 +3,11 @@ package com.greenfoxacademy.needforsequel.services;
 import com.greenfoxacademy.needforsequel.models.VideoGame;
 import com.greenfoxacademy.needforsequel.repositories.VideoGameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class VideoGameServiceImpl implements VideoGameService {
 
   @Autowired
