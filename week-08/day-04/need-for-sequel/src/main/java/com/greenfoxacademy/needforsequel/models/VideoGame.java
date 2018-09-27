@@ -14,13 +14,13 @@ public class VideoGame {
 
   private String title;
   private String company;
-  private int income;
-  private int age;
+  private Integer income;
+  private Integer age;
 
   public VideoGame() {
   }
 
-  public VideoGame(String title, String company, int income, int age) {
+  public VideoGame(String title, String company, Integer income, Integer age) {
     this.title = title;
     this.company = company;
     this.income = income;
@@ -63,7 +63,7 @@ public class VideoGame {
     return age;
   }
 
-  public void setAge(int age) {
+  public void setAge(Integer age) {
     this.age = age;
   }
 }

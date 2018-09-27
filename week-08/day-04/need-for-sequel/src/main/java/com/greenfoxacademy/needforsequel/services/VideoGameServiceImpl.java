@@ -5,6 +5,7 @@ import com.greenfoxacademy.needforsequel.repositories.VideoGameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,24 +31,35 @@ public class VideoGameServiceImpl implements VideoGameService {
   }
 
   @Override
-  public List<VideoGame> filterVideoGamesByAgeAndIncome(String ageOption, int ageValue, String incomeOption, int incomeValue) {
-    List<VideoGame> gamesFilteredByAge;
-    List<VideoGame> gamesFiltereByAgeAndIncome;
+  public List<VideoGame> filterVideoGamesByAgeAndIncome(String ageOption, Integer ageValue, String incomeOption, Integer incomeValue) {
+    List<VideoGame> startingPoint = videoGameRepository.findAll();
+    List<VideoGame> firsFilteredGames;
+    List<VideoGame> secondFilteredGames = new ArrayList<>();
 
-    gamesFilteredByAge = filterGamesByAge(ageOption, ageValue);
-    gamesFiltereByAgeAndIncome = filterGamesByIncome(incomeOption, incomeValue, gamesFilteredByAge);
-    return gamesFiltereByAgeAndIncome;
+    if (ageOption != null) {
+      firsFilteredGames = filterGamesByAge(ageOption, ageValue, startingPoint);
+    } else {
+      firsFilteredGames = startingPoint;
+    }
+
+    if (incomeOption != null) {
+      secondFilteredGames = filterGamesByIncome(incomeOption, incomeValue, firsFilteredGames);
+    } else {
+      secondFilteredGames.addAll(firsFilteredGames);
+    }
+
+    return secondFilteredGames;
   }
 
 
-  public List<VideoGame> filterGamesByAge(String ageOption, int ageValue) {
+  public List<VideoGame> filterGamesByAge(String ageOption, int ageValue, List<VideoGame> filteredGames) {
     if (ageOption.equals("greater")) {
-      return videoGameRepository.findAll().stream()
+      return filteredGames.stream()
           .filter(videoGame -> videoGame.getAge() >= ageValue)
           .collect(Collectors.toList());
     }
 
-    return videoGameRepository.findAll().stream()
+    return filteredGames.stream()
         .filter(videoGame -> videoGame.getAge() < ageValue)
         .collect(Collectors.toList());
   }

@@ -25,10 +25,10 @@ public class MainController {
   }
 
   @GetMapping("/filter")
-  public String showFiltered(@RequestParam(value = "ageOption") String ageOption,
-                             @RequestParam(value = "ageValue") int ageValue,
-                             @RequestParam(value = "incomeOption") String incomeOption,
-                             @RequestParam(value = "incomeValue") int incomeValue,
+  public String showFiltered(@RequestParam(value = "ageOption", required = false) String ageOption,
+                             @RequestParam(value = "ageValue", required = false, defaultValue = "0") Integer ageValue,
+                             @RequestParam(value = "incomeOption", required = false) String incomeOption,
+                             @RequestParam(value = "incomeValue", required = false, defaultValue = "0") Integer incomeValue,
                              Model model) {
     List<VideoGame> games = videoGameService.filterVideoGamesByAgeAndIncome(ageOption, ageValue, incomeOption, incomeValue);
 
