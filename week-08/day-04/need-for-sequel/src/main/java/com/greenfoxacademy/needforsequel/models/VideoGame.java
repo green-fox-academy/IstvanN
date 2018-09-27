@@ -14,9 +14,9 @@ public class VideoGame {
 
   private String title;
   private String company;
-  private int income;
   private int age;
   private int soldCopy;
+  private int income;
 
   public VideoGame() {
   }

@@ -19,9 +19,13 @@ public class NeedForSequelApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    videoGameService.saveVideoGame(new VideoGame("The Witcher 3: Wild Hunt", "CD Projekt Red", 200, 3, 20));
-    videoGameService.saveVideoGame(new VideoGame("FIFA 99", "EA Sports", 50, 19, 5));
-    videoGameService.saveVideoGame(new VideoGame("Neverwinter Nights", "BioWare", 10, 17, 1));
-    videoGameService.saveVideoGame(new VideoGame("GTA 5", "Rockstar Games", 300, 4, 50));
+    videoGameService.saveVideoGame(new VideoGame("The Witcher 3: Wild Hunt", "CD Projekt Red", 211, 3, 87));
+    videoGameService.saveVideoGame(new VideoGame("FIFA 99", "EA Sports", 56, 19, 5));
+    videoGameService.saveVideoGame(new VideoGame("Neverwinter Nights", "BioWare", 12, 17, 1));
+    videoGameService.saveVideoGame(new VideoGame("GTA 5", "Rockstar Games", 315, 5, 125));
+    videoGameService.saveVideoGame(new VideoGame("The Sims", "Maxis", 128, 18, 64));
+    videoGameService.saveVideoGame(new VideoGame("Heroes of Might And Magic III", "3DO", 48, 18, 19));
+    videoGameService.saveVideoGame(new VideoGame("Heroes of Might And Magic IV", "3DO", 34, 16, 4));
+    videoGameService.saveVideoGame(new VideoGame("Dragon Age: Origins", "BioWare", 57, 9, 34));
   }
 }

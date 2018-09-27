@@ -30,17 +30,26 @@ public class VideoGameServiceImpl implements VideoGameService {
   }
 
   @Override
-  public List<VideoGame> filterVideoGamesByAgeIncomeSoldCopy(String ageOption, int ageValue, String incomeOption, int incomeValue, String copyOption, int copyValue) {
+  public List<VideoGame> filterVideoGamesByAgeIncomeSoldCopy(
+      String ageOption, int ageValue,
+      String incomeOption, int incomeValue,
+      String copyOption, int copyValue) {
     List<VideoGame> startingPoint = videoGameRepository.findAll();
-    List<VideoGame> firsFilteredGames = filterGamesByAge(ageOption, ageValue, startingPoint);
-    List<VideoGame> secondFilteredGames = filterGamesByIncome(incomeOption, incomeValue, firsFilteredGames);
-    List<VideoGame> lastFilteredGames = filterGamesByCopy(copyOption, copyValue, secondFilteredGames);
+    List<VideoGame> firsFilteredGames = filterGamesByAge(
+        ageOption, ageValue, startingPoint);
+    List<VideoGame> secondFilteredGames = filterGamesByIncome(
+        incomeOption, incomeValue, firsFilteredGames);
+    List<VideoGame> lastFilteredGames = filterGamesByCopy(
+        copyOption, copyValue, secondFilteredGames);
 
     return lastFilteredGames;
   }
 
 
-  public List<VideoGame> filterGamesByAge(String ageOption, int ageValue, List<VideoGame> listToFilter) {
+  private List<VideoGame> filterGamesByAge(
+      String ageOption,
+      int ageValue,
+      List<VideoGame> listToFilter) {
     if (ageOption.equals("greater")) {
       return listToFilter.stream()
           .filter(videoGame -> videoGame.getAge() >= ageValue)
@@ -69,12 +78,12 @@ public class VideoGameServiceImpl implements VideoGameService {
   private List<VideoGame> filterGamesByCopy(String copyOption, int copyValue, List<VideoGame> listToFilter) {
     if (copyOption.equals("greater")) {
       return listToFilter.stream()
-          .filter(videoGame -> videoGame.getAge() >= copyValue)
+          .filter(videoGame -> videoGame.getSoldCopy() >= copyValue)
           .collect(Collectors.toList());
     }
 
     return listToFilter.stream()
-        .filter(videoGame -> videoGame.getAge() < copyValue)
+        .filter(videoGame -> videoGame.getSoldCopy() < copyValue)
         .collect(Collectors.toList());
   }
 }
