@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Need For Sequel: Most Wanted</title>
@@ -8,7 +8,7 @@
 </head>
 <body>
 <div>
-    <table>
+    <table class="table table table-hover">
         <thead>
         <tr>
             <th>#</th>
@@ -16,10 +16,18 @@
             <th>Title</th>
             <th>Company</th>
             <th>Income</th>
+            <th>Age</th>
         </tr>
         </thead>
         <tbody>
-
+        <tr th:each="game : ${games}" th:object="${game}">
+            <td th:text="${gameStat.index + 1}"></td>
+            <td th:text="*{id}"></td>
+            <td th:text="*{title}"></td>
+            <td th:text="*{company}"></td>
+            <td th:text="*{income}"></td>
+            <td th:text="*{age}"></td>
+        </tr>
         </tbody>
     </table>
 </div>
