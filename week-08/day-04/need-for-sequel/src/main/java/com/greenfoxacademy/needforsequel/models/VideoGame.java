@@ -20,13 +20,15 @@ public class VideoGame {
   private String title;
   private String company;
   private int income;
+  private int age;
 
   public VideoGame() {
   }
 
-  public VideoGame(String title, String company, int income) {
+  public VideoGame(String title, String company, int income, int age) {
     this.title = title;
     this.company = company;
     this.income = income;
+    this.age = age;
   }
 }

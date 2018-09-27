@@ -22,4 +22,9 @@ public class VideoGameServiceImpl implements VideoGameService {
   public VideoGame getVideoGameById(int videoGameId) {
     return videoGameRepository.findById(videoGameId).get();
   }
+
+  @Override
+  public void saveVideoGame(VideoGame videoGame) {
+    videoGameRepository.save(videoGame);
+  }
 }

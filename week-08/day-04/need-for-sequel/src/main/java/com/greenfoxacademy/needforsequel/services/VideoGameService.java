@@ -8,4 +8,5 @@ public interface VideoGameService {
 
   List<VideoGame> getVideoGames();
   VideoGame getVideoGameById(int videoGameId);
+  void saveVideoGame(VideoGame videoGame);
 }
