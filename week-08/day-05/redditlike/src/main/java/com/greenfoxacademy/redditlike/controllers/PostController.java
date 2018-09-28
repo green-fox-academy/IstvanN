@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -30,6 +31,18 @@ public class PostController {
   @PostMapping("/submit")
   public String submitNewPost(@ModelAttribute Post post) {
     postService.savePost(post);
+    return "redirect:/";
+  }
+
+  @PostMapping("/upvote/{id}")
+  public String upvotePost(@PathVariable("id") long postId) {
+    postService.getPostById(postId).upvote();
+    return "redirect:/";
+  }
+
+  @PostMapping("/downvote/{id}")
+  public String downvotePost(@PathVariable("id") long postId) {
+    postService.getPostById(postId).downvote();
     return "redirect:/";
   }
 }

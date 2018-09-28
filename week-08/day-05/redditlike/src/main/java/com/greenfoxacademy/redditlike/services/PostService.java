@@ -7,5 +7,6 @@ import java.util.List;
 public interface PostService {
 
   List<Post> getPosts();
+  Post getPostById(long id);
   void savePost(Post post);
 }
