@@ -24,7 +24,9 @@
         <tr th:each="post : ${posts}" th:object="${post}">
             <td th:text="*{numberOfVotes}"></td>
             <td>
-                <form class="glyphicon glyphicon-plus"></form>
+                <form action="#" method="post" th:action="@{/upvote/{id}(id=*{id})}">
+                    <button type="submit" class="glyphicon glyphicon-plus"></button>
+                </form>
             </td>
             <td>
                 <form class="glyphicon glyphicon-minus"></form>

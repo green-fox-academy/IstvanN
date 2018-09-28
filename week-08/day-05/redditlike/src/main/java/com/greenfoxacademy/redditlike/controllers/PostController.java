@@ -34,9 +34,10 @@ public class PostController {
     return "redirect:/";
   }
 
-  @PostMapping("/upvote/{id}")
+  @PostMapping(value = "/upvote/{id}")
   public String upvotePost(@PathVariable("id") long postId) {
-    postService.getPostById(postId).upvote();
+    Post post = postService.getPostById(postId);
+    postService.upvotePost(post);
     return "redirect:/";
   }
 

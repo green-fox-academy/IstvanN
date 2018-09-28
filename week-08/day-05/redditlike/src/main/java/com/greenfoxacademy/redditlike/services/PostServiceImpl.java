@@ -27,4 +27,17 @@ public class PostServiceImpl implements PostService {
   public void savePost(Post post) {
     postRepository.save(post);
   }
+
+  @Override
+  public void upvotePost(Post post) {
+    post.upvote();
+    postRepository.save(post);
+  }
+
+  @Override
+  public void downvotePost(Post post) {
+
+  }
+
+
 }
