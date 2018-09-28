@@ -25,4 +25,11 @@ public class Post {
   String content;
   int numberOfVotes;
 
+  public void upvote() {
+    numberOfVotes++;
+  }
+
+  public void downvote() {
+    numberOfVotes--;
+  }
 }
