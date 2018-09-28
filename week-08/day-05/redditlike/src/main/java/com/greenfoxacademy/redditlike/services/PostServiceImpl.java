@@ -3,9 +3,11 @@ package com.greenfoxacademy.redditlike.services;
 import com.greenfoxacademy.redditlike.models.Post;
 import com.greenfoxacademy.redditlike.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PostServiceImpl implements PostService {
 
   @Autowired
@@ -18,6 +20,6 @@ public class PostServiceImpl implements PostService {
 
   @Override
   public Post getPostById(long id) {
-    return postRepository.findById();
+    return postRepository.findById(id);
   }
 }
