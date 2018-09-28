@@ -17,4 +17,9 @@ public class PostController {
     model.addAttribute("posts", postService.getPosts());
     return "index";
   }
+
+  @GetMapping("/submit")
+  public String showSubmitForm() {
+    return "submit-new";
+  }
 }
