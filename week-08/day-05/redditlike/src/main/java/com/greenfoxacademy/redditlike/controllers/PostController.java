@@ -43,7 +43,8 @@ public class PostController {
 
   @PostMapping("/downvote/{id}")
   public String downvotePost(@PathVariable("id") long postId) {
-    postService.getPostById(postId).downvote();
+    Post post = postService.getPostById(postId);
+    postService.downvotePost(post);
     return "redirect:/";
   }
 }
