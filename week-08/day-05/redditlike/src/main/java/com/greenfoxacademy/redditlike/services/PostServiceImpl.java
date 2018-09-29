@@ -36,7 +36,8 @@ public class PostServiceImpl implements PostService {
 
   @Override
   public void downvotePost(Post post) {
-
+    post.downvote();
+    postRepository.save(post);
   }
 
 

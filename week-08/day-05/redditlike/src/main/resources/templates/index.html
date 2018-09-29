@@ -25,11 +25,13 @@
             <td th:text="*{numberOfVotes}"></td>
             <td>
                 <form action="#" method="post" th:action="@{/upvote/{id}(id=*{id})}">
-                    <button type="submit" class="glyphicon glyphicon-plus"></button>
+                    <button class="glyphicon glyphicon-plus"></button>
                 </form>
             </td>
             <td>
-                <form class="glyphicon glyphicon-minus"></form>
+                <form action="#" method="post" th:action="@{/downvote/{id}(id=*{id})}">
+                    <button class="glyphicon glyphicon-minus"></button>
+                </form>
             </td>
             <td th:text="*{title}"></td>
         </tr>
