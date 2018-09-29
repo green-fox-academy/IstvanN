@@ -10,15 +10,25 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Collections;
+import java.util.List;
+
 @Controller
 public class PostController {
 
-  @Autowired
+  private final
   PostService postService;
+
+  @Autowired
+  public PostController(PostService postService) {
+    this.postService = postService;
+  }
 
   @GetMapping("/")
   public String showMain(Model model) {
-    model.addAttribute("posts", postService.getPosts());
+    List<Post> posts = postService.getPosts();
+    Collections.sort(posts);
+    model.addAttribute("posts", posts);
     return "index";
   }
 

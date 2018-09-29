@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Post {
+public class Post implements Comparable<Post> {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,5 +31,11 @@ public class Post {
 
   public void downvote() {
     numberOfVotes--;
+  }
+
+
+  @Override
+  public int compareTo(Post p) {
+    return p.numberOfVotes - this.numberOfVotes;
   }
 }
