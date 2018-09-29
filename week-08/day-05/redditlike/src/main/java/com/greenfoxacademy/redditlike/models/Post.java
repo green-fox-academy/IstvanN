@@ -26,7 +26,7 @@ public class Post implements Comparable<Post> {
   private String title;
   private String content;
   private int numberOfVotes;
-  private String dateCreatedAt = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+  private final String DATE_CREATED = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
 
 
   public void upvote() {
