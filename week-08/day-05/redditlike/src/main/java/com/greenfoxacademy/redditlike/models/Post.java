@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 @Getter
@@ -21,9 +23,11 @@ public class Post implements Comparable<Post> {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   long id;
 
-  String title;
-  String content;
-  int numberOfVotes;
+  private String title;
+  private String content;
+  private int numberOfVotes;
+  private String dateCreatedAt = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+
 
   public void upvote() {
     numberOfVotes++;
