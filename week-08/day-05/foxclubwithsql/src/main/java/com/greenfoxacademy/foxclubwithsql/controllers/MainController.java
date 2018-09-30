@@ -38,6 +38,7 @@ public class MainController {
     Manatee newManatee = new Manatee();
     userService.addManateeToUser(userId, newManatee);
     model.addAttribute("manatee", newManatee);
+    model.addAttribute("user", userService.getUserById(userId));
     return "create-manatee";
   }
 
