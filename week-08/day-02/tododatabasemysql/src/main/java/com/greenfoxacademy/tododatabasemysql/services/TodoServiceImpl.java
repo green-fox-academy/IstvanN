@@ -42,4 +42,9 @@ public class TodoServiceImpl implements TodoService {
   public void deleteTodoById(long todoId) {
     todoRepository.deleteById(todoId);
   }
+
+  @Override
+  public List<Todo> getTodosContaining(String searchOption) {
+    return todoRepository.findAllByTitleContaining(searchOption);
+  }
 }

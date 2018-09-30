@@ -65,6 +65,12 @@ public class TodoController {
     model.addAttribute("todo", todoService.getTodoById(id));
     return "show-single-todo";
   }
+
+  @GetMapping("/search")
+  public String showTodosMatchingSearch(Model model, @RequestParam("searchOption")String searchOption) {
+    model.addAttribute("todos", todoService.getTodosContaining(searchOption));
+    return "todoslist";
+  }
 }
 
 

@@ -11,4 +11,5 @@ public interface TodoService {
   Todo getTodoById(long id);
   void saveNewTodo(Todo todo);
   void deleteTodoById(long id);
+  List<Todo> getTodosContaining(String searchOption);
 }

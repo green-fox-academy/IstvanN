@@ -56,13 +56,13 @@
             <td>
                 <form action="#" th:action="@{/todo/{id}/delete(id=*{id})}" method="post">
                     <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon glyphicon-trash"
-                                                                       aria-hidden="true"></button>
+                                                                       aria-hidden="true"></span></button>
                 </form>
             </td>
             <td>
                 <form action="#" th:action="@{/todo/{id}/edit(id=*{id})}" method="get">
                     <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"
-                                                                       aria-hidden="true"></button>
+                                                                        aria-hidden="true"></span></button>
                 </form>
             </td>
         </tr>
@@ -78,9 +78,9 @@
     </form>
 </div>
 <div>
-    <form>
-        <labe for="search">Search:</labe><br>
-        <input id="search" type="text">
+    <form action="/todo/search" method="get">
+        <label for="search">Search:</label><br>
+        <input id="search" type="text" name="searchOption">
         <button>Search!</button>
     </form>
 </div>
