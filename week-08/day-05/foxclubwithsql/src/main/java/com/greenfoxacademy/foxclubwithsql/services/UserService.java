@@ -5,4 +5,5 @@ import com.greenfoxacademy.foxclubwithsql.models.User;
 public interface UserService {
 
   User getUserById(long id);
+  void saveUser(User user);
 }

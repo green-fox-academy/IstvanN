@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Sign up!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -13,15 +13,15 @@
         <small>Please sign up!</small>
     </h1>
 </div>
-<div>
-    <form>
-        <label for="username">Username</label><br>
-        <input id="username" type="text" name="username" placeholder="Give a username here"><br>
-        <label for="password">Password</label><br>
-        <input id="password" type="password" name="password" placeholder="Set up a password here"><br>
-        <label for="secondPassowrd">Password again</label><br>
-        <input id="secondPassowrd" type="password" name="secondPassword" placeholder="The password again"><br>
-        <button class="btn btn-success">Log in</button>
+<div th:object="${user}">
+    <form method="post" action="/signup">
+        <label>Username</label><br>
+        <input th:field="*{username}" placeholder="Give a username here"><br>
+        <label>Password</label><br>
+        <input th:field="*{password}" type="password" placeholder="Set up a password here"><br>
+        <label>Password again</label><br>
+        <input type="password" name="secondPassword" placeholder="The password again"><br>
+        <button class="btn btn-success">Sign up!</button>
     </form>
 </div>
 <div>

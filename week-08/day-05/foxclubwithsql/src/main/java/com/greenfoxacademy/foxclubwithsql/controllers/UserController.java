@@ -1,9 +1,14 @@
 package com.greenfoxacademy.foxclubwithsql.controllers;
 
+import com.greenfoxacademy.foxclubwithsql.models.User;
 import com.greenfoxacademy.foxclubwithsql.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class UserController {
@@ -21,7 +26,18 @@ public class UserController {
   }
 
   @GetMapping("/signup")
-  public String showSignupPage() {
+  public String showSignupPage(Model model) {
+    model.addAttribute("user", new User());
     return "sign-up";
+  }
+
+  @PostMapping("/signup")
+  public String signUp(@ModelAttribute User user, @RequestParam("secondPassword") String secondPassword) {
+    if (user.getPassword().equals(secondPassword)) {
+      userService.saveUser(user);
+      return "redirect:/login";
+    }
+
+    return "redirect:/login";
   }
 }
