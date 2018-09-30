@@ -36,7 +36,7 @@
             <td th:text="*{title}"></td>
             <td th:text="*{getDateCreated()}"></td>
             <td>
-                <form action="#" method="post" th:action="@{/edit/{id}(id=*{id})}">
+                <form action="#" method="get" th:action="@{/edit/{id}(id=*{id})}">
                     <button class="glyphicon glyphicon-pencil btn btn-info"></button>
                 </form>
             </td>
