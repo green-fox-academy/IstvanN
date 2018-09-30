@@ -55,4 +55,11 @@ public class PostController {
     postService.downvotePost(post);
     return "redirect:/";
   }
+
+  @GetMapping("/edit/{id}")
+  public String showEditPage(@PathVariable("id") long postId, Model model) {
+    Post post = postService.getPostById(postId);
+    model.addAttribute("post", post);
+    return "edit-post";
+  }
 }
