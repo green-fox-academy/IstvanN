@@ -1,5 +1,6 @@
 package com.greenfoxacademy.foxclubwithsql.services;
 
+import com.greenfoxacademy.foxclubwithsql.models.Manatee;
 import com.greenfoxacademy.foxclubwithsql.models.User;
 import com.greenfoxacademy.foxclubwithsql.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +30,12 @@ public class UserServiceImpl implements UserService {
   public User getUserByUserName(String username) {
     return userRepository.findByUsername(username);
   }
+
+  @Override
+  public void addManateeToUser(long userId, Manatee manatee) {
+    User user = userRepository.findById(userId).orElse(null);
+    user.getManatees().add(manatee);
+    userRepository.save(user);
+  }
+
 }
