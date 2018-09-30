@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/club")
+@RequestMapping(value = {"", "/club"})
 public class MainController {
 
   private final UserService userService;
@@ -24,6 +24,10 @@ public class MainController {
   @GetMapping("/{id}")
   public String showIndex(@PathVariable("id") long userId, Model model) {
     User user = userService.getUserById(userId);
+    if (user == null) {
+      return "redirect:/login";
+    }
+
     model.addAttribute("user", user);
     return "index";
   }

@@ -28,6 +28,12 @@ public class UserController {
   @PostMapping("/login")
   public String logInUser(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
     User user = userService.getUserByUserName(username);
+
+    if (user == null) {
+      model.addAttribute("notExistingUser", true);
+      return "login";
+    }
+
     if (password.equals(user.getPassword())) {
       return "redirect:/club/" + user.getId();
     }

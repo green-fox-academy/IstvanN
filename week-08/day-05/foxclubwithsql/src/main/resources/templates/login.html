@@ -28,5 +28,8 @@
 <div>
     <p style="color: red;" th:text="${validationFailed} ? 'Either the username or the password you entered was wrong. Please try again!'"></p>
 </div>
+<div>
+    <p style="color: red;" th:text="${notExistingUser} ? 'There is no user by that name. Please sign up!'"></p>
+</div>
 </body>
 </html>
