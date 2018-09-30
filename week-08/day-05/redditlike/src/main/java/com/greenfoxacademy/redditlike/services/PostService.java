@@ -12,4 +12,5 @@ public interface PostService {
   void upvotePost(Post post);
   void downvotePost(Post post);
   List<Post> getPostsOrderedByVotes();
+  void deleteById(long id);
 }

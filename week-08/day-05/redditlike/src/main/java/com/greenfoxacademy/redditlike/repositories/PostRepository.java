@@ -11,4 +11,5 @@ public interface PostRepository extends CrudRepository<Post, Long> {
 
   List<Post> findAll();
   List<Post> findAllByOrderByNumberOfVotesDescDateCreatedAsc();
+  void deleteById(long id);
 }

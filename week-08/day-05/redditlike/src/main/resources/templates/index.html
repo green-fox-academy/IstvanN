@@ -30,7 +30,7 @@
             </td>
             <td>
                 <form action="#" method="post" th:action="@{/downvote/{id}(id=*{id})}">
-                    <button class="glyphicon glyphicon-minus btn btn-danger"></button>
+                    <button class="glyphicon glyphicon-minus btn btn-warning"></button>
                 </form>
             </td>
             <td th:text="*{title}"></td>
@@ -38,6 +38,11 @@
             <td>
                 <form action="#" method="get" th:action="@{/edit/{id}(id=*{id})}">
                     <button class="glyphicon glyphicon-pencil btn btn-info"></button>
+                </form>
+            </td>
+            <td>
+                <form action="#" method="post" th:action="@{/delete/{id}(id=*{id})}">
+                    <button class="glyphicon glyphicon-trash btn btn-danger"></button>
                 </form>
             </td>
         </tr>

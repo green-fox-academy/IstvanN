@@ -48,4 +48,9 @@ public class PostServiceImpl implements PostService {
   public List<Post> getPostsOrderedByVotes() {
     return postRepository.findAllByOrderByNumberOfVotesDescDateCreatedAsc();
   }
+
+  @Override
+  public void deleteById(long id) {
+    postRepository.deleteById(id);
+  }
 }
