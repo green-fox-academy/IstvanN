@@ -3,6 +3,7 @@ package com.greenfoxacademy.foxclubwithsql.controllers;
 import com.greenfoxacademy.foxclubwithsql.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class UserController {
@@ -14,5 +15,8 @@ public class UserController {
     this.userService = userService;
   }
 
-
+  @GetMapping("/login")
+  public String showLoginPage() {
+    return "login";
+  }
 }
