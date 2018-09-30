@@ -20,11 +20,26 @@ public class TodoServiceImpl implements TodoService {
 
   @Override
   public List<Todo> getAllTodos() {
-    return null;
+    return todoRepository.findAll();
+  }
+
+  @Override
+  public List<Todo> getActiveTodos() {
+    return todoRepository.findAllByDoneFalse();
   }
 
   @Override
   public Todo getTodoById(long id) {
-    return null;
+    return todoRepository.findById(id).orElse(null);
+  }
+
+  @Override
+  public void saveNewTodo(Todo todo) {
+    todoRepository.save(todo);
+  }
+
+  @Override
+  public void deleteTodoById(long todoId) {
+    todoRepository.deleteById(todoId);
   }
 }
