@@ -26,12 +26,13 @@ public class UserController {
   }
 
   @PostMapping("/login")
-  public String logInUser(@RequestParam("username") String username, @RequestParam("password") String password) {
+  public String logInUser(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
     User user = userService.getUserByUserName(username);
     if (password.equals(user.getPassword())) {
       return "redirect:/club/" + user.getId();
     }
 
+    model.addAttribute("validationFailed", true);
     return "login";
   }
 
