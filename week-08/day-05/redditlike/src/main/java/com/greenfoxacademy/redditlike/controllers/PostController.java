@@ -5,10 +5,7 @@ import com.greenfoxacademy.redditlike.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -64,7 +61,10 @@ public class PostController {
   }
 
   @PostMapping("/edit/{id}")
-  public String editPost(@ModelAttribute Post post) {
+  public String editPost(@PathVariable("id") long postId, @RequestParam("title") String postTitle, @RequestParam("content") String postContent) {
+    Post post = postService.getPostById(postId);
+    post.setTitle(postTitle);
+    post.setContent(postContent);
     postService.savePost(post);
     return "redirect:/";
   }

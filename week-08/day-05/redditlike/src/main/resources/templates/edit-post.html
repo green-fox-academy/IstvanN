@@ -12,10 +12,10 @@
 </div>
 <div>
     <form th:object="${post}" action="#" th:action="@{/edit/{id}(id=*{id})}" method="post">
-        <label for="title">Title</label><br>
-        <input id="title" th:field="*{title}"><br>
-        <label for="content">Content</label><br>
-        <textarea id="content" th:field="*{content}"></textarea><br>
+        <label>Title</label><br>
+        <input th:field="*{title}"><br>
+        <label>Content</label><br>
+        <textarea th:field="*{content}"></textarea><br>
         <button class="btn btn-primary">Submit changes</button>
     </form>
 </div>
