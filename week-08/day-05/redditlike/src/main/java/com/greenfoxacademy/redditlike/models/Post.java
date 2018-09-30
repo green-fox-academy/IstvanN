@@ -1,6 +1,5 @@
 package com.greenfoxacademy.redditlike.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,7 +15,6 @@ import java.time.format.DateTimeFormatter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Post {
 
   @Id
@@ -27,7 +25,6 @@ public class Post {
   private String content;
   private int numberOfVotes;
   private final String dateCreated = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
-
 
   public void upvote() {
     numberOfVotes++;
