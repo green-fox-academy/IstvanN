@@ -46,6 +46,6 @@ public class PostServiceImpl implements PostService {
 
   @Override
   public List<Post> getPostsOrderedByVotes() {
-    return postRepository.findAllByOrderByNumberOfVotesDesc();
+    return postRepository.findAllByOrderByNumberOfVotesDescDateCreatedAsc();
   }
 }

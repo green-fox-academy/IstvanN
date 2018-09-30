@@ -26,7 +26,7 @@ public class Post {
   private String title;
   private String content;
   private int numberOfVotes;
-  private final String DATE_CREATED = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+  private final String dateCreated = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
 
 
   public void upvote() {
