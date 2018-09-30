@@ -25,6 +25,16 @@ public class UserController {
     return "login";
   }
 
+  @PostMapping("/login")
+  public String logInUser(@RequestParam("username") String username, @RequestParam("password") String password) {
+    User user = userService.getUserByUserName(username);
+    if (password.equals(user.getPassword())) {
+      return "redirect:/club/" + user.getId();
+    }
+
+    return "login";
+  }
+
   @GetMapping("/signup")
   public String showSignupPage(Model model) {
     model.addAttribute("user", new User());
@@ -38,7 +48,7 @@ public class UserController {
       return "redirect:/login";
     }
 
-    model.addAttribute("wrongPassowrd", true);
+    model.addAttribute("wrongPassword", true);
     return "sign-up";
   }
 }

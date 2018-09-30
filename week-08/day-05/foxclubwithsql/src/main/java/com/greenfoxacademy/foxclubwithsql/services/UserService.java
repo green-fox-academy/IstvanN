@@ -6,4 +6,5 @@ public interface UserService {
 
   User getUserById(long id);
   void saveUser(User user);
+  User getUserByUserName(String username);
 }
