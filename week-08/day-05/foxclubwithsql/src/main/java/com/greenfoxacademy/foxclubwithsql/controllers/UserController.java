@@ -32,12 +32,13 @@ public class UserController {
   }
 
   @PostMapping("/signup")
-  public String signUp(@ModelAttribute User user, @RequestParam("secondPassword") String secondPassword) {
+  public String signUp(@ModelAttribute User user, @RequestParam("secondPassword") String secondPassword, Model model) {
     if (user.getPassword().equals(secondPassword)) {
       userService.saveUser(user);
       return "redirect:/login";
     }
 
-    return "redirect:/login";
+    model.addAttribute("wrongPassowrd", true);
+    return "sign-up";
   }
 }
