@@ -17,7 +17,7 @@ import java.time.format.DateTimeFormatter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Post implements Comparable<Post> {
+public class Post {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,11 +35,5 @@ public class Post implements Comparable<Post> {
 
   public void downvote() {
     numberOfVotes--;
-  }
-
-
-  @Override
-  public int compareTo(Post p) {
-    return p.numberOfVotes - this.numberOfVotes;
   }
 }

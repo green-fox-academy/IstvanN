@@ -11,4 +11,5 @@ public interface PostService {
   void savePost(Post post);
   void upvotePost(Post post);
   void downvotePost(Post post);
+  List<Post> getPostsOrderedByVotes();
 }

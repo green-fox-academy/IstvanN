@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -26,8 +25,7 @@ public class PostController {
 
   @GetMapping("/")
   public String showMain(Model model) {
-    List<Post> posts = postService.getPosts();
-    Collections.sort(posts);
+    List<Post> posts = postService.getPostsOrderedByVotes();
     model.addAttribute("posts", posts);
     return "index";
   }
