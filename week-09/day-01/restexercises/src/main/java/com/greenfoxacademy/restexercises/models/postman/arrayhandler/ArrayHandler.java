@@ -13,14 +13,14 @@ public class ArrayHandler {
 
   public void handleWhatNumber(WhatNumbers whatNumbers) {
     if (whatNumbers.getWhat().equals("sum")) {
-      multiplyNumbersInArray(whatNumbers.getNumbers());
-    } else if (whatNumbers.getWhat().equals("multiply")) {
       sumNumbersInArray(whatNumbers.getNumbers());
+    } else if (whatNumbers.getWhat().equals("multiply")) {
+      multiplyNumbersInArray(whatNumbers.getNumbers());
     }
   }
 
   private void multiplyNumbersInArray(Integer[] numbers) {
-    result = 0;
+    result = 1;
     for (int number : numbers) {
       result *= number;
     }
@@ -32,4 +32,12 @@ public class ArrayHandler {
       result += number;
     }
   }
+
+//  private void doubleElementsInArray(Integer[] numbers) {
+//    for (int i = 0; i < numbers.length; i++) {
+//      numbers[i] *= 2;
+//    }
+//
+//    Integer.
+//  }
 }
