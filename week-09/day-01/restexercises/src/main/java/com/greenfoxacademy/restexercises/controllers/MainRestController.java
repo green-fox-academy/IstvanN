@@ -27,9 +27,15 @@ public class MainRestController {
   @GetMapping("/greeter")
   public Object greet(@RequestParam(value = "name", required = false) String name,
                       @RequestParam(value = "title", required = false) String title) {
-    if (name == null || title == null) {
+    if (name == null) {
       ErrorHandler errorHandler = new ErrorHandler();
       errorHandler.setError("Please provide a name!");
+      return errorHandler;
+    }
+
+    if (title == null) {
+      ErrorHandler errorHandler = new ErrorHandler();
+      errorHandler.setError("Please provide a title!");
       return errorHandler;
     }
 
