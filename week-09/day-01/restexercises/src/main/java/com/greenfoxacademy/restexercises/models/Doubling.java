@@ -2,18 +2,18 @@ package com.greenfoxacademy.restexercises.models;
 
 public class Doubling {
 
-  private Integer recieved;
+  private Integer received;
   private Integer result;
 
   public Doubling() {
   }
 
-  public int getRecieved() {
-    return recieved;
+  public int getReceived() {
+    return received;
   }
 
-  public void setRecieved(int recieved) {
-    this.recieved = recieved;
+  public void setReceived(int received) {
+    this.received = received;
   }
 
   public int getResult() {
@@ -25,6 +25,6 @@ public class Doubling {
   }
 
   public void doubleRecieved() {
-    result = recieved * 2;
+    result = received * 2;
   }
 }

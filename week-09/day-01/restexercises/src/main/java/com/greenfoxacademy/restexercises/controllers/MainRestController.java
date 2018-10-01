@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class MainRestController {
 
   @GetMapping("/doubling")
-  public Doubling doubleTheInput(@RequestParam(value = "input") Integer input) {
+  public Object doubleTheInput(@RequestParam(value = "input", required = false) Integer input) {
     if (input != null) {
       Doubling doubling = new Doubling();
-      doubling.setRecieved(input);
+      doubling.setReceived(input);
       doubling.doubleRecieved();
       return doubling;
     }
@@ -22,3 +22,4 @@ public class MainRestController {
     doublingError.setError("Please provide an input!");
     return doublingError;
   }
+}
