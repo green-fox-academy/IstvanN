@@ -19,6 +19,10 @@ public class Manatee {
   private String currentFood;
   private String currentDrink;
 
+  public Manatee(String name) {
+    this.name = name;
+  }
+
   @ManyToOne
   private User owner;
 }

@@ -10,10 +10,10 @@
 <div>
     <h1>Create a manatee here!</h1>
 </div>
-<div th:object="${manatee}">
+<div>
     <form method="post" action="#" th:action="@{/club/{id}/create(id=${user.id})}">
         <label>Manatee name</label><br>
-        <input th:field="*{name}" placeholder="Give a manatee here"><br>
+        <input name="manateeName" placeholder="Give a manatee here"><br>
         <button class="btn btn-success">Name it!</button>
     </form>
 </div>
