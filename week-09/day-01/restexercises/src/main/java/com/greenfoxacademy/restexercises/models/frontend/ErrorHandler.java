@@ -1,4 +1,4 @@
-package com.greenfoxacademy.restexercises.models;
+package com.greenfoxacademy.restexercises.models.frontend;
 
 public class ErrorHandler {
 

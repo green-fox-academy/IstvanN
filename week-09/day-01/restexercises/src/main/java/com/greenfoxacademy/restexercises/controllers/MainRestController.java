@@ -1,6 +1,6 @@
 package com.greenfoxacademy.restexercises.controllers;
 
-import com.greenfoxacademy.restexercises.models.*;
+import com.greenfoxacademy.restexercises.models.frontend.*;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
