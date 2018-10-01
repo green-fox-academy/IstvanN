@@ -22,4 +22,9 @@ public class User {
 
   @OneToMany(cascade = CascadeType.ALL)
   private List<Manatee> manatees;
+
+  public void addManatee(Manatee manatee) {
+    manatees.add(manatee);
+    manatee.setOwner(this);
+  }
 }

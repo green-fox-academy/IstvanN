@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
   @Override
   public void addManateeToUser(long userId, Manatee manatee) {
     User user = userRepository.findById(userId).orElse(null);
-    user.getManatees().add(manatee);
+    user.addManatee(manatee);
     userRepository.save(user);
   }
 

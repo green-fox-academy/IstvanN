@@ -13,8 +13,8 @@
 </div>
 <div>
     <h2>You have the following Monumental Manatees:</h2>
-    <ul>
-        <li th:each="manatee : *{manatees}"></li>
+    <ul th:each="manatee : *{manatees}">
+        <li th:text="${manatee.name}"></li>
     </ul>
 </div>
 <div>
