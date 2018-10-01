@@ -7,9 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ArrayHandler {
+public class WhatNumbers {
 
- private int result;
-
+  private String what;
+  private Integer[] numbers;
 
 }
