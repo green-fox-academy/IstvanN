@@ -48,14 +48,21 @@ public class MainRestController {
   }
 
   @PostMapping("/dountil/{action}")
-  public DoUntil doUntil(@RequestBody Until until, @PathVariable("action") String action) {
+  public Object doUntil(@RequestBody Until until, @PathVariable("action") String action) {
     DoUntil doUntil = new DoUntil();
+
+    if (until == null) {
+      ErrorHandler errorHandler = new ErrorHandler();
+      errorHandler.setError("Please provide a number!");
+      return errorHandler;
+    }
 
     if (action.equals("sum")) {
       doUntil.sum(until);
       return doUntil;
     }
 
+    doUntil.fact(until);
     return doUntil;
   }
 }
