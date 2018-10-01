@@ -1,6 +1,6 @@
 package com.greenfoxacademy.restexercises.models;
 
-public class DoublingError {
+public class ErrorHandler {
 
   private String error;
 
