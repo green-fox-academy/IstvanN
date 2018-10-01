@@ -2,6 +2,7 @@ package com.greenfoxacademy.restexercises.controllers;
 
 import com.greenfoxacademy.restexercises.models.Doubling;
 import com.greenfoxacademy.restexercises.models.ErrorHandler;
+import com.greenfoxacademy.restexercises.models.Greeter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,9 +24,17 @@ public class MainRestController {
     return doubling;
   }
 
-//  @GetMapping("/greeter")
-//  public Object greet(@RequestParam(value = "name", required = false) String name,
-//                      @RequestParam(value = "title", required = false) String title) {
-//
-//  }
+  @GetMapping("/greeter")
+  public Object greet(@RequestParam(value = "name", required = false) String name,
+                      @RequestParam(value = "title", required = false) String title) {
+    if (name == null || title == null) {
+      ErrorHandler errorHandler = new ErrorHandler();
+      errorHandler.setError("Please provide a name!");
+      return errorHandler;
+    }
+
+    Greeter greeter = new Greeter();
+    greeter.greet(name, title);
+    return greeter;
+  }
 }
