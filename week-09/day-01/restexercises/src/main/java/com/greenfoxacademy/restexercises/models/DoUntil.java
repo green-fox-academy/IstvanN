@@ -2,16 +2,7 @@ package com.greenfoxacademy.restexercises.models;
 
 public class DoUntil {
 
-  private int until;
   private int result;
-
-  public int getUntil() {
-    return until;
-  }
-
-  public void setUntil(int until) {
-    this.until = until;
-  }
 
   public int getResult() {
     return result;
@@ -21,8 +12,8 @@ public class DoUntil {
     this.result = result;
   }
 
-  public void sum() {
-    result = summaria(until);
+  public void sum(Until until) {
+    result = summaria(until.getUntil());
   }
 
   private int summaria(int n) {
@@ -37,9 +28,11 @@ public class DoUntil {
 
   private int factorio(int n) {
     if (n > 0) {
-      return n = n + factorio(n - 1);
+      return n = n * factorio(n - 1);
+    } else {
+      n = 1;
     }
 
-    return 1;
+    return n;
   }
 }
