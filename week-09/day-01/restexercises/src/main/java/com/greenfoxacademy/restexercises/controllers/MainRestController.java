@@ -1,9 +1,11 @@
 package com.greenfoxacademy.restexercises.controllers;
 
+import com.greenfoxacademy.restexercises.models.AAppender;
 import com.greenfoxacademy.restexercises.models.Doubling;
 import com.greenfoxacademy.restexercises.models.ErrorHandler;
 import com.greenfoxacademy.restexercises.models.Greeter;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -42,5 +44,12 @@ public class MainRestController {
     Greeter greeter = new Greeter();
     greeter.greet(name, title);
     return greeter;
+  }
+
+  @GetMapping("/appenda/{appendable}")
+  public AAppender appendA(@PathVariable("appendable") String appendable) {
+    AAppender aAppender = new AAppender();
+    aAppender.appendA(appendable);
+    return aAppender;
   }
 }
