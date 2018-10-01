@@ -16,6 +16,10 @@ public class DoUntil {
     result = summaria(until.getUntil());
   }
 
+  public void fact(Until until) {
+    result = factorio(until.getUntil());
+  }
+
   private int summaria(int n) {
     if (n > 0) {
       n = n + summaria(n - 1);
