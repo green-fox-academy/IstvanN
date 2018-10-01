@@ -20,7 +20,7 @@ public class UserController {
     this.userService = userService;
   }
 
-  @GetMapping("/login")
+  @GetMapping(value = {"", "/login"})
   public String showLoginPage() {
     return "login";
   }
