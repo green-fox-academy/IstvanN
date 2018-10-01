@@ -9,9 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class MainRestController {
 
   @GetMapping("/doubling")
-  public Doubling doubleTheInput(@RequestParam("input") int input) {
-    Doubling doubling = new Doubling(input);
-    doubling.doubleRecieved();
-    return doubling;
+  public Doubling doubleTheInput(@RequestParam(value = "input") Integer input) {
+    if (input != null) {
+      Doubling doubling = new Doubling();
+      doubling.setRecieved(input);
+      doubling.doubleRecieved();
+      return doubling;
+    }
+
+    
   }
-}

@@ -8,10 +8,6 @@ public class Doubling {
   public Doubling() {
   }
 
-  public Doubling(int recieved) {
-    this.recieved = recieved;
-  }
-
   public int getRecieved() {
     return recieved;
   }
