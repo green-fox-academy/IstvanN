@@ -14,8 +14,8 @@
     </h1>
 </div>
 <div th:unless="*{manatees.size() != 0}">
-    <h2>Unfortunately you have no manatees!<a th:href="@{/club/{id}/create(id=${user.id})}">
-        <br><small>Create one here!</small>
+    <h2>Unfortunately you have no manatees!<br><a th:href="@{/club/{id}/create(id=${user.id})}">
+        <small>Create one here!</small>
     </a></h2>
 </div>
 <div th:if="*{manatees.size() != 0}">

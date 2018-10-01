@@ -35,15 +35,15 @@ public class MainController {
 
   @GetMapping("/{id}/create")
   public String showManateeCreationCenter(@PathVariable("id") long userId, Model model) {
-    Manatee newManatee = new Manatee();
-    userService.addManateeToUser(userId, newManatee);
-    model.addAttribute("manatee", newManatee);
+    model.addAttribute("manatee", new Manatee());
     model.addAttribute("user", userService.getUserById(userId));
     return "create-manatee";
   }
 
   @PostMapping("/{id}/create")
   public String createManatee(@PathVariable("id") long userId, @ModelAttribute Manatee manatee) {
+    User user = userService.getUserById(userId);
+    user.addManatee(manatee);
     manateeService.saveManatee(manatee);
     return "redirect:/club/" + userId;
   }

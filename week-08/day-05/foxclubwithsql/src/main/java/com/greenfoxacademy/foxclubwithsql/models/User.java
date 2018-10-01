@@ -20,7 +20,7 @@ public class User {
   private String username;
   private String password;
 
-  @OneToMany(cascade = CascadeType.ALL)
+  @OneToMany
   private List<Manatee> manatees;
 
   public void addManatee(Manatee manatee) {
