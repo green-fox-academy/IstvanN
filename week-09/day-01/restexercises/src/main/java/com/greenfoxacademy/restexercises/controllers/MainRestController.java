@@ -1,13 +1,7 @@
 package com.greenfoxacademy.restexercises.controllers;
 
-import com.greenfoxacademy.restexercises.models.AAppender;
-import com.greenfoxacademy.restexercises.models.Doubling;
-import com.greenfoxacademy.restexercises.models.ErrorHandler;
-import com.greenfoxacademy.restexercises.models.Greeter;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.greenfoxacademy.restexercises.models.*;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MainRestController {
@@ -51,5 +45,18 @@ public class MainRestController {
     AAppender aAppender = new AAppender();
     aAppender.appendA(appendable);
     return aAppender;
+  }
+
+  @PostMapping("/dountil/{action}")
+  public DoUntil doUntil(@RequestBody DoUntil doUntil, @PathVariable("action") String action) {
+    DoUntil doUntil = new DoUntil();
+    doUntil.setUntil(until);
+
+    if (action.equals("sum")) {
+      doUntil.sum();
+      return doUntil;
+    }
+
+    return doUntil;
   }
 }

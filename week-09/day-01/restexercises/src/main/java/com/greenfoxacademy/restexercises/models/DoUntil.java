@@ -27,8 +27,19 @@ public class DoUntil {
 
   private int summaria(int n) {
     if (n > 0) {
-      return n = n + summaria(n - 1);
+      n = n + summaria(n - 1);
+    } else {
+      n = 0;
     }
-    return 0;
+
+    return n;
+  }
+
+  private int factorio(int n) {
+    if (n > 0) {
+      return n = n + factorio(n - 1);
+    }
+
+    return 1;
   }
 }
