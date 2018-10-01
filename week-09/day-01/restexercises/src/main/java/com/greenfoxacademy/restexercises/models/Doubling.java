@@ -1,11 +1,11 @@
 package com.greenfoxacademy.restexercises.models;
 
-public class Input {
+public class Doubling {
 
   private int recieved;
   private int result;
 
-  public Input() {
+  public Doubling() {
   }
 
   public int getRecieved() {
