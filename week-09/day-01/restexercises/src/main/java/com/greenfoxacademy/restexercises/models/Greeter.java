@@ -2,20 +2,20 @@ package com.greenfoxacademy.restexercises.models;
 
 public class Greeter {
 
-  private String welcomeMessage;
+  private String welcome_message;
 
   public Greeter() {
   }
 
-  public String getWelcomeMessage() {
-    return welcomeMessage;
+  public String getWelcome_message() {
+    return welcome_message;
   }
 
-  public void setWelcomeMessage(String welcomeMessage) {
-    this.welcomeMessage = welcomeMessage;
+  public void setWelcome_message(String welcome_message) {
+    this.welcome_message = welcome_message;
   }
 
   public void greet(String name, String title) {
-    welcomeMessage = "Oh, hi there " + name + ", my dear " + title + " student!";
+    welcome_message = "Oh, hi there " + name + ", my dear " + title + "!";
   }
 }
