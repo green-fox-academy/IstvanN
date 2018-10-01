@@ -9,16 +9,23 @@
 <body class="container" th:object="${user}">
 <div>
     <h1 class="page-head" th:text="'Welcome ' + *{username} + ' to the Monumental Manatee Club!'"></h1>
-    <h1><small>Hope you enjoy your stay here!</small></h1>
+    <h1>
+        <small>Hope you enjoy your stay here!</small>
+    </h1>
 </div>
-<div>
+<div th:unless="*{manatees.size() != 0}">
+    <h2>Unfortunately you have no manatees!<a th:href="@{/club/{id}/create(id=${user.id})}">
+        <br><small>Create one here!</small>
+    </a></h2>
+</div>
+<div th:if="*{manatees.size() != 0}">
     <h2>You have the following Monumental Manatees:</h2>
     <ul th:each="manatee : *{manatees}">
         <li th:text="${manatee.name}"></li>
     </ul>
-</div>
-<div>
-    <a th:href="@{/club/{id}/create(id=${user.id})}">Create a Monumental Manatee!</a>
+    <div>
+        <a th:href="@{/club/{id}/create(id=${user.id})}">Create another Monumental Manatee!</a>
+    </div>
 </div>
 </body>
 </html>
