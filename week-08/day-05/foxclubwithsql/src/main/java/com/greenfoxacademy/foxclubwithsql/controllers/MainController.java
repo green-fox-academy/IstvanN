@@ -2,7 +2,6 @@ package com.greenfoxacademy.foxclubwithsql.controllers;
 
 import com.greenfoxacademy.foxclubwithsql.models.Manatee;
 import com.greenfoxacademy.foxclubwithsql.models.User;
-import com.greenfoxacademy.foxclubwithsql.services.ManateeService;
 import com.greenfoxacademy.foxclubwithsql.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,12 +13,10 @@ import org.springframework.web.bind.annotation.*;
 public class MainController {
 
   private final UserService userService;
-  private final ManateeService manateeService;
 
   @Autowired
-  public MainController(UserService userService, ManateeService manateeService) {
+  public MainController(UserService userService) {
     this.userService = userService;
-    this.manateeService = manateeService;
   }
 
   @GetMapping("/{id}")
@@ -41,10 +38,8 @@ public class MainController {
 
   @PostMapping("/{id}/create")
   public String createManatee(@PathVariable("id") long userId, @RequestParam("manateeName") String manateeName) {
-    User user = userService.getUserById(userId);
     Manatee manatee = new Manatee(manateeName);
-    user.addManatee(manatee);
-    manateeService.saveManatee(manatee);
+    userService.addManateeToUser(userId, manatee);
     return "redirect:/club/" + userId;
   }
 
