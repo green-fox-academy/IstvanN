@@ -20,4 +20,9 @@ public class ManateeServiceImpl implements ManateeService {
   public void saveManatee(Manatee manatee) {
     manateeRepository.save(manatee);
   }
+
+  @Override
+  public Manatee getManateeById(long id) {
+    return manateeRepository.findById(id).orElse(null);
+  }
 }
