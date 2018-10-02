@@ -8,5 +8,5 @@ public interface UserService {
   User getUserById(long id);
   void saveUser(User user);
   User getUserByUserName(String username);
-  void addManateeToUser(long userId, Manatee manatee);
+  void createManateeAddToUser(long userId, String manateeName);
 }
