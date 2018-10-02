@@ -46,7 +46,7 @@ public class LoginController {
   public String showSignupPage(Model model) {
     User newUser = userService.createUser();
     model.addAttribute("user", newUser);
-    return "sign-up";
+    return "login/sign-up";
   }
 
   @PostMapping("/signup")

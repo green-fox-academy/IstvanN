@@ -10,7 +10,8 @@
 <div class="row">
     <h1 class="page-header" th:text="|Welcome to *{name}'s Page|"></h1>
     <h1>
-        <small th:text="|Owner: *{owner.username}|"></small>
+        <small th:text="|Owner: *{owner.username}|"></small><br>
+        <small th:text="|Sex: *{sex.toString().toLowerCase()}|"></small>
     </h1>
 </div>
 <div class="row">
