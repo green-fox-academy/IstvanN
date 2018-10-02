@@ -28,7 +28,8 @@ public class Manatee {
   @ManyToOne
   private User owner;
 
-  public Manatee(String name) {
+  public Manatee(String name, Sex sex) {
     this.name = name;
+    this.sex = sex;
   }
 }

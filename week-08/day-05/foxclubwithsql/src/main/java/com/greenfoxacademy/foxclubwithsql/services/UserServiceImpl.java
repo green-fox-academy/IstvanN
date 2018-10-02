@@ -2,6 +2,7 @@ package com.greenfoxacademy.foxclubwithsql.services;
 
 import com.greenfoxacademy.foxclubwithsql.models.Manatee;
 import com.greenfoxacademy.foxclubwithsql.models.User;
+import com.greenfoxacademy.foxclubwithsql.models.enums.Sex;
 import com.greenfoxacademy.foxclubwithsql.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,8 +38,8 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public void createManateeAddToUser(long userId, String manateeName) {
-    Manatee manatee = new Manatee(manateeName);
+  public void createManateeAddToUser(long userId, String manateeName, boolean isMale) {
+    Manatee manatee = isMale ? new Manatee(manateeName, Sex.MALE) : new Manatee(manateeName, Sex.FEMALE);
     User user = userRepository.findById(userId).orElse(null);
     user.addManatee(manatee);
     userRepository.save(user);

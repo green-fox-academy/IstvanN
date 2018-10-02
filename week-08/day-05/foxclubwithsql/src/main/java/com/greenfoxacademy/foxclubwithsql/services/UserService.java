@@ -8,6 +8,6 @@ public interface UserService {
   User createUser();
   void saveUser(User user);
   User getUserByUserName(String username);
-  void createManateeAddToUser(long userId, String manateeName);
+  void createManateeAddToUser(long userId, String manateeName, boolean isMale);
   void removeManatee(long userId, long manateeId);
 }
