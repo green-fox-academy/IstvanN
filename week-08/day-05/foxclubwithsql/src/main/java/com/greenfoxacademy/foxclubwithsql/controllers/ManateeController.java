@@ -1,5 +1,8 @@
 package com.greenfoxacademy.foxclubwithsql.controllers;
 
+import com.greenfoxacademy.foxclubwithsql.models.Manatee;
+import com.greenfoxacademy.foxclubwithsql.services.ManateeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,10 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/manatees/{manateeId}")
 public class ManateeController {
 
-  @GetMapping("")
-  public String showManateePage(@PathVariable("manateeId") String manateeId, Model model) {
+  private final ManateeService manateeService;
 
-    model.addAttribute()
+  @Autowired
+  public ManateeController(ManateeService manateeService) {
+    this.manateeService = manateeService;
+  }
+
+  @GetMapping("")
+  public String showManateePage(@PathVariable("manateeId") long manateeId, Model model) {
+    Manatee manatee = manateeService.getManateeById(manateeId);
+    model.addAttribute("manatee", manatee);
     return "manatee-page";
   }
 }
