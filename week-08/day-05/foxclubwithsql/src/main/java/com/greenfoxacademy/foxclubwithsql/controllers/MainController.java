@@ -41,4 +41,10 @@ public class MainController {
     return "redirect:/club/" + userId;
   }
 
+  @PostMapping("/{id}/delete")
+  public String deleteManatee(@PathVariable("id") long userId, @RequestParam("manateeId") long manateeId) {
+    userService.removeManatee(userId, manateeId);
+    return "redirect:/club/" + userId;
+  }
+
 }

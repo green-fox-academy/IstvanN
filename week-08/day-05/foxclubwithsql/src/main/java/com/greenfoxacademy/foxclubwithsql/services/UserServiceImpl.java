@@ -43,4 +43,11 @@ public class UserServiceImpl implements UserService {
     user.addManatee(manatee);
     userRepository.save(user);
   }
+
+  @Override
+  public void removeManatee(long userId, long manateeId) {
+    User user = userRepository.findById(userId).orElse(null);
+    user.removeManatee(manateeId);
+    userRepository.save(user);
+  }
 }

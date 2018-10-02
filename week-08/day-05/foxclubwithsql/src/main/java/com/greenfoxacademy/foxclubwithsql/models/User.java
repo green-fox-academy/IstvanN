@@ -28,6 +28,10 @@ public class User {
     manatee.setOwner(this);
   }
 
+  public void removeManatee(long manateeId) {
+    manatees.remove(getManateeById(manateeId));
+  }
+
   public Manatee getUsersManateeById(long manateeId) {
     return getManateeById(manateeId);
   }

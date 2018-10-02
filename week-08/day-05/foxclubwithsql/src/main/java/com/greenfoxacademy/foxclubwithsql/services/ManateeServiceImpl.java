@@ -25,4 +25,9 @@ public class ManateeServiceImpl implements ManateeService {
   public Manatee getManateeById(long id) {
     return manateeRepository.findById(id).orElse(null);
   }
+
+  @Override
+  public void removeManateeById(long id) {
+    manateeRepository.deleteById(id);
+  }
 }

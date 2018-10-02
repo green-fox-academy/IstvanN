@@ -9,4 +9,5 @@ public interface UserService {
   void saveUser(User user);
   User getUserByUserName(String username);
   void createManateeAddToUser(long userId, String manateeName);
+  void removeManatee(long userId, long manateeId);
 }
