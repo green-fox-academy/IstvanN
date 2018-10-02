@@ -39,8 +39,12 @@ public class MainController {
   }
 
   @PostMapping("/{id}/create")
-  public String createManatee(@PathVariable("id") long userId, @RequestParam("manateeName") String manateeName) {
-    userService.createManateeAddToUser(userId, manateeName, true);
+  public String createManatee(@PathVariable("id") long userId, @RequestParam("manateeName") String manateeName, @RequestParam("sex") boolean isMale) {
+    if (isMale) {
+      userService.createManateeAddToUser(userId, manateeName, true);
+    } else {
+      userService.createManateeAddToUser(userId, manateeName, false);
+    }
     return "redirect:/club/" + userId;
   }
 
