@@ -21,12 +21,12 @@
         <h1 class="page-header">Current stats:</h1>
         <div>
             <label>Food:</label>
-            <span th:if="*{currentFood} != null" th:text="*{currentFood}"></span>
+            <span th:if="*{currentFood} != null" th:text="*{currentFood.name}"></span>
             <span th:unless="*{currentFood} != null" th:text="|sadly *{name} has no food to eat :(|"></span>
         </div>
         <div>
             <label>Drink:</label>
-            <span th:if="*{currentDrink} != null" th:text="*{currentDrink}"></span>
+            <span th:if="*{currentDrink} != null" th:text="*{currentDrink.name}"></span>
             <span th:unless="*{currentDrink} != null" th:text="|sadly *{name} has no drink to drink :(|"></span>
         </div>
         <div>
