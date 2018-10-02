@@ -1,6 +1,7 @@
 package com.greenfoxacademy.foxclubwithsql.services;
 
 import com.greenfoxacademy.foxclubwithsql.models.Manatee;
+import com.greenfoxacademy.foxclubwithsql.models.Nutrition;
 import com.greenfoxacademy.foxclubwithsql.repositories.ManateeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,5 +30,12 @@ public class ManateeServiceImpl implements ManateeService {
   @Override
   public void removeManateeById(long id) {
     manateeRepository.deleteById(id);
+  }
+
+  @Override
+  public void setFoodAndDrink(long manateeId, Nutrition food, Nutrition drink) {
+    Manatee manatee = manateeRepository.findById(manateeId).orElse(null);
+    manatee.setCurrentFood(food);
+    manatee.setCurrentDrink(drink);
   }
 }
