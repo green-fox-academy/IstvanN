@@ -44,7 +44,8 @@ public class UserController {
 
   @GetMapping("/signup")
   public String showSignupPage(Model model) {
-    model.addAttribute("user", new User());
+    User newUser = userService.createUser();
+    model.addAttribute("user", newUser);
     return "sign-up";
   }
 
