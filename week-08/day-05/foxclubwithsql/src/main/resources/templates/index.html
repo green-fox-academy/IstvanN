@@ -20,9 +20,19 @@
 </div>
 <div th:if="*{manatees.size() != 0}">
     <h2>You have the following Monumental Manatees:</h2>
-    <ul th:each="manatee : *{manatees}">
-        <a th:href="@{/manatees/{manateeId}(manateeId=${manatee.id})}"><li th:text="${manatee.name}"></li></a>
-    </ul>
+    <table th:each="manatee : *{manatees}" class="table table-hover">
+        <tbody>
+        <td><img src="https://i.redd.it/423tpcgtjofz.jpg" width="40%"></td>
+        <td>
+            <a th:href="@{/manatees/{manateeId}(manateeId=${manatee.id})}"><h1 th:text="${manatee.name}" style="margin-right: 400px; margin-top: 100px"></h1></a>
+        </td>
+        <td>
+            <form>
+                <button class="btn btn-danger" style="margin-top: 100px">Delete</button>
+            </form>
+        </td>
+        </tbody>
+    </table>
     <div>
         <a th:href="@{/club/{id}/create(id=${user.id})}">Create another Monumental Manatee!</a>
     </div>
