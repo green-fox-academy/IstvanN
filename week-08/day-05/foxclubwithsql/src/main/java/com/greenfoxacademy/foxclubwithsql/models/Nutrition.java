@@ -14,6 +14,6 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 public class Nutrition {
 
-  private String type;
+  private NutritionType type;
   private String name;
 }
