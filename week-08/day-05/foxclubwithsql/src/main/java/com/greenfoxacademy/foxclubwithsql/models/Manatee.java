@@ -16,8 +16,12 @@ public class Manatee {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
   private String name;
-  private String currentFood;
-  private String currentDrink;
+
+  @ManyToOne
+  private Nutrition currentFood;
+
+  @ManyToOne
+  private Nutrition currentDrink;
 
   @ManyToOne
   private User owner;
