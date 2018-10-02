@@ -12,9 +12,12 @@
     <h1><small>Grab some delicious stuff for your Monumental Manatee!</small></h1>
 </div>
 <div>
-    <form>
-        <select th:each="food : ${foods}">
-            <option th:text="${food.name}"></option>
+    <form method="post" action="#">
+        <select>
+            <option th:each="food : ${foods}" th:text="${food.name}" th:value="${food.id}" name="foodId"></option>
+        </select>
+        <select>
+            <option th:each="drink : ${drinks}" th:text="${drink.name}" th:value="${drink.id}" name="drinkId"></option>
         </select>
     </form>
 </div>
