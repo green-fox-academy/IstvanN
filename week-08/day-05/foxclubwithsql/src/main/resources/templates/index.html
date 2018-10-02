@@ -30,7 +30,8 @@
         </td>
         <td>
             <form action="#" th:action="@{/club/{id}/delete(id=${user.id})}" method="post">
-                <button th:value="${manatee.id}" name="manateeId" class="btn btn-danger" style="margin-top: 100px">Delete</button>
+                <button th:value="${manatee.id}" name="manateeId" class="btn btn-danger" style="margin-top: 100px"><span
+                        class="glyphicon glyphicon glyphicon-trash"></span></button>
             </form>
         </td>
         </tbody>

@@ -28,7 +28,9 @@ public class ManateeController {
   }
 
   @GetMapping("/nutritionstore")
-  public String showNutritionStore() {
+  public String showNutritionStore(@PathVariable("manateeId") long manateeId, Model model) {
+    Manatee manatee = manateeService.getManateeById(manateeId);
+    model.addAttribute("manatee", manatee);
     return "nutrition-store";
   }
 }
