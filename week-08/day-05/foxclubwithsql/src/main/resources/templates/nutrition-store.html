@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Nutrition Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body th:object="${manatee}" class="container">
+<div>
+    <h1 th:text="|Welcome to *{name}'s Store!|"></h1>
+    <h1><small>Grab some delicious stuff for your Monumental Manatee!</small></h1>
+</div>
+<div>
+    <form>
+        <select th:each="food : ${foods}">
+            <option th:text="${food.name}"></option>
+        </select>
+    </form>
+</div>
+</body>
+</html>

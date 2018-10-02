@@ -4,9 +4,11 @@ import com.greenfoxacademy.foxclubwithsql.models.Nutrition;
 import com.greenfoxacademy.foxclubwithsql.models.NutritionType;
 import com.greenfoxacademy.foxclubwithsql.repositories.NutritionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class NutritionServiceImpl implements NutritionService {
 
   private final NutritionRepository nutritionRepository;
