@@ -1,6 +1,7 @@
 package com.greenfoxacademy.foxclubwithsql.controllers;
 
 import com.greenfoxacademy.foxclubwithsql.models.User;
+import com.greenfoxacademy.foxclubwithsql.services.ManateeService;
 import com.greenfoxacademy.foxclubwithsql.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +13,12 @@ import org.springframework.web.bind.annotation.*;
 public class MainController {
 
   private final UserService userService;
+  private final ManateeService manateeService;
 
   @Autowired
-  public MainController(UserService userService) {
+  public MainController(UserService userService, ManateeService manateeService) {
     this.userService = userService;
+    this.manateeService = manateeService;
   }
 
   @GetMapping("/{id}")
@@ -44,6 +47,7 @@ public class MainController {
   @PostMapping("/{id}/delete")
   public String deleteManatee(@PathVariable("id") long userId, @RequestParam("manateeId") long manateeId) {
     userService.removeManatee(userId, manateeId);
+    manateeService.removeManateeById(manateeId);
     return "redirect:/club/" + userId;
   }
 
