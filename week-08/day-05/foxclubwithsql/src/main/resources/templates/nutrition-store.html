@@ -12,13 +12,14 @@
     <h1><small>Grab some delicious stuff for your Monumental Manatee!</small></h1>
 </div>
 <div>
-    <form method="post" action="#">
-        <select>
-            <option th:each="food : ${foods}" th:text="${food.name}" th:value="${food.id}" name="foodId"></option>
+    <form method="post" action="#" th:action="@{/manatees/{manateeId}/nutritionstore(manateeId=*{id})}">
+        <select name="foodId">
+            <option th:each="food : ${foods}" th:text="${food.name}" th:value="${food.id}"></option>
         </select>
-        <select>
-            <option th:each="drink : ${drinks}" th:text="${drink.name}" th:value="${drink.id}" name="drinkId"></option>
+        <select name="drinkId">
+            <option th:each="drink : ${drinks}" th:text="${drink.name}" th:value="${drink.id}"></option>
         </select>
+        <button>SET</button>
     </form>
 </div>
 </body>
