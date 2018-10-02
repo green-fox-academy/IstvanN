@@ -37,5 +37,6 @@ public class ManateeServiceImpl implements ManateeService {
     Manatee manatee = manateeRepository.findById(manateeId).orElse(null);
     manatee.setCurrentFood(food);
     manatee.setCurrentDrink(drink);
+    manateeRepository.save(manatee);
   }
 }

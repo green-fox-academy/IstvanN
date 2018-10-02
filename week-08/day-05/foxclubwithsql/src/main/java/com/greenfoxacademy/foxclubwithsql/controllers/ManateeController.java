@@ -1,6 +1,7 @@
 package com.greenfoxacademy.foxclubwithsql.controllers;
 
 import com.greenfoxacademy.foxclubwithsql.models.Manatee;
+import com.greenfoxacademy.foxclubwithsql.models.Nutrition;
 import com.greenfoxacademy.foxclubwithsql.services.ManateeService;
 import com.greenfoxacademy.foxclubwithsql.services.NutritionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,9 @@ public class ManateeController {
 
   @PostMapping("/nutritionstore")
   public String setNutritionToManatee(@PathVariable("manateeId") long manateeId, @RequestParam("foodId") long foodId, @RequestParam("drinkId") long drinkId) {
-
+    Nutrition food = nutritionService.getFoodById(foodId);
+    Nutrition drink = nutritionService.getDrinkById(drinkId);
+    manateeService.setFoodAndDrink(manateeId, food, drink);
     return "redirect:/manatees/" + manateeId;
   }
 }
