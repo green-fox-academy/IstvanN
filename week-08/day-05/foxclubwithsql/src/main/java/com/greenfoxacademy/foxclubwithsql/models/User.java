@@ -27,4 +27,15 @@ public class User {
     manatees.add(manatee);
     manatee.setOwner(this);
   }
+
+  public Manatee getUsersManateeById(long manateeId) {
+    return getManateeById(manateeId);
+  }
+
+  private Manatee getManateeById(long manateeId) {
+    return manatees.stream()
+        .filter(manatee -> manatee.getId() == manateeId)
+        .findFirst()
+        .orElse(null);
+  }
 }
