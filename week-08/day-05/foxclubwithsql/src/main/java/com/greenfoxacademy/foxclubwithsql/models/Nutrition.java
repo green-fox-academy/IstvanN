@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter
@@ -25,7 +24,4 @@ public class Nutrition {
     this.type = type;
     this.name = name;
   }
-
-  @OneToMany(cascade = CascadeType.PERSIST)
-  List<Manatee> consumers;
 }
