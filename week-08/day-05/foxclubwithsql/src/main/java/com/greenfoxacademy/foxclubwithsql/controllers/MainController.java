@@ -1,6 +1,5 @@
 package com.greenfoxacademy.foxclubwithsql.controllers;
 
-import com.greenfoxacademy.foxclubwithsql.models.Manatee;
 import com.greenfoxacademy.foxclubwithsql.models.User;
 import com.greenfoxacademy.foxclubwithsql.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

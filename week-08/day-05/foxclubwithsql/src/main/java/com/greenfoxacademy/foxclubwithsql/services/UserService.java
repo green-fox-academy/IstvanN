@@ -1,6 +1,5 @@
 package com.greenfoxacademy.foxclubwithsql.services;
 
-import com.greenfoxacademy.foxclubwithsql.models.Manatee;
 import com.greenfoxacademy.foxclubwithsql.models.User;
 
 public interface UserService {
