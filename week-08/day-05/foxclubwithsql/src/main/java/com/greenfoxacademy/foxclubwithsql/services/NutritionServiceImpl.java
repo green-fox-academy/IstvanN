@@ -27,4 +27,14 @@ public class NutritionServiceImpl implements NutritionService {
   public List<Nutrition> getAllDrinks() {
     return nutritionRepository.findAllByType(NutritionType.DRINK);
   }
+
+  @Override
+  public Nutrition getFoodById(long id) {
+    return nutritionRepository.findById(id).orElse(null);
+  }
+
+  @Override
+  public Nutrition getDrinkById(long id) {
+    return nutritionRepository.findById(id).orElse(null);
+  }
 }

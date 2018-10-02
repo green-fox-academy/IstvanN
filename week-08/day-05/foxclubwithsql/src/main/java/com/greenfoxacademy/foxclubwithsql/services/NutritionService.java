@@ -7,4 +7,6 @@ import java.util.List;
 public interface NutritionService {
   List<Nutrition> getAllFoods();
   List<Nutrition> getAllDrinks();
+  Nutrition getFoodById(long id);
+  Nutrition getDrinkById(long id);
 }
