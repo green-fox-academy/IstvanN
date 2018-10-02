@@ -22,7 +22,7 @@ public class LoginController {
 
   @GetMapping(value = {"", "/login"})
   public String showLoginPage() {
-    return "login";
+    return "login/login";
   }
 
   @PostMapping("/login")
@@ -31,7 +31,7 @@ public class LoginController {
 
     if (user == null) {
       model.addAttribute("notExistingUser", true);
-      return "login";
+      return "login/login";
     }
 
     if (password.equals(user.getPassword())) {
@@ -39,7 +39,7 @@ public class LoginController {
     }
 
     model.addAttribute("validationFailed", true);
-    return "login";
+    return "login/login";
   }
 
   @GetMapping("/signup")
@@ -57,6 +57,6 @@ public class LoginController {
     }
 
     model.addAttribute("wrongPassword", true);
-    return "sign-up";
+    return "login/sign-up";
   }
 }

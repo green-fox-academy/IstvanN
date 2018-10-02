@@ -1,7 +1,7 @@
 package com.greenfoxacademy.foxclubwithsql.repositories;
 
 import com.greenfoxacademy.foxclubwithsql.models.Nutrition;
-import com.greenfoxacademy.foxclubwithsql.models.NutritionType;
+import com.greenfoxacademy.foxclubwithsql.models.enums.NutritionType;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

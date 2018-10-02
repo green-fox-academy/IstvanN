@@ -1,5 +1,6 @@
 package com.greenfoxacademy.foxclubwithsql.models;
 
+import com.greenfoxacademy.foxclubwithsql.models.enums.NutritionType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

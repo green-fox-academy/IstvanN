@@ -35,7 +35,7 @@ public class MainController {
   @GetMapping("/{id}/create")
   public String showManateeCreationCenter(@PathVariable("id") long userId, Model model) {
     model.addAttribute("user", userService.getUserById(userId));
-    return "create-manatee";
+    return "manatee/create-manatee";
   }
 
   @PostMapping("/{id}/create")

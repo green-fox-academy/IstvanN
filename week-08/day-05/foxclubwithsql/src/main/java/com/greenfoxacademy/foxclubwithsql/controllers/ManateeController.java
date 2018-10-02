@@ -26,7 +26,7 @@ public class ManateeController {
   public String showManateePage(@PathVariable("manateeId") long manateeId, Model model) {
     Manatee manatee = manateeService.getManateeById(manateeId);
     model.addAttribute("manatee", manatee);
-    return "manatee-page";
+    return "manatee/manatee-page";
   }
 
   @GetMapping("/nutritionstore")
@@ -35,7 +35,7 @@ public class ManateeController {
     model.addAttribute("manatee", manatee);
     model.addAttribute("foods", nutritionService.getAllFoods());
     model.addAttribute("drinks", nutritionService.getAllDrinks());
-    return "nutrition-store";
+    return "manatee/nutrition-store";
   }
 
   @PostMapping("/nutritionstore")
