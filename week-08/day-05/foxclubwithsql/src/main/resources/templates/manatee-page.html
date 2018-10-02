@@ -2,9 +2,34 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Manatee</title>
+    <title th:text="|${manatee.name}'s Page|"></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-<body>
-
+<body th:object="${manatee}" class="container">
+<div class="row">
+    <h1 class="page-header" th:text="|Welcome to *{name}'s Page|"></h1>
+    <h1>
+        <small th:text="|Owner: *{owner.username}|"></small>
+    </h1>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <img src="https://i.redd.it/423tpcgtjofz.jpg" style="width: 100%">
+    </div>
+    <div class="col-md-8">
+        <h2>Current stats:</h2>
+        <div>
+            <label>Current food:</label>
+            <span th:if="*{currentFood} != null" th:text="*{currentFood}"></span>
+            <span th:unless="*{currentFood} != null" th:text="|sadly *{name} has no food to eat :(|"></span>
+        </div>
+        <div>
+            <label>Current food:</label>
+            <span th:if="*{currentDrink} != null" th:text="*{currentDrink}"></span>
+            <span th:unless="*{currentDrink} != null" th:text="|sadly *{name} has no drink to drink :(|"></span>
+        </div>
+    </div>
+</div>
 </body>
 </html>
