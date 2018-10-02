@@ -26,4 +26,9 @@ public class ManateeController {
     model.addAttribute("manatee", manatee);
     return "manatee-page";
   }
+
+  @GetMapping("/nutritionstore")
+  public String showNutritionStore() {
+    return "nutrition-store";
+  }
 }

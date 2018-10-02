@@ -21,6 +21,11 @@ public class Nutrition {
   private NutritionType type;
   private String name;
 
+  public Nutrition(NutritionType type, String name) {
+    this.type = type;
+    this.name = name;
+  }
+
   @OneToMany(cascade = CascadeType.PERSIST)
   List<Manatee> consumers;
 }

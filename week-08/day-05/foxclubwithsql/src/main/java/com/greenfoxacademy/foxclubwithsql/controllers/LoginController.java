@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class UserController {
+public class LoginController {
 
   private final UserService userService;
 
   @Autowired
-  public UserController(UserService userService) {
+  public LoginController(UserService userService) {
     this.userService = userService;
   }
 
