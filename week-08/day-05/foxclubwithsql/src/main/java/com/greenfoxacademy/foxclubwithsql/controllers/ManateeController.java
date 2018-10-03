@@ -45,4 +45,10 @@ public class ManateeController {
     manateeService.setFoodAndDrink(manateeId, food, drink);
     return "redirect:/manatees/" + manateeId;
   }
+
+  @PostMapping("/customnutrition")
+  public String addCustomNutrition() {
+
+    return "manatee/nutrition-store";
+  }
 }
