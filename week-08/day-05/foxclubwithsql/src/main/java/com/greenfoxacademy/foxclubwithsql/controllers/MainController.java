@@ -39,7 +39,7 @@ public class MainController {
   }
 
   @PostMapping("/{id}/create")
-  public String createManatee(@PathVariable("id") long userId, @RequestParam("manateeName") String manateeName, @RequestParam("sex") boolean isMale) {
+  public String createManatee(@PathVariable("id") long userId, @RequestParam("manateeName") String manateeName, @RequestParam("gender") boolean isMale) {
     if (isMale) {
       userService.createManateeAddToUser(userId, manateeName, true);
     } else {

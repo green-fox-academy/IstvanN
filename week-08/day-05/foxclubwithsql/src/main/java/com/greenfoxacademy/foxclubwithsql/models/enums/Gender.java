@@ -1,6 +1,6 @@
 package com.greenfoxacademy.foxclubwithsql.models.enums;
 
-public enum Sex {
+public enum Gender {
   MALE,
   FEMALE
 }

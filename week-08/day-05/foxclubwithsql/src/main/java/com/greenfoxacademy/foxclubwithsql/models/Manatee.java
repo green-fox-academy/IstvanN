@@ -1,6 +1,6 @@
 package com.greenfoxacademy.foxclubwithsql.models;
 
-import com.greenfoxacademy.foxclubwithsql.models.enums.Sex;
+import com.greenfoxacademy.foxclubwithsql.models.enums.Gender;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,7 +17,7 @@ public class Manatee {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
   private String name;
-  private Sex sex;
+  private Gender gender;
 
   @ManyToOne
   private Nutrition currentFood;
@@ -28,8 +28,8 @@ public class Manatee {
   @ManyToOne
   private User owner;
 
-  public Manatee(String name, Sex sex) {
+  public Manatee(String name, Gender gender) {
     this.name = name;
-    this.sex = sex;
+    this.gender = gender;
   }
 }
