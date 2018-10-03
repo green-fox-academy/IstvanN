@@ -32,7 +32,7 @@
 </div>
 <h3>... or have the store order some custom food/drink!</h3>
 <div>
-    <form method="post" action="/manatees/">
+    <form method="post" action="#" th:action="@{/manatees/{manateeId}/customnutrition(manateeId=*{id})}">
         <label for="food">Food</label><br>
         <input id="food" name="food" type="text"><br>
         <label for="drink">Drink</label><br>
