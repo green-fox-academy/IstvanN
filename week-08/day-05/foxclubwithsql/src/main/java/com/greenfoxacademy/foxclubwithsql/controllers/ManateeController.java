@@ -49,13 +49,13 @@ public class ManateeController {
 
   @PostMapping("/customnutrition")
   public String addCustomNutrition(@PathVariable("manateeId") long manateeId, @RequestParam(value = "food", required = false) String foodName, @RequestParam(value = "drink", required = false) String drinkName) {
-    if (foodName != null) {
-      Nutrition food = new Nutrition(NutritionType.FOOD, foodName);
+    if (!foodName.equals("")) {
+      Nutrition food = new Nutrition(NutritionType.FOOD, foodName.toLowerCase());
       nutritionService.saveNutrition(food);
     }
 
-    if (drinkName != null) {
-      Nutrition drink = new Nutrition(NutritionType.DRINK, drinkName);
+    if (!drinkName.equals("")) {
+      Nutrition drink = new Nutrition(NutritionType.DRINK, drinkName.toLowerCase());
       nutritionService.saveNutrition(drink);
     }
     return "redirect:/manatees/" + manateeId + "/nutritionstore";
