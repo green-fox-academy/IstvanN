@@ -9,4 +9,5 @@ public interface NutritionService {
   List<Nutrition> getAllDrinks();
   Nutrition getFoodById(long id);
   Nutrition getDrinkById(long id);
+  void saveNutrition(Nutrition nutrition);
 }

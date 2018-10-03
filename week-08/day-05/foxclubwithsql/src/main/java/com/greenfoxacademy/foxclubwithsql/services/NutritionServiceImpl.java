@@ -37,4 +37,9 @@ public class NutritionServiceImpl implements NutritionService {
   public Nutrition getDrinkById(long id) {
     return nutritionRepository.findById(id).orElse(null);
   }
+
+  @Override
+  public void saveNutrition(Nutrition nutrition) {
+    nutritionRepository.save(nutrition);
+  }
 }
