@@ -8,6 +8,11 @@ public class Doubling {
   public Doubling() {
   }
 
+  public Doubling(Integer received, Integer result) {
+    this.received = received;
+    this.result = result;
+  }
+
   public int getReceived() {
     return received;
   }
