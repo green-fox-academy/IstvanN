@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Need For Stream: Most Wanted</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<div>
+    <h1 class="page-header">Need For Stream: Most Wanted <small>aka Archie's all time favourite video games</small></h1>
+</div>
+<div>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Company</th>
+            <th>Age (years)</th>
+            <th>Sold copy (million)</th>
+            <th>Income (million $)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="game : ${games}" th:object="${game}">
+            <td th:text="${gameStat.index + 1}"></td>
+            <td th:text="|VG*{id}|"></td>
+            <td th:text="*{title}"></td>
+            <td th:text="*{company}"></td>
+            <td th:text="*{age}"></td>
+            <td th:text="*{soldCopy}"></td>
+            <td th:text="*{income}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <form action="/filter" method="get">
+        <div>
+            <label for="age">Age:</label><br>
+            <select name="ageOption" class="btn btn-default">
+                <option value="greater">greater than or equals</option>
+                <option value="lesser">lesser</option>
+            </select>
+            <input id="age" type="number" name="ageValue">
+        </div>
+        <div>
+            <label for="copy">Sold copy:</label><br>
+            <select name="copyOption" class="btn btn-default">
+                <option value="greater">greater than or equals</option>
+                <option value="lesser">lesser</option>
+            </select>
+            <input id="copy" type="number" name="copyValue">
+        </div>
+        <div>
+            <label for="income">Income:</label><br>
+            <select name="incomeOption" class="btn btn-default">
+                <option value="greater">greater than or equals</option>
+                <option value="lesser">lesser</option>
+            </select>
+            <input id="income" type="number" name="incomeValue">
+        </div>
+        <button class="btn btn-success col-md-2" style="margin-top: 10px">Filter!</button>
+    </form>
+</div>
+<form action="/" method="get">
+    <button class="btn btn-primary col-md-2" style="margin-top: 10px">Back to main</button>
+</form>
+</body>
+</html>
