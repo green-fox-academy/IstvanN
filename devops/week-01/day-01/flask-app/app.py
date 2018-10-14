@@ -3,8 +3,8 @@ import random
 
 app = Flask(__name__)
 
+# list of Witcher images
 images = [
-    "https://media3.giphy.com/media/ZRMo8QM6M7lM4/giphy.gif?cid=3640f6095bc2f2c32f4c6d6677822abe",
     "https://media2.giphy.com/media/SGfWWpPV6LO92/200w.webp?cid=3640f6095bc2f2c32f4c6d6677822abe",
     "https://media1.giphy.com/media/QSACl5ZnSgQ5W/giphy.webp?cid=3640f6095bc2f2c32f4c6d6677822abe",
     "https://media3.giphy.com/media/6fsOq4QkRt7sQ/100.webp?cid=3640f6095bc2f2c32f4c6d6677822abe",
@@ -14,8 +14,6 @@ images = [
     "https://media3.giphy.com/media/1zR9sZ5VfXUfSIbtd6/200w.webp?cid=3640f6095bc2f2c32f4c6d6677822abe"
 ]
 
-
-# list of cat images
 
 @app.route('/')
 def index():
