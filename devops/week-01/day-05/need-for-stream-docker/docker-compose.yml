@@ -1,0 +1,30 @@
+version: '1'
+
+services:
+  mariadb-container:
+    image: mariadb:latest
+    container_name: mariadb-container
+    restart: always
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_PASSWORD: 12345
+      MYSQL_DATABASE: message
+    expose:
+      - 3306
+    
+  gradle-container:
+    image: archiezgg/need-for-stream
+    container_name: nfs-container
+    environment:
+      JDBC_DATABASE_URL: jdbc:mysql://mariadb-container/need-for-sequel
+      JDBC_DATABASE_USERNAME: root
+      JDBC_DATABASE_PASSWORD: 12345
+    depends_on:
+      - mariadb-container
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/greenfox/
+    tty: true
+
