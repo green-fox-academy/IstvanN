@@ -4,15 +4,13 @@ services:
     image: mariadb:latest
     container_name: mariadb-container
     restart: always
-    volumes:
-      - ./nfs.sql:/docker-entrypoint-initdb.d/nfs.sql
     environment:
-      MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: 12345
-      MYSQL_PASSWORD: 12345
       MYSQL_DATABASE: nfs
     expose:
       - 3306
+    volumes:
+      - ./nfs.sql:/docker-entrypoint-initdb.d/nfs.sql
     
   spring-container:
     image: archiezgg/nfs-app
