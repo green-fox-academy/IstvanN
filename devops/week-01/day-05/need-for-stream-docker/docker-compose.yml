@@ -13,7 +13,7 @@ services:
       - ./nfs.sql:/docker-entrypoint-initdb.d/nfs.sql
     
   spring-container:
-    image: archiezgg/nfs-app
+    image: archiezgg/nfs-application
     container_name: nfs-app-container
     environment:
       JDBC_DATABASE_URL: jdbc:mysql://mariadb-container/nfs
@@ -23,6 +23,4 @@ services:
       - mariadb-container
     ports:
       - 8080:8080
-    volumes:
-      - .:/archiezgg/
     tty: true

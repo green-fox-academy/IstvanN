@@ -23,11 +23,8 @@ RUN mkdir -p $GRADLE_FOLDER
 # Mark as volume
 VOLUME  $GRADLE_FOLDER
 
-# Change to root folder
-WORKDIR /archiezgg/
-
 # Add the application
-COPY . ./app
+COPY . .
 
 EXPOSE 8080
 
